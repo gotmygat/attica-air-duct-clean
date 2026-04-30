@@ -65,6 +65,18 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
 export default function Home() {
   useScrollAnimation();
 
+  useEffect(() => {
+    document.title = 'Attica Air Duct Cleaners | Orlando Air Duct Cleaning';
+    // Ensure keywords meta tag is set for SPA navigation
+    let kw = document.querySelector('meta[name="keywords"]');
+    if (!kw) {
+      kw = document.createElement('meta');
+      (kw as HTMLMetaElement).name = 'keywords';
+      document.head.appendChild(kw);
+    }
+    (kw as HTMLMetaElement).content = 'air duct cleaning Orlando, dryer vent cleaning, chimney cleaning, attic insulation, HVAC cleaning, air duct cleaning near me, duct cleaning Orlando, Attica cleaners, air purification, vent cleaning Florida';
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
