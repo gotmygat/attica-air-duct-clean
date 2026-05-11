@@ -8,6 +8,10 @@ export default function ChimneyCleaning() {
       title="Chimney Cleaning & Inspection"
       subtitle="Safety & Fire Prevention"
       heroImage={IMG}
+      heroImageAlt="Attica Air Duct Cleaners performing chimney inspection on a residential rooftop in Orlando, FL"
+      metaTitle="Chimney Inspection & Cleaning in Orlando, FL | Attica Air Duct Cleaners"
+      metaDescription="Professional chimney inspection & cleaning in Orlando, FL. Remove creosote buildup, check for carbon monoxide risks & fire hazards. Call (407) 990-1969."
+      canonical="/chimney-cleaning"
       description="Chimney sweeps service install, clean, and maintain chimney systems, evaluate their performance, prescribe changes to improve their performance, and educate the users about their safe and efficient operation. Check for creosote buildup, carbon monoxide risks, fire hazards, and flue blockages."
       benefits={[
         'Creosote Buildup Removal',

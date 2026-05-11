@@ -6,6 +6,10 @@ export default function AirPurification() {
   return (
     <ServicePageLayout
       title="Air Purification Systems"
+      heroImageAlt="Attica Air Duct Cleaners installing a whole-home air purification system in an Orlando home"
+      metaTitle="Air Purification Systems in Orlando, FL | Attica Air Duct Cleaners"
+      metaDescription="Whole-home air purification systems in Orlando, FL. HEPA-grade filtration installed directly into your HVAC. Removes bacteria, viruses & allergens. Call (407) 990-1969."
+      canonical="/air-purification"
       subtitle="Whole-Home Air Quality"
       heroImage={IMG}
       description="Our essential services include Air Purification Systems which bring clean air into your home from the environment. If you want to install the air purification system at your home or office, let us know or book an appointment now. Our whole-home air purification systems work with your existing HVAC to filter and purify every breath you take."

@@ -8,6 +8,10 @@ export default function DryerVentCleaning() {
       title="Dryer Vent Cleaning"
       subtitle="Fire Prevention & Safety"
       heroImage={IMG}
+      heroImageAlt="Attica Air Duct Cleaners technician cleaning a dryer vent to prevent fire hazards in an Orlando home"
+      metaTitle="Dryer Vent Cleaning in Orlando, FL | Attica Air Duct Cleaners"
+      metaDescription="Professional dryer vent cleaning in Orlando, FL. Prevent dryer fires, remove lint buildup & eliminate burning smells. Up to 7ft cleaning. Call (407) 990-1969."
+      canonical="/dryer-vent-cleaning"
       description="We aim to protect our valued customers from any sort of fire or malfunctioning hazard caused by dryer vent obstructions. So, we provide up-to-the-mark dryer vent cleaning services at competitive rates. Hire us! Up to 7ft. Eliminate burning smells, prevent fires, remove lint buildup, and ensure efficient drying."
       benefits={[
         'Up to 7ft Vent Cleaning',

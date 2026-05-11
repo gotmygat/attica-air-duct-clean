@@ -6,6 +6,10 @@ export default function AtticInsulation() {
   return (
     <ServicePageLayout
       title="Attic Insulation"
+      heroImageAlt="Attica Air Duct Cleaners installing blow-in attic insulation in an Orlando home"
+      metaTitle="Attic Insulation in Orlando, FL | Attica Air Duct Cleaners"
+      metaDescription="Professional attic blow-in insulation in Orlando, FL. Improve energy efficiency, reduce heating & cooling costs, and increase home comfort. Call (407) 990-1969."
+      canonical="/attic-insulation"
       subtitle="Energy Efficiency"
       heroImage={IMG}
       description="Attic Insulation can help keep your heating and cooling costs down. We provide the best Attic Insulation Service in the Greater Orlando area. Book an appointment today. Attica Air Duct Cleaners optimize your home's energy with professional attic blow-in insulation services. Improve efficiency, enjoy year-round comfort, and save on energy bills with this cost-effective solution tailored for your home."
