@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" fill="none">
+  <!-- Wind/air icon -->
+  <g>
+    <path d="M6 16 Q14 10 22 16 Q30 22 38 16" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M6 24 Q14 18 22 24 Q30 30 38 24" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M6 32 Q14 26 22 32 Q30 38 38 32" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="48" y="20" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#0f1923" letter-spacing="2">ATTICA</text>
+  <text x="48" y="36" font-family="'Arial', sans-serif" font-size="10" font-weight="400" fill="#374151" letter-spacing="1">AIR DUCT CLEANERS</text>
+</svg>

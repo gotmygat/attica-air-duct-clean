@@ -118,13 +118,6 @@ export default function LocationPage() {
                 </h2>
                 <div className="rounded-2xl overflow-hidden border border-border shadow-sm" style={{ height: 360 }}>
                   <MapView
-                    onMapReady={(map) => {
-                      new google.maps.Marker({
-                        position: { lat: city.lat, lng: city.lng },
-                        map,
-                        title: `Attica Cleaners — ${city.name}`,
-                      });
-                    }}
                     initialCenter={{ lat: city.lat, lng: city.lng }}
                     initialZoom={12}
                   />

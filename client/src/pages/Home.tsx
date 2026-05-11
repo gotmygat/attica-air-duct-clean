@@ -15,7 +15,7 @@ import Footer from '@/components/Footer';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 import { useScrollAnimation, useCountUp } from '@/hooks/useScrollAnimation';
 
-const VIDEO_URL = '/manus-storage/attica-hero_1ca63fe7.mp4';
+const VIDEO_URL = '/assets/hero.mp4';
 
 const CF = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg';
 const WHY_CHOOSE_IMG = `${CF}/attica-why-choose-9SbmvXVHyTPbvvzQi2k7ge.webp`;
