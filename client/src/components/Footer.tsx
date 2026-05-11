@@ -7,7 +7,7 @@
 import { Link } from 'wouter';
 import { Phone, Mail, Facebook, Instagram, MapPin } from 'lucide-react';
 
-const LOGO_URL = '/manus-storage/attica-logo_a9afdc85.png';
+const LOGO_URL = '/assets/attica-logo.png';
 
 const SERVICES_FOOTER = [
   { label: 'Air Duct Cleaning', href: '/air-duct-cleaning' },
