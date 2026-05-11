@@ -19,16 +19,16 @@ const VIDEO_URL = '/assets/hero.mp4';
 
 const CF = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg';
 const WHY_CHOOSE_IMG = `${CF}/attica-why-choose-9SbmvXVHyTPbvvzQi2k7ge.webp`;
-const AIR_DUCT_IMG   = `${CF}/attica-air-duct-DyuTQXMLptwvdGKyf8Unbg.webp`;
+const AIR_DUCT_IMG   = '/assets/air-duct-cleaning.jpg';
 const DRYER_IMG      = `${CF}/attica-dryer-vent-HUUTnvW6cjAqwvmfjdrvne.webp`;
-const CHIMNEY_IMG    = `${CF}/attica-chimney-hrnWhwvtf4mH9hSE3C3YLp.webp`;
+const CHIMNEY_IMG    = '/assets/chimney-inspection.jpg';
 const INSULATION_IMG = `${CF}/attica-insulation-9E3gQuVCTRRtKuUcVBFgKb.webp`;
 const PURIFY_IMG     = 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=700&q=80';
 
 const SERVICES = [
   { title: 'Air Duct Cleaning', desc: 'Unlimited vents. Remove dust, allergens, pet dander, mold, and musty odors with Negative Air Pressure Technology.', img: AIR_DUCT_IMG, href: '/air-duct-cleaning', tag: 'Most Popular', icon: Wind },
   { title: 'Dryer Vent Cleaning', desc: 'Up to 7ft. Eliminate burning smells, prevent fires, remove lint buildup, and ensure efficient drying cycles.', img: DRYER_IMG, href: '/dryer-vent-cleaning', tag: 'Fire Prevention', icon: Flame },
-  { title: 'Chimney Cleaning', desc: 'Check for creosote buildup, carbon monoxide risks, fire hazards, and flue blockages with a full inspection.', img: CHIMNEY_IMG, href: '/chimney-cleaning', tag: null, icon: Flame },
+  { title: 'Chimney Inspection', desc: 'Check for creosote buildup, carbon monoxide risks, fire hazards, and flue blockages with a full inspection.', img: CHIMNEY_IMG, href: '/chimney-cleaning', tag: null, icon: Flame },
   { title: 'Attic Insulation', desc: 'Professional blow-in insulation to optimize energy efficiency, comfort, and savings on your energy bills.', img: INSULATION_IMG, href: '/attic-insulation', tag: 'Energy Savings', icon: Thermometer },
   { title: 'Air Purification', desc: 'Whole-home air purification systems installed directly into your HVAC for clean air in every room.', img: PURIFY_IMG, href: '/air-purification', tag: null, icon: Wind },
   { title: 'HVAC Restoration', desc: 'Restore performance, improve overall air quality, and extend the lifespan of your heating and cooling system.', img: WHY_CHOOSE_IMG, href: '/services', tag: null, icon: Zap },
