@@ -12,6 +12,8 @@ import DryerVentCleaning from "./pages/DryerVentCleaning";
 import ChimneyCleaning from "./pages/ChimneyCleaning";
 import AtticInsulation from "./pages/AtticInsulation";
 import AirPurification from "./pages/AirPurification";
+import HvacRestoration from "./pages/HvacRestoration";
+import CondenserCoilCleaning from "./pages/CondenserCoilCleaning";
 import ReferralClub from "./pages/ReferralClub";
 import Blog from "./pages/Blog";
 import LocationPage from "./pages/LocationPage";
@@ -27,6 +29,8 @@ function Router() {
       <Route path="/chimney-cleaning" component={ChimneyCleaning} />
       <Route path="/attic-insulation" component={AtticInsulation} />
       <Route path="/air-purification" component={AirPurification} />
+      <Route path="/hvac-restoration" component={HvacRestoration} />
+      <Route path="/condenser-coil-cleaning" component={CondenserCoilCleaning} />
       <Route path="/referral-club" component={ReferralClub} />
       <Route path="/blog" component={Blog} />
       <Route path="/locations/:city" component={LocationPage} />

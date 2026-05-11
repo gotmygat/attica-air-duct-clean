@@ -16,8 +16,8 @@ const SERVICES = [
   { label: 'Chimney Cleaning', href: '/chimney-cleaning' },
   { label: 'Attic Insulation', href: '/attic-insulation' },
   { label: 'Air Purification', href: '/air-purification' },
-  { label: 'HVAC System Restoration', href: '/services' },
-  { label: 'Condenser Coil Cleaning', href: '/services' },
+  { label: 'HVAC System Restoration', href: '/hvac-restoration' },
+  { label: 'Condenser Coil Cleaning', href: '/condenser-coil-cleaning' },
 ];
 
 const LOCATIONS = [
