@@ -1,6 +1,7 @@
 /**
  * ATTICA CLEANERS — Map Component
  * Uses Leaflet + OpenStreetMap (no API key required, works on Firebase)
+ * Pin and view update reactively when city coordinates change (navigation fix)
  */
 
 import { useEffect, useRef } from "react";
@@ -31,7 +32,26 @@ export function MapView({
 }: MapViewProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
+  const markerRef = useRef<L.Marker | null>(null);
 
+  // Custom green pin icon factory
+  const makeGreenIcon = () =>
+    L.divIcon({
+      className: "",
+      html: `<div style="
+        width:28px;height:28px;
+        background:linear-gradient(135deg,#22c55e,#16a34a);
+        border-radius:50% 50% 50% 0;
+        transform:rotate(-45deg);
+        border:3px solid white;
+        box-shadow:0 2px 8px rgba(0,0,0,0.35);
+      "></div>`,
+      iconSize: [28, 28],
+      iconAnchor: [14, 28],
+      popupAnchor: [0, -32],
+    });
+
+  // Initialize map once
   useEffect(() => {
     if (mapRef.current || !mapContainer.current) return;
 
@@ -47,23 +67,7 @@ export function MapView({
       maxZoom: 19,
     }).addTo(map);
 
-    // Custom green pin marker
-    const greenIcon = L.divIcon({
-      className: "",
-      html: `<div style="
-        width:28px;height:28px;
-        background:linear-gradient(135deg,#22c55e,#16a34a);
-        border-radius:50% 50% 50% 0;
-        transform:rotate(-45deg);
-        border:3px solid white;
-        box-shadow:0 2px 8px rgba(0,0,0,0.35);
-      "></div>`,
-      iconSize: [28, 28],
-      iconAnchor: [14, 28],
-      popupAnchor: [0, -32],
-    });
-
-    L.marker([initialCenter.lat, initialCenter.lng], { icon: greenIcon })
+    const marker = L.marker([initialCenter.lat, initialCenter.lng], { icon: makeGreenIcon() })
       .addTo(map)
       .bindPopup(
         `<strong style="font-family:sans-serif;font-size:13px;">Attica Air Duct Cleaners</strong><br/>
@@ -71,13 +75,23 @@ export function MapView({
       );
 
     mapRef.current = map;
+    markerRef.current = marker;
 
     return () => {
       map.remove();
       mapRef.current = null;
+      markerRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Update pin and view whenever the city coordinates change (navigation between location pages)
+  useEffect(() => {
+    if (!mapRef.current || !markerRef.current) return;
+    const latlng: L.LatLngExpression = [initialCenter.lat, initialCenter.lng];
+    mapRef.current.setView(latlng, initialZoom, { animate: true });
+    markerRef.current.setLatLng(latlng);
+  }, [initialCenter.lat, initialCenter.lng, initialZoom]);
 
   return (
     <div

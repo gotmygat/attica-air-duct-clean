@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 
-const LOGO_URL = '/assets/attica-logo.svg';
+const LOGO_URL = '/assets/attica-logo.png';
 
 const SERVICES = [
   { label: 'Air Duct Cleaning', href: '/air-duct-cleaning' },
