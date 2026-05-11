@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg/attica-chimney-hrnWhwvtf4mH9hSE3C3YLp.webp';
+const IMG = '/assets/chimney-inspection.jpg';
 
 export default function ChimneyCleaning() {
   return (
