@@ -18,7 +18,7 @@ import { useScrollAnimation, useCountUp } from '@/hooks/useScrollAnimation';
 const VIDEO_URL = '/assets/hero.mp4';
 
 const CF = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg';
-const WHY_CHOOSE_IMG = `${CF}/attica-why-choose-9SbmvXVHyTPbvvzQi2k7ge.webp`;
+const WHY_CHOOSE_IMG = '/assets/why-choose-attica.jpg';
 const AIR_DUCT_IMG   = '/assets/air-duct-cleaning.jpg';
 const DRYER_IMG      = `${CF}/attica-dryer-vent-HUUTnvW6cjAqwvmfjdrvne.webp`;
 const CHIMNEY_IMG    = '/assets/chimney-inspection.jpg';
