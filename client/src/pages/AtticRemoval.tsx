@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/chimney-inspection.jpg';
+const IMG = '/assets/service-attic-removal.jpg';
 
 export default function AtticRemoval() {
   return (

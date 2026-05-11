@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/why-choose-attica.jpg';
+const IMG = '/assets/service-hvac-restoration.jpg';
 
 export default function HvacRestoration() {
   return (

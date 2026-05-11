@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/why-choose-attica.jpg';
+const IMG = '/assets/service-air-purification.webp';
 
 export default function AirPurification() {
   return (
