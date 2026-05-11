@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/service-attic-insulation.webp';
+const IMG = '/assets/service-attic-insulation-v2.jpg';
 
 export default function AtticInsulation() {
   return (
