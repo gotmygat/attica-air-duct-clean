@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg/attica-dryer-vent-HUUTnvW6cjAqwvmfjdrvne.webp';
+const IMG = '/assets/service-dryer-vent.webp';
 
 export default function DryerVentCleaning() {
   return (

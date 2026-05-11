@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/air-duct-cleaning.jpg';
+const IMG = '/assets/service-air-duct-real.webp';
 
 export default function AirDuctCleaning() {
   return (
