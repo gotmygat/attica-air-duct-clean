@@ -19,6 +19,81 @@ interface LeadCaptureFormProps {
   subtitle?: string;
 }
 
+/** Build a styled HTML email body matching the Wix Contact Form notification style */
+function buildHtmlEmail(fields: {
+  firstName: string;
+  lastName: string;
+  address: string;
+  city: string;
+  state: string;
+  phone: string;
+  email: string;
+  zipCode: string;
+  message: string;
+}): string {
+  const row = (label: string, value: string) => `
+    <tr>
+      <td style="padding:10px 20px;background:#f9f9f9;border-bottom:1px solid #e8e8e8;">
+        <p style="margin:0;font-family:Arial,sans-serif;font-size:11px;font-weight:700;color:#888888;text-transform:uppercase;letter-spacing:0.5px;">${label}</p>
+        <p style="margin:4px 0 0;font-family:Arial,sans-serif;font-size:15px;color:#222222;">${value || '<span style="color:#aaa;">—</span>'}</p>
+      </td>
+    </tr>`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f0f0f0;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f0f0f0;padding:30px 0;">
+    <tr><td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+
+        <!-- Header -->
+        <tr>
+          <td style="background:#1a3a2a;padding:28px 30px;text-align:center;">
+            <p style="margin:0;font-family:Arial,sans-serif;font-size:13px;font-weight:600;color:#7ec8a0;text-transform:uppercase;letter-spacing:1px;">New Form Submission</p>
+            <h1 style="margin:6px 0 0;font-family:Arial,sans-serif;font-size:22px;font-weight:700;color:#ffffff;">Contact Form</h1>
+            <p style="margin:6px 0 0;font-family:Arial,sans-serif;font-size:13px;color:#aaaaaa;">Attica Air Duct Cleaners</p>
+          </td>
+        </tr>
+
+        <!-- Intro -->
+        <tr>
+          <td style="padding:20px 20px 10px;background:#ffffff;">
+            <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#555555;">
+              A site visitor just submitted your <strong>Contact Form</strong>. Here is a summary of their submission:
+            </p>
+          </td>
+        </tr>
+
+        <!-- Fields -->
+        <table width="100%" cellpadding="0" cellspacing="0">
+          ${row('First Name', fields.firstName)}
+          ${row('Last Name', fields.lastName)}
+          ${row('Phone Number', fields.phone)}
+          ${row('Email', fields.email || 'Not provided')}
+          ${row('Address', fields.address || 'Not provided')}
+          ${row('City', fields.city || 'Not provided')}
+          ${row('State', fields.state || 'Not provided')}
+          ${row('Zip Code', fields.zipCode || 'Not provided')}
+          ${row('Message', fields.message || 'No message provided')}
+        </table>
+
+        <!-- Footer -->
+        <tr>
+          <td style="padding:20px 20px 28px;background:#ffffff;border-top:1px solid #e8e8e8;text-align:center;">
+            <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;color:#aaaaaa;">
+              This email was sent as a notification from <strong>attica-cleaners.web.app</strong>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+}
+
 export default function LeadCaptureForm({
   dark = false,
   title = 'Get Your Free Quote',
@@ -42,12 +117,16 @@ export default function LeadCaptureForm({
     setError('');
 
     const templateParams = {
-      first_name: form.firstName,
-      last_name:  form.lastName,
-      phone:      form.phone,
-      email:      form.email || 'Not provided',
-      address:    `${form.address}${form.city ? ', ' + form.city : ''}${form.state ? ', ' + form.state : ''}${form.zipCode ? ' ' + form.zipCode : ''}`.trim() || 'Not provided',
-      message:    form.message || 'No message provided',
+      first_name:   form.firstName,
+      last_name:    form.lastName,
+      phone:        form.phone,
+      email:        form.email || 'Not provided',
+      address:      form.address || 'Not provided',
+      city:         form.city || 'Not provided',
+      state:        form.state || 'Not provided',
+      zip_code:     form.zipCode || 'Not provided',
+      message:      form.message || 'No message provided',
+      html_message: buildHtmlEmail(form),
     };
 
     try {
