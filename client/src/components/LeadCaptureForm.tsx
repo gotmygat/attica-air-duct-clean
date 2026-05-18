@@ -1,11 +1,17 @@
 /**
  * ATTICA CLEANERS — Lead Capture Form
  * Design: Clean Air Luxury — clean form with green accents
- * Used on homepage and all sub-pages
+ * EmailJS integration: sends all submissions to atticacleaners1@gmail.com
  */
 
 import { useState } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+// EmailJS credentials
+const EMAILJS_SERVICE_ID  = 'service_1ud1kw5';
+const EMAILJS_TEMPLATE_ID = 'template_atum5ah';
+const EMAILJS_PUBLIC_KEY  = 'f22PGUPTJ1sPihQjh';
 
 interface LeadCaptureFormProps {
   dark?: boolean;
@@ -16,9 +22,11 @@ interface LeadCaptureFormProps {
 export default function LeadCaptureForm({
   dark = false,
   title = 'Get Your Free Quote',
-  subtitle = 'Fill out the form below and we\'ll get back to you within 24 hours.',
+  subtitle = "Fill out the form below and we'll get back to you within 24 hours.",
 }: LeadCaptureFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({
     firstName: '', lastName: '', address: '', city: '',
     state: 'FL', phone: '', email: '', zipCode: '', message: '',
@@ -28,10 +36,34 @@ export default function LeadCaptureForm({
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would send to a backend/CRM
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+
+    const templateParams = {
+      first_name: form.firstName,
+      last_name:  form.lastName,
+      phone:      form.phone,
+      email:      form.email || 'Not provided',
+      address:    `${form.address}${form.city ? ', ' + form.city : ''}${form.state ? ', ' + form.state : ''}${form.zipCode ? ' ' + form.zipCode : ''}`.trim() || 'Not provided',
+      message:    form.message || 'No message provided',
+    };
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY,
+      );
+      setSubmitted(true);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setError('Something went wrong. Please call us at (407) 990-1969 or try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass = `w-full px-4 py-3 rounded-xl font-body text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
@@ -118,12 +150,17 @@ export default function LeadCaptureForm({
           <label className={labelClass}>How May We Help You</label>
           <textarea name="message" rows={4} placeholder="Tell us about your needs..." value={form.message} onChange={handleChange} className={`${inputClass} resize-none`} />
         </div>
+        {error && (
+          <p className="font-body text-sm text-red-500 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+            {error}
+          </p>
+        )}
         <p className={`font-body text-xs ${dark ? 'text-white/40' : 'text-muted-foreground'}`}>
-          * I agree to the Terms & Conditions and Privacy Policy provided by Attica Air Duct Cleaners LLC. By providing my phone number, I agree to receive text messages from Attica Air Duct Cleaners LLC. Text STOP to cancel or HELP for help.
+          * I agree to the Terms &amp; Conditions and Privacy Policy provided by Attica Air Duct Cleaners LLC. By providing my phone number, I agree to receive text messages from Attica Air Duct Cleaners LLC. Text STOP to cancel or HELP for help.
         </p>
-        <button type="submit" className="btn-primary w-full justify-center gap-2 py-3.5">
-          <Send size={16} />
-          Send My Request
+        <button type="submit" disabled={loading} className="btn-primary w-full justify-center gap-2 py-3.5 disabled:opacity-60 disabled:cursor-not-allowed">
+          {loading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+          {loading ? 'Sending...' : 'Send My Request'}
         </button>
       </form>
     </div>
