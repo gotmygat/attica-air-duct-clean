@@ -1,12 +1,12 @@
 /**
  * ATTICA CLEANERS — Header Component
- * Uses real Attica logo from /manus-storage/attica-logo_a9afdc85.png
- * Transparent-to-white scroll behavior on homepage
+ * Book Now button opens a modal with the lead capture form
  */
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import LeadCaptureForm from './LeadCaptureForm';
 
 const LOGO_URL = '/assets/attica-logo.png';
 
@@ -50,6 +50,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [locationsOpen, setLocationsOpen] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
   const [location] = useLocation();
   const isHome = location === '/';
 
@@ -60,6 +61,16 @@ export default function Header() {
   }, []);
 
   useEffect(() => { setMobileOpen(false); }, [location]);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (bookingOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [bookingOpen]);
 
   const solidBg = isHome ? scrolled : true;
   const headerBg = solidBg
@@ -139,7 +150,12 @@ export default function Header() {
                 <Phone size={15} />
                 (407) 990-1969
               </a>
-              <a href="tel:4079901969" className="btn-primary text-xs px-5 py-2.5">Book Now</a>
+              <button
+                onClick={() => setBookingOpen(true)}
+                className="btn-primary text-xs px-5 py-2.5"
+              >
+                Book Now
+              </button>
             </div>
 
             {/* Mobile toggle */}
@@ -201,7 +217,13 @@ export default function Header() {
             <Link href="/blog" className="block py-3 px-3 rounded-lg font-body font-medium hover:bg-muted transition-colors">Blog</Link>
           </nav>
           <div className="p-5 border-t space-y-3">
-            <a href="tel:4079901969" className="btn-primary w-full justify-center">
+            <button
+              onClick={() => { setMobileOpen(false); setBookingOpen(true); }}
+              className="btn-primary w-full justify-center"
+            >
+              Book Now — Get a Free Quote
+            </button>
+            <a href="tel:4079901969" className="flex items-center justify-center gap-2 font-body font-semibold text-sm text-foreground hover:text-[oklch(0.56_0.12_165)] transition-colors">
               <Phone size={16} /> Call (407) 990-1969
             </a>
           </div>
@@ -214,6 +236,35 @@ export default function Header() {
           <Phone size={16} /> Call Now: (407) 990-1969
         </a>
       </div>
+
+      {/* Booking Modal */}
+      {bookingOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          onClick={(e) => { if (e.target === e.currentTarget) setBookingOpen(false); }}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setBookingOpen(false)} />
+
+          {/* Modal panel */}
+          <div className="relative z-10 w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-[#1a1a1a] p-8 shadow-2xl">
+            {/* Close button */}
+            <button
+              onClick={() => setBookingOpen(false)}
+              className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              aria-label="Close"
+            >
+              <X size={18} />
+            </button>
+
+            <LeadCaptureForm
+              dark={true}
+              title="Get a Free Quote"
+              subtitle="We'll respond within 24 hours."
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
