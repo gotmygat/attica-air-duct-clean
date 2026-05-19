@@ -82,20 +82,20 @@ export default function Header() {
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-18 lg:h-24">
 
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <img
                 src={LOGO_URL}
                 alt="Attica Air Duct Cleaners"
-                className={`h-10 lg:h-12 w-auto object-contain transition-all duration-300 ${!solidBg ? 'brightness-0 invert' : ''}`}
+                className={`h-12 lg:h-16 w-auto object-contain transition-all duration-300 ${!solidBg ? 'brightness-0 invert' : ''}`}
               />
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-7">
-              <Link href="/" className={`nav-link ${textColor}`}>Home</Link>
+            <nav className="hidden lg:flex items-center gap-8">
+              <Link href="/" className={`nav-link text-base font-semibold ${textColor}`}>Home</Link>
 
               {/* Services Dropdown */}
               <div
@@ -103,7 +103,7 @@ export default function Header() {
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
               >
-                <button className={`nav-link flex items-center gap-1 ${textColor}`}>
+                <button className={`nav-link text-base font-semibold flex items-center gap-1 ${textColor}`}>
                   Services
                   <ChevronDown size={14} className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
                 </button>
@@ -123,7 +123,7 @@ export default function Header() {
                 onMouseEnter={() => setLocationsOpen(true)}
                 onMouseLeave={() => setLocationsOpen(false)}
               >
-                <button className={`nav-link flex items-center gap-1 ${textColor}`}>
+                <button className={`nav-link text-base font-semibold flex items-center gap-1 ${textColor}`}>
                   Locations
                   <ChevronDown size={14} className={`transition-transform duration-200 ${locationsOpen ? 'rotate-180' : ''}`} />
                 </button>
@@ -139,20 +139,20 @@ export default function Header() {
                 </div>
               </div>
 
-              <Link href="/referral-club" className={`nav-link ${textColor}`}>Referral Club</Link>
-              <Link href="/blog" className={`nav-link ${textColor}`}>Blog</Link>
+              <Link href="/referral-club" className={`nav-link text-base font-semibold ${textColor}`}>Referral Club</Link>
+              <Link href="/blog" className={`nav-link text-base font-semibold ${textColor}`}>Blog</Link>
             </nav>
 
             {/* CTA */}
             <div className="hidden lg:flex items-center gap-3">
               <a href="tel:4079901969"
-                className={`flex items-center gap-2 font-body font-semibold text-sm whitespace-nowrap transition-colors duration-300 ${!solidBg ? 'text-white hover:text-[#4ade80]' : 'text-foreground hover:text-[oklch(0.56_0.12_165)]'}`}>
+                className={`flex items-center gap-2 font-body font-semibold text-base whitespace-nowrap transition-colors duration-300 ${!solidBg ? 'text-white hover:text-[#4ade80]' : 'text-foreground hover:text-[oklch(0.56_0.12_165)]'}`}>
                 <Phone size={15} />
                 (407) 990-1969
               </a>
               <button
                 onClick={() => setBookingOpen(true)}
-                className="btn-primary text-xs px-5 py-2.5"
+                className="btn-primary text-sm px-6 py-3"
               >
                 Book Now
               </button>
