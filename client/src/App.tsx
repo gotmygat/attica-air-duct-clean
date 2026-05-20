@@ -20,6 +20,7 @@ import ReferralClub from "./pages/ReferralClub";
 import Blog from "./pages/Blog";
 import LocationPage from "./pages/LocationPage";
 import NotFound from "./pages/NotFound";
+import ThankYou from "./pages/ThankYou";
 
 function Router() {
   return (
@@ -38,6 +39,7 @@ function Router() {
       <Route path="/referral-club" component={ReferralClub} />
       <Route path="/blog" component={Blog} />
       <Route path="/locations/:city" component={LocationPage} />
+      <Route path="/thank-you" component={ThankYou} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

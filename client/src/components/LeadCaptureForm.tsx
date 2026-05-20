@@ -5,8 +5,9 @@
  */
 
 import { useState } from 'react';
-import { Send, CheckCircle, Loader2 } from 'lucide-react';
+import { Send, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { useLocation } from 'wouter';
 
 // EmailJS credentials
 const EMAILJS_SERVICE_ID  = 'service_1ud1kw5';
@@ -99,7 +100,7 @@ export default function LeadCaptureForm({
   title = 'Get Your Free Quote',
   subtitle = "Fill out the form below and we'll get back to you within 24 hours.",
 }: LeadCaptureFormProps) {
-  const [submitted, setSubmitted] = useState(false);
+  const [, navigate] = useLocation();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [form, setForm] = useState({
@@ -136,7 +137,7 @@ export default function LeadCaptureForm({
         templateParams,
         EMAILJS_PUBLIC_KEY,
       );
-      setSubmitted(true);
+      navigate('/thank-you');
     } catch (err) {
       console.error('EmailJS error:', err);
       setError('Something went wrong. Please call us at (407) 990-1969 or try again.');
@@ -152,23 +153,6 @@ export default function LeadCaptureForm({
   }`;
 
   const labelClass = `block font-body text-xs font-semibold tracking-wide uppercase mb-1.5 ${dark ? 'text-white/60' : 'text-muted-foreground'}`;
-
-  if (submitted) {
-    return (
-      <div className="flex flex-col items-center justify-center py-16 text-center">
-        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-          <CheckCircle size={32} className="text-primary" />
-        </div>
-        <h3 className={`font-display text-2xl font-bold mb-2 ${dark ? 'text-white' : 'text-foreground'}`}>
-          Thank You!
-        </h3>
-        <p className={`font-body text-sm ${dark ? 'text-white/60' : 'text-muted-foreground'}`}>
-          We've received your request and will contact you within 24 hours.<br />
-          For immediate assistance, call <a href="tel:4079901969" className="text-primary font-semibold">(407) 990-1969</a>.
-        </p>
-      </div>
-    );
-  }
 
   return (
     <div>
