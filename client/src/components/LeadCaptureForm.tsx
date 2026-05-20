@@ -7,7 +7,6 @@
 import { useState } from 'react';
 import { Send, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import { useLocation } from 'wouter';
 
 // EmailJS credentials
 const EMAILJS_SERVICE_ID  = 'service_1ud1kw5';
@@ -100,7 +99,6 @@ export default function LeadCaptureForm({
   title = 'Get Your Free Quote',
   subtitle = "Fill out the form below and we'll get back to you within 24 hours.",
 }: LeadCaptureFormProps) {
-  const [, navigate] = useLocation();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [form, setForm] = useState({
@@ -137,7 +135,7 @@ export default function LeadCaptureForm({
         templateParams,
         EMAILJS_PUBLIC_KEY,
       );
-      navigate('/thank-you');
+      window.location.href = '/thank-you';
     } catch (err) {
       console.error('EmailJS error:', err);
       setError('Something went wrong. Please call us at (407) 990-1969 or try again.');
