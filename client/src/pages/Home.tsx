@@ -7,7 +7,7 @@
 import { useEffect } from 'react';
 import { Link } from 'wouter';
 import {
-  Phone, Star, CheckCircle, Award, Leaf,
+  Phone, Star, CheckCircle, Award, Leaf, Zap,
   MapPin, ArrowRight, Users, Wind, Flame, Thermometer
 } from 'lucide-react';
 import Header from '@/components/Header';
