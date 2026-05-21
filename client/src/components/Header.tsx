@@ -16,7 +16,6 @@ const SERVICES = [
   { label: 'Chimney Cleaning', href: '/chimney-cleaning' },
   { label: 'Attic Insulation', href: '/attic-insulation' },
   { label: 'Air Purification', href: '/air-purification' },
-  { label: 'HVAC System Restoration', href: '/hvac-restoration' },
   { label: 'Condenser Coil Cleaning', href: '/condenser-coil-cleaning' },
   { label: 'Solar Attic Fan', href: '/solar-attic-fan' },
   { label: 'Attic Removal', href: '/attic-removal' },

@@ -12,7 +12,6 @@ import DryerVentCleaning from "./pages/DryerVentCleaning";
 import ChimneyCleaning from "./pages/ChimneyCleaning";
 import AtticInsulation from "./pages/AtticInsulation";
 import AirPurification from "./pages/AirPurification";
-import HvacRestoration from "./pages/HvacRestoration";
 import CondenserCoilCleaning from "./pages/CondenserCoilCleaning";
 import SolarAtticFan from "./pages/SolarAtticFan";
 import AtticRemoval from "./pages/AtticRemoval";
@@ -21,9 +20,12 @@ import Blog from "./pages/Blog";
 import LocationPage from "./pages/LocationPage";
 import NotFound from "./pages/NotFound";
 import ThankYou from "./pages/ThankYou";
+import ScrollToTop from "./components/ScrollToTop";
 
 function Router() {
   return (
+    <>
+    <ScrollToTop />
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
@@ -32,7 +34,6 @@ function Router() {
       <Route path="/chimney-cleaning" component={ChimneyCleaning} />
       <Route path="/attic-insulation" component={AtticInsulation} />
       <Route path="/air-purification" component={AirPurification} />
-      <Route path="/hvac-restoration" component={HvacRestoration} />
       <Route path="/condenser-coil-cleaning" component={CondenserCoilCleaning} />
       <Route path="/solar-attic-fan" component={SolarAtticFan} />
       <Route path="/attic-removal" component={AtticRemoval} />
@@ -43,6 +44,7 @@ function Router() {
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
+    </>
   );
 }
 

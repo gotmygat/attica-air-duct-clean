@@ -20,8 +20,7 @@ const SERVICES = [
   { title: 'Chimney Cleaning', href: '/chimney-cleaning', img: CHIMNEY_IMG, desc: 'Chimney sweeps service install, clean, and maintain chimney systems, evaluate their performance, prescribe changes to improve their performance, and educate the users about their safe and efficient operation.' },
   { title: 'Attic Insulation', href: '/attic-insulation', img: INSULATION_IMG, desc: 'Attica Air Duct Cleaners optimize your home\'s energy with professional attic blow-in insulation services. Improve efficiency, enjoy year-round comfort, and save on energy bills with this cost-effective solution tailored for your home.' },
   { title: 'Air Purification System', href: '/air-purification', img: WHY_IMG, desc: 'Our essential services include Air Purification Systems which bring clean air into your home from the environment. If you want to install the air purification system at your home or office, let us know or book an appointment now.' },
-  { title: 'HVAC System Restoration', href: '/services', img: WHY_IMG, desc: 'Restore performance, improve overall air quality, and extend the lifespan of your HVAC unit. Our comprehensive restoration service addresses every component of your system.' },
-  { title: 'Condenser Coil Cleaning', href: '/services', img: AIR_DUCT_IMG, desc: 'Improve efficiency, reduce energy consumption, and keep your system running smoothly. Clean condenser coils are essential for optimal HVAC performance.' },
+  { title: 'Condenser Coil Cleaning', href: '/condenser-coil-cleaning', img: AIR_DUCT_IMG, desc: 'Improve efficiency, reduce energy consumption, and keep your system running smoothly. Clean condenser coils are essential for optimal HVAC performance.' },
 ];
 
 export default function Services() {

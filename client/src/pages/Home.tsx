@@ -7,7 +7,7 @@
 import { useEffect } from 'react';
 import { Link } from 'wouter';
 import {
-  Phone, Star, CheckCircle, Award, Leaf, Zap,
+  Phone, Star, CheckCircle, Award, Leaf,
   MapPin, ArrowRight, Users, Wind, Flame, Thermometer
 } from 'lucide-react';
 import Header from '@/components/Header';
@@ -31,7 +31,6 @@ const SERVICES = [
   { title: 'Chimney Inspection', desc: 'Check for creosote buildup, carbon monoxide risks, fire hazards, and flue blockages with a full inspection.', img: CHIMNEY_IMG, href: '/chimney-cleaning', tag: null, icon: Flame },
   { title: 'Attic Insulation', desc: 'Professional blow-in insulation to optimize energy efficiency, comfort, and savings on your energy bills.', img: INSULATION_IMG, href: '/attic-insulation', tag: 'Energy Savings', icon: Thermometer },
   { title: 'Air Purification', desc: 'Whole-home air purification systems installed directly into your HVAC for clean air in every room.', img: PURIFY_IMG, href: '/air-purification', tag: null, icon: Wind },
-  { title: 'HVAC Restoration', desc: 'Restore performance, improve overall air quality, and extend the lifespan of your heating and cooling system.', img: WHY_CHOOSE_IMG, href: '/services', tag: null, icon: Zap },
 ];
 
 const TESTIMONIALS = [

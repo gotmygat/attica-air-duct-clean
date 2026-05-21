@@ -15,8 +15,9 @@ const SERVICES_FOOTER = [
   { label: 'Chimney Cleaning', href: '/chimney-cleaning' },
   { label: 'Attic Insulation', href: '/attic-insulation' },
   { label: 'Air Purification', href: '/air-purification' },
-  { label: 'HVAC Restoration', href: '/services' },
-  { label: 'Condenser Coil Cleaning', href: '/services' },
+  { label: 'Condenser Coil Cleaning', href: '/condenser-coil-cleaning' },
+  { label: 'Solar Attic Fan', href: '/solar-attic-fan' },
+  { label: 'Attic Removal', href: '/attic-removal' },
 ];
 
 const ALL_LOCATIONS = [
@@ -60,7 +61,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex items-center gap-3 mt-6">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.facebook.com/profile.php?id=61569575870635" target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full flex items-center justify-center transition-colors"
                 style={{ background: 'rgba(255,255,255,0.1)' }}
                 aria-label="Facebook"
@@ -68,7 +69,7 @@ export default function Footer() {
                 onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}>
                 <Facebook size={15} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/atticacleaners/" target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full flex items-center justify-center transition-colors"
                 style={{ background: 'rgba(255,255,255,0.1)' }}
                 aria-label="Instagram"
@@ -119,6 +120,17 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-body text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>
             &copy; {new Date().getFullYear()} Attica Air Duct Cleaners LLC. All rights reserved.
+            {' '}Site built by{' '}
+            <a
+              href="https://renderanalytics.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-white underline underline-offset-2"
+              style={{ color: 'rgba(255,255,255,0.5)' }}
+            >
+              Render Analytics
+            </a>
+            .
           </p>
           <div className="flex items-center gap-6">
             <Link href="/blog" className="font-body text-xs transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.35)' }}>Blog</Link>
