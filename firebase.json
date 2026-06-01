@@ -6,6 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/altamonte-springs-air-duct-cleaning",
+        "destination": "/locations/altamonte-springs",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",
