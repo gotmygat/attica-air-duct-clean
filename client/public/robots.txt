@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
+
+# Disallow utility/system paths
 Disallow: /thank-you
 Disallow: /404
 
+# Sitemap
 Sitemap: https://www.atticacleaners.com/sitemap.xml

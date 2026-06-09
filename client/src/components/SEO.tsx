@@ -14,7 +14,7 @@ interface SEOProps {
   jsonLd?: object;
 }
 
-const BASE_URL = 'https://attica-cleaners.web.app';
+const BASE_URL = 'https://www.atticacleaners.com';
 const DEFAULT_IMAGE = `${BASE_URL}/assets/attica-logo.png`;
 const BUSINESS_NAME = 'Attica Air Duct Cleaners';
 const PHONE = '(407) 990-1969';
@@ -84,8 +84,8 @@ const LOCAL_BUSINESS_JSONLD = {
   ],
   priceRange: '$$',
   sameAs: [
-    'https://www.facebook.com/atticacleaners',
-    'https://www.instagram.com/atticacleaners',
+    'https://www.facebook.com/profile.php?id=61569575870635',
+    'https://www.instagram.com/atticacleaners/',
   ],
 };
 
