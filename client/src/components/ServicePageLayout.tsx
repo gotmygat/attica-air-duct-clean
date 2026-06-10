@@ -3,6 +3,8 @@
  * Reusable layout for all service sub-pages
  * Redesigned hero: split layout (text left, image right) — no stretching or cropping
  * Includes full SEO: meta tags, Open Graph, JSON-LD, canonical, alt text, H1/H2/H3 hierarchy
+ * CWV: hero image has fetchpriority="high" for LCP improvement
+ * SEO: BreadcrumbList JSON-LD added for Google rich results
  */
 
 import Header from './Header';
@@ -12,7 +14,7 @@ import SEO from './SEO';
 import { CheckCircle, Phone } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
-const BASE_URL = 'https://attica-cleaners.web.app';
+const BASE_URL = 'https://www.atticacleaners.com';
 
 interface ServicePageLayoutProps {
   title: string;
@@ -43,26 +45,55 @@ export default function ServicePageLayout({
 
   const seoTitle = metaTitle || `${title} in Orlando, FL`;
   const seoDescription = metaDescription || `${description.slice(0, 155).trim()}…`;
+  const pageUrl = `${BASE_URL}${canonical || ''}`;
 
-  const serviceJsonLd = {
+  // Combined JSON-LD: Service schema + BreadcrumbList for Google rich results
+  const combinedJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: title,
-    description: seoDescription,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'Attica Air Duct Cleaners',
-      telephone: '(407) 990-1969',
-      url: BASE_URL,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Orlando',
-        addressRegion: 'FL',
-        addressCountry: 'US',
+    '@graph': [
+      {
+        '@type': 'Service',
+        name: title,
+        description: seoDescription,
+        provider: {
+          '@type': 'LocalBusiness',
+          name: 'Attica Air Duct Cleaners',
+          telephone: '(407) 990-1969',
+          url: BASE_URL,
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Orlando',
+            addressRegion: 'FL',
+            addressCountry: 'US',
+          },
+        },
+        areaServed: { '@type': 'City', name: 'Orlando' },
+        url: pageUrl,
       },
-    },
-    areaServed: { '@type': 'City', name: 'Orlando' },
-    url: `${BASE_URL}${canonical || ''}`,
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: BASE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Services',
+            item: `${BASE_URL}/services`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: title,
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
   };
 
   return (
@@ -72,7 +103,7 @@ export default function ServicePageLayout({
         description={seoDescription}
         canonical={canonical}
         image={heroImage.startsWith('/') ? `${BASE_URL}${heroImage}` : heroImage}
-        jsonLd={serviceJsonLd}
+        jsonLd={combinedJsonLd}
       />
       <Header />
 
@@ -108,13 +139,14 @@ export default function ServicePageLayout({
             </div>
           </div>
 
-          {/* Right: image — contained, never stretched */}
+          {/* Right: image — fetchpriority=high for LCP, contained, never stretched */}
           <div className="relative overflow-hidden min-h-[280px] lg:min-h-0">
             <img
               src={heroImage}
               alt={heroImageAlt || `${title} service by Attica Air Duct Cleaners in Orlando, FL`}
               className="w-full h-full object-cover object-center"
               loading="eager"
+              fetchPriority="high"
               style={{ minHeight: '280px' }}
             />
             {/* subtle dark overlay on right edge for blend */}

@@ -84,7 +84,7 @@ export default function Home() {
           HERO — Full-bleed video, dark overlay
       ═══════════════════════════════════════════ */}
       <section className="relative h-screen min-h-[600px] max-h-[900px] flex items-center overflow-hidden">
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
+        <video autoPlay muted loop playsInline poster="/assets/hero-poster.webp" className="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
           <source src={VIDEO_URL} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20" />

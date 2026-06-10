@@ -12,6 +12,9 @@ import Footer from '@/components/Footer';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 import { MapView } from '@/components/Map';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import SEO from '@/components/SEO';
+
+const BASE_URL = 'https://www.atticacleaners.com';
 
 const CITY_DATA: Record<string, { name: string; county: string; lat: number; lng: number; blurb: string }> = {
   'orlando':           { name: 'Orlando',           county: 'Orange County',   lat: 28.5383, lng: -81.3792, blurb: 'Serving all of Orlando with professional air duct, dryer vent, and chimney cleaning services.' },
@@ -66,8 +69,69 @@ export default function LocationPage() {
 
   useScrollAnimation();
 
+  const pageTitle = `Air Duct Cleaning in ${city.name}, FL | Attica Air Duct Cleaners`;
+  const pageDescription = `Professional air duct cleaning, dryer vent cleaning & chimney services in ${city.name}, FL. Serving ${city.county}. Call (407) 990-1969 for same-week scheduling.`;
+  const pageUrl = `${BASE_URL}/locations/${citySlug}`;
+
+  const locationJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LocalBusiness',
+        name: 'Attica Air Duct Cleaners',
+        telephone: '(407) 990-1969',
+        url: BASE_URL,
+        description: pageDescription,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: city.name,
+          addressRegion: 'FL',
+          addressCountry: 'US',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: city.lat,
+          longitude: city.lng,
+        },
+        areaServed: {
+          '@type': 'City',
+          name: city.name,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: BASE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Locations',
+            item: `${BASE_URL}/locations`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: `${city.name}, FL`,
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={pageTitle}
+        description={pageDescription}
+        canonical={`/locations/${citySlug}`}
+        jsonLd={locationJsonLd}
+      />
       <Header />
 
       {/* Hero */}

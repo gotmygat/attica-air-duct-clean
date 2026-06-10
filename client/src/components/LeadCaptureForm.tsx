@@ -2,11 +2,11 @@
  * ATTICA CLEANERS — Lead Capture Form
  * Design: Clean Air Luxury — clean form with green accents
  * EmailJS integration: sends all submissions to atticacleaners1@gmail.com
+ * INP optimization: EmailJS is lazy-loaded only on form submit (not on page load)
  */
 
 import { useState } from 'react';
 import { Send, Loader2 } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 // EmailJS credentials
 const EMAILJS_SERVICE_ID  = 'service_1ud1kw5';
@@ -82,7 +82,7 @@ function buildHtmlEmail(fields: {
         <tr>
           <td style="padding:20px 20px 28px;background:#ffffff;border-top:1px solid #e8e8e8;text-align:center;">
             <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;color:#aaaaaa;">
-              This email was sent as a notification from <strong>attica-cleaners.web.app</strong>
+              This email was sent as a notification from <strong>www.atticacleaners.com</strong>
             </p>
           </td>
         </tr>
@@ -129,6 +129,9 @@ export default function LeadCaptureForm({
     };
 
     try {
+      // Lazy-load EmailJS only when the form is actually submitted
+      // This avoids parsing ~40KB of JS on initial page load (INP improvement)
+      const emailjs = await import('@emailjs/browser');
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,

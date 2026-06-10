@@ -32,10 +32,15 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="apple-touch-icon" href="/assets/favicon.svg" />
-    <!-- Fonts -->
+    <!-- LCP: Preload hero video so it starts loading immediately -->
+    <link rel="preload" href="/assets/hero.mp4" as="video" type="video/mp4" />
+    <!-- LCP: Preload hero poster image for instant above-fold paint -->
+    <link rel="preload" href="/assets/hero-poster.webp" as="image" />
+    <!-- Fonts: preconnect + load with font-display=swap to avoid render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
