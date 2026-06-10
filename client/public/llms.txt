@@ -6,6 +6,8 @@
 
 Attica Air Duct Cleaners is a licensed and insured air quality company based in Orlando, FL. We serve residential and commercial customers across Orange, Seminole, Lake, and Volusia counties. Our technicians use Negative Air Pressure Technology for thorough, deep cleaning of air duct systems.
 
+Our journey began with a clear mission: to bring cleaner air and healthier living environments to the homes of Orlando and its surrounding areas. What started as a small local business has grown into a trusted provider of residential HVAC air duct cleaning services in the greater Orlando, Florida area. Every project includes a detailed before-and-after photo and video report.
+
 - Phone: (407) 990-1969
 - Website: https://www.atticacleaners.com
 - Service Area: Greater Orlando, FL
@@ -28,7 +30,9 @@ Orlando, Apopka, Longwood, Sanford, Altamonte Springs, Casselberry, Clermont, Go
 ## Pages
 
 - [Home](https://www.atticacleaners.com/)
+- [About Us](https://www.atticacleaners.com/about)
 - [Services](https://www.atticacleaners.com/services)
+- [Contact](https://www.atticacleaners.com/contact)
 - [Blog](https://www.atticacleaners.com/blog)
 - [Referral Club](https://www.atticacleaners.com/referral-club)
 - [Sitemap](https://www.atticacleaners.com/sitemap.xml)

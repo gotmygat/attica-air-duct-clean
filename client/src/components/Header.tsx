@@ -138,8 +138,10 @@ export default function Header() {
                 </div>
               </div>
 
+              <Link href="/about" className={`nav-link text-base font-semibold ${textColor}`}>About</Link>
               <Link href="/referral-club" className={`nav-link text-base font-semibold ${textColor}`}>Referral Club</Link>
               <Link href="/blog" className={`nav-link text-base font-semibold ${textColor}`}>Blog</Link>
+              <Link href="/contact" className={`nav-link text-base font-semibold ${textColor}`}>Contact</Link>
             </nav>
 
             {/* CTA */}
@@ -212,8 +214,10 @@ export default function Header() {
                 </div>
               )}
             </div>
+            <Link href="/about" className="block py-3 px-3 rounded-lg font-body font-medium hover:bg-muted transition-colors">About</Link>
             <Link href="/referral-club" className="block py-3 px-3 rounded-lg font-body font-medium hover:bg-muted transition-colors">Referral Club</Link>
             <Link href="/blog" className="block py-3 px-3 rounded-lg font-body font-medium hover:bg-muted transition-colors">Blog</Link>
+            <Link href="/contact" className="block py-3 px-3 rounded-lg font-body font-medium hover:bg-muted transition-colors">Contact</Link>
           </nav>
           <div className="p-5 border-t space-y-3">
             <button

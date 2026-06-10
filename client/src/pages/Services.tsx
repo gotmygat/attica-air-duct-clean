@@ -6,7 +6,26 @@ import { ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
+import SEO from '@/components/SEO';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+const BASE_URL = 'https://www.atticacleaners.com';
+
+const SERVICES_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Air Duct Cleaning Services in Orlando, FL',
+  description: 'Professional air duct, dryer vent, chimney, attic insulation, and air purification services by Attica Air Duct Cleaners in Orlando, FL.',
+  url: `${BASE_URL}/services`,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Air Duct Cleaning', url: `${BASE_URL}/air-duct-cleaning` },
+    { '@type': 'ListItem', position: 2, name: 'Dryer Vent Cleaning', url: `${BASE_URL}/dryer-vent-cleaning` },
+    { '@type': 'ListItem', position: 3, name: 'Chimney Cleaning', url: `${BASE_URL}/chimney-cleaning` },
+    { '@type': 'ListItem', position: 4, name: 'Attic Insulation', url: `${BASE_URL}/attic-insulation` },
+    { '@type': 'ListItem', position: 5, name: 'Air Purification System', url: `${BASE_URL}/air-purification` },
+    { '@type': 'ListItem', position: 6, name: 'Condenser Coil Cleaning', url: `${BASE_URL}/condenser-coil-cleaning` },
+  ],
+};
 
 const AIR_DUCT_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg/attica-air-duct-DyuTQXMLptwvdGKyf8Unbg.webp';
 const DRYER_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg/attica-dryer-vent-HUUTnvW6cjAqwvmfjdrvne.webp';
@@ -27,6 +46,12 @@ export default function Services() {
   useScrollAnimation();
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Air Duct Cleaning Services in Orlando, FL | Attica Air Duct Cleaners"
+        description="Professional air duct cleaning, dryer vent cleaning, chimney inspection, attic insulation & air purification services in Orlando, FL. Call (407) 990-1969 for a free quote."
+        canonical="/services"
+        jsonLd={SERVICES_JSON_LD}
+      />
       <Header />
       <section className="relative h-72 sm:h-96 flex items-end overflow-hidden">
         <img src={WHY_IMG} alt="Air Duct Cleaning Services" className="absolute inset-0 w-full h-full object-cover" />

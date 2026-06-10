@@ -8,12 +8,123 @@ import { useEffect } from 'react';
 import { Link } from 'wouter';
 import {
   Phone, Star, CheckCircle, Award, Leaf, Zap,
-  MapPin, ArrowRight, Users, Wind, Flame, Thermometer
+  MapPin, ArrowRight, Users, Wind, Flame, Thermometer, ChevronDown
 } from 'lucide-react';
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
+import SEO from '@/components/SEO';
 import { useScrollAnimation, useCountUp } from '@/hooks/useScrollAnimation';
+
+const BASE_URL = 'https://www.atticacleaners.com';
+
+const HOME_FAQ = [
+  {
+    q: 'How much does air duct cleaning cost in Orlando?',
+    a: 'Attica Air Duct Cleaners offers a $97 special per A/C unit that includes unlimited vents, maintenance cleaning, coil condition check, air flow inspection, and duct condition inspection. No hidden fees.',
+  },
+  {
+    q: 'How often should I have my air ducts cleaned?',
+    a: 'We recommend air duct cleaning every 3–5 years for most homes. If you have pets, allergies, asthma, or have recently completed renovations, annual cleaning is advisable.',
+  },
+  {
+    q: 'How long does air duct cleaning take?',
+    a: 'A typical residential air duct cleaning takes 2–4 hours depending on the size of your home and number of vents. Our team works efficiently without cutting corners.',
+  },
+  {
+    q: 'Do you serve areas outside of Orlando?',
+    a: 'Yes! We serve all of Greater Orlando including Winter Park, Altamonte Springs, Sanford, Longwood, Oviedo, Windermere, Winter Garden, Clermont, Apopka, and more.',
+  },
+  {
+    q: 'Is dryer vent cleaning really necessary?',
+    a: 'Absolutely. Clogged dryer vents are one of the leading causes of house fires. Safety experts recommend annual dryer vent cleaning to protect your home and keep your dryer running efficiently.',
+  },
+  {
+    q: 'Are your technicians certified and background-checked?',
+    a: 'Yes. All Attica technicians are certified, background-checked, and trained in advanced Negative Air Pressure Technology for thorough, safe cleaning.',
+  },
+];
+
+const HOME_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${BASE_URL}/#business`,
+      name: 'Attica Air Duct Cleaners',
+      url: BASE_URL,
+      telephone: '(407) 990-1969',
+      email: 'atticacleaners1@gmail.com',
+      image: `${BASE_URL}/assets/attica-logo.png`,
+      description: "Orlando's trusted air duct cleaning specialists. Serving Greater Orlando with air duct cleaning, dryer vent cleaning, chimney inspection, attic insulation, and air purification.",
+      priceRange: '$$',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Orlando',
+        addressRegion: 'FL',
+        addressCountry: 'US',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 28.5383,
+        longitude: -81.3792,
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Orlando' },
+        { '@type': 'City', name: 'Winter Park' },
+        { '@type': 'City', name: 'Altamonte Springs' },
+        { '@type': 'City', name: 'Sanford' },
+        { '@type': 'City', name: 'Longwood' },
+        { '@type': 'City', name: 'Oviedo' },
+        { '@type': 'City', name: 'Windermere' },
+        { '@type': 'City', name: 'Winter Garden' },
+      ],
+      openingHoursSpecification: [
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '08:00', closes: '18:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '16:00' },
+      ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        reviewCount: '47',
+        bestRating: '5',
+        worstRating: '1',
+      },
+      review: [
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Joenas Brauers' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'I was so impressed with the professionalism of the estimator as well as the two teams that did the work. I feel they went above and beyond to explain everything.',
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Lari French' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Attica team showed up promptly, introduced themselves & explained the process thoroughly & answered all my questions. They were friendly & conducted the job quickly & efficiently!',
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'James Khosravi' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Attica always does an outstanding job and provides the very best service. Give them a call for ac or dryer vent cleaning. You will not regret it.',
+        },
+      ],
+      sameAs: [
+        'https://www.google.com/maps/place/Attica+Air+Duct+Cleaners',
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: HOME_FAQ.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+};
 
 const VIDEO_URL = '/assets/hero.mp4';
 
@@ -61,23 +172,36 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
   );
 }
 
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-border last:border-0">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-4 py-5 text-left"
+        aria-expanded={open}
+      >
+        <span className="font-body font-semibold text-foreground text-base">{q}</span>
+        <ChevronDown size={18} className={`flex-shrink-0 text-primary transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      </button>
+      {open && (
+        <p className="font-body text-muted-foreground text-sm leading-relaxed pb-5">{a}</p>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   useScrollAnimation();
 
-  useEffect(() => {
-    document.title = 'Attica Air Duct Cleaners | Orlando Air Duct Cleaning';
-    // Ensure keywords meta tag is set for SPA navigation
-    let kw = document.querySelector('meta[name="keywords"]');
-    if (!kw) {
-      kw = document.createElement('meta');
-      (kw as HTMLMetaElement).name = 'keywords';
-      document.head.appendChild(kw);
-    }
-    (kw as HTMLMetaElement).content = 'air duct cleaning Orlando, dryer vent cleaning, chimney cleaning, attic insulation, HVAC cleaning, air duct cleaning near me, duct cleaning Orlando, Attica cleaners, air purification, vent cleaning Florida';
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Attica Air Duct Cleaners | Orlando Air Duct Cleaning"
+        description="Orlando's trusted air duct cleaning specialists. Serving Greater Orlando with air duct cleaning, dryer vent cleaning, chimney inspection, attic insulation & air purification. Call (407) 990-1969."
+        canonical="/"
+        jsonLd={HOME_JSON_LD}
+      />
       <Header />
 
       {/* ═══════════════════════════════════════════
@@ -402,6 +526,28 @@ export default function Home() {
               <LeadCaptureForm dark={true} />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          FAQ SECTION — FAQPage schema eligible
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-[#FAFAF8]" aria-label="Frequently Asked Questions">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 fade-up">
+            <p className="font-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'oklch(0.56 0.12 165)' }}>Got Questions?</p>
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+            <p className="font-body text-muted-foreground">Everything you need to know about air duct cleaning in Orlando.</p>
+          </div>
+          <div className="bg-white rounded-2xl shadow-sm border border-border px-6 fade-up">
+            {HOME_FAQ.map((item) => (
+              <FaqItem key={item.q} q={item.q} a={item.a} />
+            ))}
+          </div>
+          <p className="text-center mt-8 font-body text-sm text-muted-foreground">
+            Still have questions?{' '}
+            <a href="tel:4079901969" className="font-semibold" style={{ color: 'oklch(0.56 0.12 165)' }}>Call us at (407) 990-1969</a>
+          </p>
         </div>
       </section>
 

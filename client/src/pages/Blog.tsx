@@ -8,7 +8,10 @@ import { useState } from 'react';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+const BASE_URL = 'https://www.atticacleaners.com';
 
 const CF_BASE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg';
 const BLOG_HERO = '/assets/why-choose-attica.jpg';
@@ -188,8 +191,37 @@ export default function Blog() {
   useScrollAnimation();
   const [activePost, setActivePost] = useState<typeof POSTS[0] | null>(null);
 
+  const articleJsonLd = activePost ? {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: activePost.title,
+    description: activePost.excerpt,
+    image: activePost.img.startsWith('/') ? `${BASE_URL}${activePost.img}` : activePost.img,
+    author: { '@type': 'Organization', name: 'Attica Air Duct Cleaners', url: BASE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Attica Air Duct Cleaners',
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/assets/attica-logo.png` },
+    },
+    datePublished: activePost.date,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE_URL}/blog#${activePost.id}` },
+  } : {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Attica Air Duct Cleaners Blog',
+    description: 'Expert insights on air quality, HVAC maintenance, and creating a healthier home environment in Orlando, FL.',
+    url: `${BASE_URL}/blog`,
+    publisher: { '@type': 'Organization', name: 'Attica Air Duct Cleaners', url: BASE_URL },
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={activePost ? `${activePost.title} | Attica Air Duct Cleaners Blog` : 'Air Duct Cleaning Blog | Tips & Guides | Attica Air Duct Cleaners'}
+        description={activePost ? activePost.excerpt : 'Expert insights on air duct cleaning, dryer vent maintenance, and indoor air quality for Orlando homeowners. Tips from certified HVAC cleaning professionals.'}
+        canonical={activePost ? `/blog#${activePost.id}` : '/blog'}
+        jsonLd={articleJsonLd}
+      />
       <Header />
 
       {activePost ? (
