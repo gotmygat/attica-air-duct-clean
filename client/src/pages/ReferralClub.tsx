@@ -7,7 +7,19 @@ import { Gift, Users, DollarSign, Star, CheckCircle, Phone } from 'lucide-react'
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
+import SEO from '@/components/SEO';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+const BASE_URL = 'https://www.atticacleaners.com';
+
+const REFERRAL_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Referral Club', item: `${BASE_URL}/referral-club` },
+  ],
+};
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&q=80';
 
@@ -46,6 +58,12 @@ export default function ReferralClub() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Referral Club — Earn Rewards | Attica Air Duct Cleaners"
+        description="Refer friends and neighbors to Attica Air Duct Cleaners and earn rewards. No limit on referrals — you both benefit. Join our Orlando referral program today."
+        canonical="/referral-club"
+        jsonLd={REFERRAL_JSON_LD}
+      />
       <Header />
 
       {/* Hero */}

@@ -1,9 +1,16 @@
+# Attica Air Duct Cleaners — https://www.atticacleaners.com
+# All well-behaved crawlers, including AI answer engines, are welcome.
+
 User-agent: *
 Allow: /
 
-# Disallow utility/system paths
+# Disallow utility/system paths and build artifacts
 Disallow: /thank-you
 Disallow: /404
+Disallow: /__manus__/
+
+# AI / LLM guide
+# See https://www.atticacleaners.com/llms.txt for a structured business summary.
 
 # Sitemap
 Sitemap: https://www.atticacleaners.com/sitemap.xml

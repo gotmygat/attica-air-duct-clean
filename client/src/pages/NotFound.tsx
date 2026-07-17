@@ -1,10 +1,16 @@
 import { Link } from 'wouter';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Page Not Found"
+        description="The page you're looking for doesn't exist. Return to Attica Air Duct Cleaners."
+        noindex
+      />
       <Header />
       <div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-4">
         <div className="font-display text-8xl font-bold mb-4" style={{ color: 'oklch(0.56 0.12 165)' }}>404</div>

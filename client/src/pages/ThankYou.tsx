@@ -1,10 +1,17 @@
 import { CheckCircle } from 'lucide-react';
 import { Link } from 'wouter';
 import Header from '@/components/Header';
+import SEO from '@/components/SEO';
 
 export default function ThankYou() {
   return (
     <>
+      <SEO
+        title="Thank You"
+        description="Thank you for contacting Attica Air Duct Cleaners. We'll be in touch within 24 hours."
+        canonical="/thank-you"
+        noindex
+      />
       <Header />
       {/* Full-page blurred background overlay */}
       <div className="fixed inset-0 z-0 bg-[#0d1f17]/90 backdrop-blur-sm" />

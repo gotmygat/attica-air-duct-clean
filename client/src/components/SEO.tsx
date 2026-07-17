@@ -12,6 +12,8 @@ interface SEOProps {
   image?: string;
   type?: 'website' | 'article';
   jsonLd?: object;
+  /** When true, tells search engines not to index this page (e.g. thank-you, 404). */
+  noindex?: boolean;
 }
 
 const BASE_URL = 'https://www.atticacleaners.com';
@@ -96,6 +98,7 @@ export default function SEO({
   image,
   type = 'website',
   jsonLd,
+  noindex = false,
 }: SEOProps) {
   useEffect(() => {
     const fullTitle = title.includes(BUSINESS_NAME)
@@ -112,7 +115,7 @@ export default function SEO({
     // Standard meta
     setMeta('description', description);
     setMeta('keywords', 'air duct cleaning Orlando, dryer vent cleaning, chimney inspection, attic insulation, HVAC cleaning, air duct cleaning near me, duct cleaning Orlando, Attica cleaners, air purification, vent cleaning Florida, solar attic fan, condenser coil cleaning');
-    setMeta('robots', 'index, follow');
+    setMeta('robots', noindex ? 'noindex, follow' : 'index, follow');
     setMeta('author', BUSINESS_NAME);
 
     // Canonical
@@ -136,7 +139,7 @@ export default function SEO({
 
     // JSON-LD
     setJsonLd(jsonLd || LOCAL_BUSINESS_JSONLD);
-  }, [title, description, canonical, image, type, jsonLd]);
+  }, [title, description, canonical, image, type, jsonLd, noindex]);
 
   return null;
 }
