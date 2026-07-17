@@ -160,6 +160,10 @@ const LOCATIONS = [
 const SPECIAL_ITEMS_LEFT  = ['Per A/C Unit', 'Maintenance Cleaning', 'Coil Condition Check'];
 const SPECIAL_ITEMS_RIGHT = ['Unlimited Duct Supply', 'Air Flow Inspection', 'Duct Condition Check'];
 
+// Current month + year for the special-offer badge, e.g. "July 2026".
+// Recomputes on every render so the badge always reflects the current month.
+const SPECIAL_MONTH = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
 function StatItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   const ref = useCountUp(value);
   return (
@@ -197,8 +201,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Attica Air Duct Cleaners | Orlando Air Duct Cleaning"
-        description="Orlando's trusted air duct cleaning specialists. Serving Greater Orlando with air duct cleaning, dryer vent cleaning, chimney inspection, attic insulation & air purification. Call (407) 990-1969."
+        title="Air Duct Cleaning Service Orlando"
+        description="Orlando's trusted air duct cleaning service — duct & dryer vent cleaning, chimney inspection & attic insulation. Call (407) 990-1969."
         canonical="/"
         jsonLd={HOME_JSON_LD}
       />
@@ -223,11 +227,11 @@ export default function Home() {
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6">
               Breathe{' '}
               <span className="text-[#4ade80] italic">Cleaner Air</span>
-              <br />In Your Home Today.
+              <br />Orlando's Air Duct Cleaning Service
             </h1>
             <p className="font-body text-base sm:text-lg text-white/80 mb-8 leading-relaxed max-w-lg">
-              Expert air duct &amp; dryer vent cleaning powered by Negative Air Pressure Technology.
-              Protect your family's health and prevent fire hazards.
+              Orlando's expert air duct cleaning service — air duct &amp; dryer vent cleaning powered by
+              Negative Air Pressure Technology. Protect your family's health and prevent fire hazards.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a href="#special-offer" className="btn-primary text-base px-8 py-4">
@@ -259,7 +263,7 @@ export default function Home() {
                 <div className="p-8 lg:p-12">
                   {/* Badge — teal pill like screenshot */}
                   <div className="inline-flex items-center bg-[#2DD4BF] text-[#0f1923] text-xs font-body font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide">
-                    April 2026 Special
+                    {SPECIAL_MONTH} Special
                   </div>
                   <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-3">
                     The "Clean Air" Special
@@ -326,7 +330,7 @@ export default function Home() {
               Complete Air Quality Solutions
             </h2>
             <p className="font-body text-muted-foreground max-w-xl mx-auto">
-              Expert cleaning services designed to improve your home's air quality, safety, and energy efficiency.
+              From residential and commercial air duct cleaning to HVAC duct cleaning, dryer vents, and more — expert services designed to improve your home's air quality, safety, and energy efficiency.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
