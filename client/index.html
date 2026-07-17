@@ -41,6 +41,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <!-- Static LocalBusiness structured data. Lives in the static HTML so it is
+         visible to crawlers that don't execute JavaScript (page-specific JSON-LD
+         is still added at runtime by the React SEO component). -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Attica Air Duct Cleaners",
+      "image": "https://www.atticacleaners.com/assets/attica-logo.png",
+      "url": "https://www.atticacleaners.com",
+      "telephone": "(407) 990-1969",
+      "email": "atticacleaners1@gmail.com",
+      "priceRange": "$$",
+      "description": "Orlando's trusted air duct cleaning service. Air duct cleaning, dryer vent cleaning, chimney inspection, attic insulation, and air purification across Greater Orlando, FL.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Orlando",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.5383,
+        "longitude": -81.3792
+      },
+      "areaServed": "Greater Orlando, FL",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "15:00" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "47",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61569575870635",
+        "https://www.instagram.com/atticacleaners/",
+        "https://www.google.com/maps/place/Attica+Air+Duct+Cleaners"
+      ]
+    }
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
