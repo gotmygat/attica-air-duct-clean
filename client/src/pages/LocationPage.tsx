@@ -1,7 +1,7 @@
 /**
  * ATTICA CLEANERS — Dynamic Location Page
  * Design: Clean Air Luxury — light editorial layout
- * Uses Google Maps via Manus proxy (no API key needed)
+ * Uses Leaflet + OpenStreetMap (no API key needed)
  * OS-aware directions link
  */
 
