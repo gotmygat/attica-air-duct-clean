@@ -34,8 +34,7 @@ const CONTACT_JSON_LD = {
           addressCountry: 'US',
         },
         openingHoursSpecification: [
-          { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '08:00', closes: '18:00' },
-          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '16:00' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '08:00', closes: '21:00' },
         ],
       },
     },
@@ -138,9 +137,7 @@ export default function Contact() {
                 </div>
                 <div className="space-y-2">
                   {[
-                    { days: 'Monday – Friday', hours: '8:00 AM – 6:00 PM' },
-                    { days: 'Saturday', hours: '9:00 AM – 4:00 PM' },
-                    { days: 'Sunday', hours: 'Closed' },
+                    { days: 'Monday – Sunday', hours: '8:00 AM – 9:00 PM' },
                   ].map(({ days, hours }) => (
                     <div key={days} className="flex justify-between font-body text-sm">
                       <span className="text-foreground font-medium">{days}</span>
