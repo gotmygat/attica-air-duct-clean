@@ -14,9 +14,9 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const BASE_URL = 'https://www.atticacleaners.com';
 
 const CF_BASE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg';
-const BLOG_HERO = '/assets/why-choose-attica.jpg';
-const IMG1 = '/assets/why-choose-attica.jpg';
-const IMG2 = '/assets/air-duct-cleaning.jpg';
+const BLOG_HERO = '/assets/why-choose-attica.webp';
+const IMG1 = '/assets/why-choose-attica.webp';
+const IMG2 = '/assets/air-duct-cleaning.webp';
 const IMG3 = `${CF_BASE}/attica-dryer-vent-HUUTnvW6cjAqwvmfjdrvne.webp`;
 
 const POSTS = [

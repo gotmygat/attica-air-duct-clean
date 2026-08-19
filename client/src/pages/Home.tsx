@@ -4,7 +4,7 @@
  * Palette: Warm white bg, charcoal text, teal-green accent — light & airy
  */
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'wouter';
 import {
   Phone, Star, CheckCircle, Award, Leaf, Zap,
@@ -128,10 +128,10 @@ const HOME_JSON_LD = {
 const VIDEO_URL = '/assets/hero.mp4';
 
 const CF = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663613975068/BiTB8y9REArww3W4NQLbDg';
-const WHY_CHOOSE_IMG = '/assets/why-choose-attica.jpg';
-const AIR_DUCT_IMG   = '/assets/air-duct-cleaning.jpg';
+const WHY_CHOOSE_IMG = '/assets/why-choose-attica.webp';
+const AIR_DUCT_IMG   = '/assets/air-duct-cleaning.webp';
 const DRYER_IMG      = `${CF}/attica-dryer-vent-HUUTnvW6cjAqwvmfjdrvne.webp`;
-const CHIMNEY_IMG    = '/assets/chimney-inspection.jpg';
+const CHIMNEY_IMG    = '/assets/chimney-inspection.webp';
 const INSULATION_IMG = `${CF}/attica-insulation-9E3gQuVCTRRtKuUcVBFgKb.webp`;
 const PURIFY_IMG     = 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=700&q=80';
 
@@ -162,6 +162,82 @@ const SPECIAL_ITEMS_RIGHT = ['Unlimited Duct Supply', 'Air Flow Inspection', 'Du
 // Current month + year for the special-offer badge, e.g. "July 2026".
 // Recomputes on every render so the badge always reflects the current month.
 const SPECIAL_MONTH = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+/**
+ * Hero background video, deferred until the page has finished loading.
+ *
+ * The file is ~850 KB and the poster alone carries the visual, so fetching it
+ * during initial load only takes bandwidth away from the paint. Holding it
+ * back until the load event (or the next idle slot, if the page is already
+ * loaded) keeps it out of that contention entirely.
+ *
+ * The source is assigned imperatively rather than rendered as a <source>
+ * child: React inserting the child mid-flight makes the element abort its
+ * first attempt and start over, which shows up as a duplicate request.
+ * Setting .src once produces exactly one fetch.
+ *
+ * scripts/prerender.mjs strips the src back out of the static snapshot —
+ * without that, the deferral would be undone by the very HTML it produces.
+ */
+function HeroVideo() {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Never attach during the build-time prerender. scripts/prerender.mjs
+    // drives the page with Puppeteer and waits for networkidle0; starting an
+    // 850 KB download *after* the load event means the network never settles
+    // and the route times out. The video is decorative and aria-hidden, so
+    // there is nothing for the snapshot to gain by loading it.
+    if (navigator.webdriver) return;
+
+    let idle = 0;
+
+    const attach = () => {
+      const v = ref.current;
+      if (!v || v.src) return;
+      v.src = VIDEO_URL;
+      v.play().catch(() => {
+        /* autoplay can be refused; the poster still covers the hero */
+      });
+    };
+
+    const schedule = () => {
+      const w = window as Window & {
+        requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number;
+      };
+      idle = w.requestIdleCallback
+        ? w.requestIdleCallback(attach, { timeout: 3000 })
+        : window.setTimeout(attach, 200);
+    };
+
+    if (document.readyState === 'complete') {
+      schedule();
+    } else {
+      window.addEventListener('load', schedule, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener('load', schedule);
+      const w = window as Window & { cancelIdleCallback?: (h: number) => void };
+      if (idle && w.cancelIdleCallback) w.cancelIdleCallback(idle);
+      else if (idle) window.clearTimeout(idle);
+    };
+  }, []);
+
+  return (
+    <video
+      ref={ref}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="none"
+      poster="/assets/hero-poster.webp"
+      className="absolute inset-0 w-full h-full object-cover"
+      aria-hidden="true"
+    />
+  );
+}
 
 function StatItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   const ref = useCountUp(value);
@@ -211,9 +287,7 @@ export default function Home() {
           HERO — Full-bleed video, dark overlay
       ═══════════════════════════════════════════ */}
       <section className="relative h-screen min-h-[600px] max-h-[900px] flex items-center overflow-hidden">
-        <video autoPlay muted loop playsInline poster="/assets/hero-poster.webp" className="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
-          <source src={VIDEO_URL} type="video/mp4" />
-        </video>
+        <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 

@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/service-condenser-coil.png';
+const IMG = '/assets/service-condenser-coil.webp';
 
 export default function CondenserCoilCleaning() {
   return (
