@@ -53,6 +53,31 @@ function isRealVisit(): boolean {
 }
 
 /**
+ * Resolves once the page has finished loading, so analytics work never lands
+ * in the window that is still painting.
+ *
+ * Measured on production: initialising during React's first render pushed
+ * mobile LCP from 10.1s to 13.1s. The SDK, its two gtag loaders and the
+ * Firebase Installations round-trips together add ~340 KB and a slice of main
+ * thread right when the largest element is trying to paint. A page_view a
+ * second later costs nothing; a paint three seconds later costs plenty.
+ */
+function afterLoad(): Promise<void> {
+  return new Promise((resolve) => {
+    const idle = () => {
+      const w = window as Window & {
+        requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number;
+      };
+      if (w.requestIdleCallback) w.requestIdleCallback(() => resolve(), { timeout: 3000 });
+      else window.setTimeout(resolve, 200);
+    };
+
+    if (document.readyState === 'complete') idle();
+    else window.addEventListener('load', idle, { once: true });
+  });
+}
+
+/**
  * Initialises Firebase Analytics once and caches the instance.
  * Resolves to null whenever analytics should not run — a prerender pass, a
  * dev host, an unsupported browser, or an ad blocker taking out the SDK.
@@ -63,6 +88,8 @@ export async function getAnalyticsInstance(): Promise<AnalyticsInstance | null> 
 
   analyticsPromise = (async () => {
     try {
+      await afterLoad();
+
       const [{ initializeApp }, { initializeAnalytics, isSupported }] = await Promise.all([
         import('firebase/app'),
         import('firebase/analytics'),
