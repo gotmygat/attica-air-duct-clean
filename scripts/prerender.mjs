@@ -125,13 +125,41 @@ async function main() {
       // Small settle for any trailing effects (JSON-LD, lazy content).
       await new Promise((r) => setTimeout(r, 400));
 
-      // Remove the GTM tag that the inline bootstrap injected at runtime, so it
-      // does not load a SECOND time on a real visit (the inline snippet in
-      // <head> re-injects it once on its own). Analytics fires exactly once.
+      // Strip every Google tag artefact that was injected at runtime.
+      //
+      // The inline GTM snippet in <head> re-injects what it needs on a real
+      // visit, so anything left in the snapshot loads a SECOND time. Worse,
+      // GTM/gtag also append conversion and remarketing pixels as <img> and
+      // <script> elements whose query strings freeze this build's timestamp
+      // and the prerender server's 127.0.0.1 URL — every visitor would then
+      // re-fire a stale build-time pixel. Match on host so loaders and
+      // pixels alike are removed.
+      //
+      // The <noscript> GTM iframe in the source HTML is untouched: with
+      // scripting enabled its contents are parsed as text, not DOM.
+      await page.evaluate(() => {
+        const TAG_HOSTS =
+          /googletagmanager\.com|google-analytics\.com|analytics\.google\.com|doubleclick\.net|googleadservices\.com|google\.[a-z.]+\/(ccm|pagead|rmkt)/;
+        document
+          .querySelectorAll('script[src], img[src], iframe[src], link[href]')
+          .forEach((el) => {
+            const url = el.getAttribute('src') || el.getAttribute('href') || '';
+            if (TAG_HOSTS.test(url)) el.remove();
+          });
+      });
+
+      // Restore the async-stylesheet pattern.
+      //
+      // <head> loads the Google Fonts sheet with media="print" plus an onload
+      // that flips it to "all" once fetched, so it never blocks the first
+      // paint. By the time this snapshot is taken that onload has already
+      // fired, so serialising the live DOM would bake media="all" into the
+      // static HTML and turn a deliberately non-blocking stylesheet into a
+      // render-blocking one for every visitor. Put "print" back.
       await page.evaluate(() => {
         document
-          .querySelectorAll('script[src*="googletagmanager.com/gtm.js"]')
-          .forEach((el) => el.remove());
+          .querySelectorAll('link[rel="stylesheet"][onload*="this.media"]')
+          .forEach((el) => el.setAttribute('media', 'print'));
       });
 
       const html = '<!doctype html>\n' + (await page.evaluate(() => document.documentElement.outerHTML));
