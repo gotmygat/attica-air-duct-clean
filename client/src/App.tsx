@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
+import Analytics from "./components/Analytics";
 
 // Home is eager (most-visited landing page — no chunk waterfall).
 import Home from "./pages/Home";
@@ -32,6 +33,7 @@ function Router() {
   return (
     <>
       <ScrollToTop />
+      <Analytics />
       <Suspense fallback={<div className="min-h-screen bg-background" />}>
         <Switch>
           <Route path="/" component={Home} />
