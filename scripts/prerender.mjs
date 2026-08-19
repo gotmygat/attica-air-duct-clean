@@ -162,13 +162,14 @@ async function main() {
           .forEach((el) => el.setAttribute('media', 'print'));
       });
 
-      // Take the hero video source back out of the snapshot.
+      // Belt and braces on the hero video source.
       //
-      // <HeroVideo> deliberately withholds it until after the load event, but
-      // this snapshot is taken long after that — so serialising the live DOM
-      // would bake the ~850 KB source into the static HTML and every visitor
-      // would fetch it during initial load, which is exactly what the deferral
-      // exists to prevent. The poster attribute stays; it carries the visual.
+      // <HeroVideo> already declines to attach it under Puppeteer, so normally
+      // there is nothing here to remove. This stays as a backstop: if that
+      // guard ever regresses, the source would otherwise be serialised into
+      // the static HTML and every visitor would fetch ~850 KB during initial
+      // load — exactly what the deferral exists to prevent. The poster
+      // attribute is untouched; it carries the visual.
       await page.evaluate(() => {
         document.querySelectorAll('video').forEach((v) => {
           v.querySelectorAll('source').forEach((el) => el.remove());

@@ -183,6 +183,13 @@ function HeroVideo() {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    // Never attach during the build-time prerender. scripts/prerender.mjs
+    // drives the page with Puppeteer and waits for networkidle0; starting an
+    // 850 KB download *after* the load event means the network never settles
+    // and the route times out. The video is decorative and aria-hidden, so
+    // there is nothing for the snapshot to gain by loading it.
+    if (navigator.webdriver) return;
+
     let idle = 0;
 
     const attach = () => {
