@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/service-solar-attic-fan.jpg';
+const IMG = '/assets/service-solar-attic-fan.webp';
 
 export default function SolarAtticFan() {
   return (

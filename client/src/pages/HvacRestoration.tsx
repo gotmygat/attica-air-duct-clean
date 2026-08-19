@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/service-hvac-restoration.jpg';
+const IMG = '/assets/service-hvac-restoration.webp';
 
 export default function HvacRestoration() {
   return (

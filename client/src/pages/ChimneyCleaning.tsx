@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/chimney-inspection.jpg';
+const IMG = '/assets/chimney-inspection.webp';
 
 export default function ChimneyCleaning() {
   return (

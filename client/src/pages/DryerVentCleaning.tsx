@@ -1,6 +1,6 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const IMG = '/assets/service-dryer-vent-v2.jpg';
+const IMG = '/assets/service-dryer-vent-v2.webp';
 
 export default function DryerVentCleaning() {
   return (
