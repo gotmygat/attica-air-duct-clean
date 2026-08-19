@@ -162,6 +162,20 @@ async function main() {
           .forEach((el) => el.setAttribute('media', 'print'));
       });
 
+      // Take the hero video source back out of the snapshot.
+      //
+      // <HeroVideo> deliberately withholds it until after the load event, but
+      // this snapshot is taken long after that — so serialising the live DOM
+      // would bake the ~850 KB source into the static HTML and every visitor
+      // would fetch it during initial load, which is exactly what the deferral
+      // exists to prevent. The poster attribute stays; it carries the visual.
+      await page.evaluate(() => {
+        document.querySelectorAll('video').forEach((v) => {
+          v.querySelectorAll('source').forEach((el) => el.remove());
+          v.removeAttribute('src');
+        });
+      });
+
       const html = '<!doctype html>\n' + (await page.evaluate(() => document.documentElement.outerHTML));
       snapshots.set(route, html);
       const title = await page.title();
