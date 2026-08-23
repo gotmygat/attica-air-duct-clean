@@ -94,8 +94,33 @@ function startServer() {
 }
 
 async function main() {
-  const routes = await routesFromSitemap();
-  console.log(`[prerender] ${routes.length} routes from sitemap`);
+  /**
+   * Routes that must exist as files but must NOT be in the sitemap.
+   *
+   * The sitemap is the right source for indexable pages, and both of these are
+   * deliberately absent from it: /thank-you is a post-submission page nobody
+   * should reach from search, and /404 is an error page.
+   *
+   * They still have to be prerendered, and the reason is the whole point of this
+   * change. firebase.json used to rewrite every unmatched path to index.html, so
+   * a URL that did not exist returned 200 with the SPA shell, carrying the home
+   * page's title and `robots: index, follow`, and only became a 404 once
+   * JavaScript ran. Verified against production on 2026-08-22:
+   * /locations/made-up-zzz returned 200 with `index, follow` in the raw HTML.
+   *
+   * With that rewrite removed, Firebase serves 404.html with a genuine HTTP 404
+   * for anything it has no file for, which is what a crawler needs to see on the
+   * first pass rather than after rendering. That only works if every REAL route
+   * has a file, so these two have to be here or removing the rewrite would 404
+   * two working pages.
+   */
+  const EXTRA_ROUTES = ['/thank-you', '/404'];
+
+  const sitemapRoutes = await routesFromSitemap();
+  const routes = [...sitemapRoutes, ...EXTRA_ROUTES];
+  console.log(
+    `[prerender] ${sitemapRoutes.length} routes from sitemap, plus ${EXTRA_ROUTES.length} unlisted (${EXTRA_ROUTES.join(', ')})`
+  );
 
   const { server, port } = await startServer();
   const base = `http://127.0.0.1:${port}`;
@@ -199,10 +224,16 @@ async function main() {
   // Write snapshots. "/" overwrites the root index.html; others become
   // <route>/index.html so Firebase serves them directly.
   for (const [route, html] of snapshots) {
+    /* /404 is written as 404.html at the root, not /404/index.html. That exact
+       filename is Firebase Hosting's convention for the page it serves, with a
+       real 404 status, when nothing else matches. Writing it anywhere else means
+       Firebase falls back to its own generic error page instead. */
     const outPath =
       route === '/'
         ? path.join(PUBLIC_DIR, 'index.html')
-        : path.join(PUBLIC_DIR, route.replace(/^\/+/, ''), 'index.html');
+        : route === '/404'
+          ? path.join(PUBLIC_DIR, '404.html')
+          : path.join(PUBLIC_DIR, route.replace(/^\/+/, ''), 'index.html');
     await mkdir(path.dirname(outPath), { recursive: true });
     await writeFile(outPath, html, 'utf8');
   }
