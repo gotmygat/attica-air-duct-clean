@@ -13,6 +13,7 @@ import LeadCaptureForm from '@/components/LeadCaptureForm';
 import { MapView } from '@/components/Map';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import SEO from '@/components/SEO';
+import NotFound from '@/pages/NotFound';
 
 const BASE_URL = 'https://www.atticacleaners.com';
 
@@ -59,13 +60,29 @@ function getDirectionsUrl(cityName: string, lat: number, lng: number): string {
 export default function LocationPage() {
   const params = useParams<{ city: string }>();
   const citySlug = params.city?.toLowerCase() || 'orlando';
-  const city = CITY_DATA[citySlug] || {
-    name: citySlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-    county: 'Orange County',
-    lat: 28.5383,
-    lng: -81.3792,
-    blurb: 'Serving your area with professional air duct and dryer vent cleaning services.',
-  };
+
+  /* AN UNKNOWN SLUG IS A 404, NOT AN INVENTED CITY.
+     This used to build a city out of whatever text was in the URL: it
+     title-cased the slug, assigned it to Orange County, pinned it to Orlando's
+     coordinates and gave it a generic blurb. Combined with the catch-all rewrite
+     in firebase.json, which serves index.html for every unmatched path, that
+     meant EVERY URL anyone could invent returned 200 with a complete,
+     indexable, near-duplicate location page. Verified against production on
+     2026-08-22: /locations/totally-made-up-place-xyz returned 200 and rendered a
+     full page.
+
+     That is an unbounded surface of near-identical 200s pointing at one
+     business, which is the exact shape Google's doorway-page policy is written
+     to catch, and the penalty is deindexation of the whole set rather than a
+     ranking dip. It also fabricated a false claim: it asserted a LocalBusiness
+     serving a place that may not exist.
+
+     Rendering NotFound emits `noindex, follow`, so an invented URL can no longer
+     enter the index. The response is still 200 because this is a static SPA on
+     Firebase Hosting and the rewrite cannot know which slugs are real, so
+     noindex is the correct available control. */
+  const city = CITY_DATA[citySlug];
+  if (!city) return <NotFound />;
 
   useScrollAnimation();
 
