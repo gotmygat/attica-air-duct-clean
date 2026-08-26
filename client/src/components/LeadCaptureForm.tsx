@@ -3,15 +3,150 @@
  * Design: Clean Air Luxury — clean form with green accents
  * EmailJS integration: sends all submissions to atticacleaners1@gmail.com
  * INP optimization: EmailJS is lazy-loaded only on form submit (not on page load)
+ * Spam defence: honeypot + submit timing + blocked sender domains (see below)
  */
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Send, Loader2 } from 'lucide-react';
 
 // EmailJS credentials
 const EMAILJS_SERVICE_ID  = 'service_1ud1kw5';
 const EMAILJS_TEMPLATE_ID = 'template_atum5ah';
 const EMAILJS_PUBLIC_KEY  = 'f22PGUPTJ1sPihQjh';
+
+/* ------------------------------------------------------------------ *
+ * SPAM DEFENCE
+ *
+ * The whole form runs in the browser — there is no server in the request
+ * path — so these are deterrents, not security. They exist to stop the
+ * outbound lead-gen vendors that submit a handful of fake quote requests a
+ * week, and they are deliberately tuned to let anything ambiguous through.
+ *
+ * GOVERNING RULE: losing one genuine lead costs the client far more than
+ * receiving ten spam ones. Every check below fails OPEN — if a value is
+ * missing, malformed, or merely suspicious, the lead is SENT.
+ *
+ * When a check does fire, the submission is dropped silently and the user
+ * still sees the normal /thank-you success path. A bot that is told it
+ * failed will adapt; one that thinks it succeeded will keep wasting its
+ * time on a form that goes nowhere.
+ * ------------------------------------------------------------------ */
+
+/**
+ * Email domains whose submissions are dropped.
+ *
+ * TO ADD A VENDOR: append the bare registered domain, lowercase, with no
+ * "@", no "www." and no protocol — e.g. 'somevendor.com'. Subdomains are
+ * covered automatically (mail.somevendor.com matches somevendor.com), and
+ * matching is case-insensitive and boundary-aware, so adding 'example.com'
+ * does NOT catch 'notexample.community' or 'example.com.br'.
+ *
+ * Keep this list small and specific. It should only ever contain domains
+ * the client has actually confirmed as spam — never a whole free-mail
+ * provider, and never a guess. Real customers use odd email addresses.
+ */
+export const BLOCKED_EMAIL_DOMAINS: readonly string[] = [
+  // Reported by Oren (Attica) 2026-08: outbound lead-gen vendor submitting
+  // roughly five fake quote requests a week under different names.
+  'virtualhandsupport.com',
+];
+
+/**
+ * Minimum plausible time between the form first rendering and a completed
+ * submit, in milliseconds. Anything faster was not typed by a person.
+ *
+ * Set to 1.5s, and deliberately anchored at FIRST RENDER rather than first
+ * keystroke, because both choices maximise the measured elapsed time and so
+ * minimise the chance of rejecting a real person.
+ *
+ * The two populations are nowhere near each other:
+ *   - Automated submits complete in roughly 50–300ms. A script has no
+ *     reason to pause between filling the last field and firing submit.
+ *   - The fastest realistic human path is click a field, accept a browser
+ *     autofill suggestion, click Send. That is two deliberate clicks plus a
+ *     dropdown selection — on the order of 2.5–4s of motor action alone,
+ *     before any reading.
+ *
+ * 1500ms sits above the automation ceiling with room to spare and still
+ * leaves better than 2x margin below the human floor. Raising it further
+ * would buy almost nothing against bots while steadily increasing the odds
+ * of eating a real lead, which is the expensive failure here.
+ */
+const MIN_SUBMIT_MS = 1500;
+
+/**
+ * Extracts the lowercase domain of an email address, or null when there
+ * isn't one we can read with confidence. Returning null means "let it
+ * through" — every caller treats an unreadable address as legitimate.
+ */
+function emailDomain(email: string): string | null {
+  const at = email.lastIndexOf('@');
+  if (at === -1) return null;
+
+  // Trailing dots are legal in a fully-qualified name and would otherwise
+  // defeat the comparison below.
+  const domain = email.slice(at + 1).trim().toLowerCase().replace(/\.+$/, '');
+  return domain || null;
+}
+
+/**
+ * True only when the address sits on a blocked domain or one of its
+ * subdomains. Compares whole labels rather than substrings, so a
+ * legitimate address at notvirtualhandsupport.community is not caught.
+ */
+export function isBlockedEmail(email: string): boolean {
+  // Email is an optional field on this form; a blank one is not a signal.
+  if (!email || !email.trim()) return false;
+
+  const domain = emailDomain(email);
+  if (!domain) return false;
+
+  return BLOCKED_EMAIL_DOMAINS.some(
+    (blocked) => domain === blocked || domain.endsWith(`.${blocked}`),
+  );
+}
+
+/**
+ * True only when the submit is implausibly fast. A missing or nonsensical
+ * start time (clock change, hydration oddity) reads as "can't tell", which
+ * means the lead is sent.
+ */
+export function isTooFast(renderedAt: number | null, now: number): boolean {
+  if (renderedAt === null || !Number.isFinite(renderedAt)) return false;
+
+  const elapsed = now - renderedAt;
+  if (!Number.isFinite(elapsed) || elapsed < 0) return false;
+
+  return elapsed < MIN_SUBMIT_MS;
+}
+
+/**
+ * Records a dropped submission.
+ *
+ * NOTE: this is client-side only and is therefore DIAGNOSTIC, not an audit
+ * trail. A bot can ignore it, and a real visitor's console is not somewhere
+ * anyone will look. It exists so that if the client ever reports "I stopped
+ * getting leads", someone can open the console on the live form, submit,
+ * and immediately see which check fired and why — rather than discovering
+ * months later that the form had been quietly eating real enquiries.
+ *
+ * The GA4 event is the closest thing to a real signal: it is the only part
+ * of this that reaches somewhere a human might notice a spike. It carries
+ * the reason and the email domain only — never the name, phone or address
+ * of whoever was dropped.
+ */
+function reportRejection(reason: string, detail: Record<string, unknown>): void {
+  console.warn(
+    `[lead-form] submission dropped — ${reason}`,
+    { reason, ...detail, note: 'client-side diagnostic only, not an audit trail' },
+  );
+
+  // Lazy-imported for the same reason EmailJS is: nothing on this path
+  // should cost the initial page load anything.
+  import('@/lib/firebase')
+    .then(({ trackEvent }) => trackEvent('lead_form_blocked', { reason, ...detail }))
+    .catch(() => { /* analytics must never break the form */ });
+}
 
 interface LeadCaptureFormProps {
   dark?: boolean;
@@ -106,14 +241,53 @@ export default function LeadCaptureForm({
     state: 'FL', phone: '', email: '', zipCode: '', message: '',
   });
 
+  // Honeypot value, kept out of `form` so it can never reach the email body.
+  const [companyWebsite, setCompanyWebsite] = useState('');
+
+  // When this form first rendered in the browser, for the timing check.
+  // A ref rather than state: it must not trigger a re-render, and it must
+  // survive every keystroke.
+  const renderedAt = useRef<number>(Date.now());
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  /** Shows the normal success path without sending anything. */
+  const silentSuccess = () => {
+    window.location.href = '/thank-you';
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    // --- Spam defence. Each check drops the submission silently. ---
+
+    // 1. Honeypot. No human can see or tab to this field, so anything in it
+    //    came from something filling inputs by name.
+    if (companyWebsite.trim() !== '') {
+      reportRejection('honeypot filled', { honeypotLength: companyWebsite.trim().length });
+      silentSuccess();
+      return;
+    }
+
+    // 2. Submit timing.
+    const submittedAt = Date.now();
+    const elapsedMs = submittedAt - renderedAt.current;
+    if (isTooFast(renderedAt.current, submittedAt)) {
+      reportRejection('submitted too fast', { elapsedMs, thresholdMs: MIN_SUBMIT_MS });
+      silentSuccess();
+      return;
+    }
+
+    // 3. Blocked sender domain.
+    if (isBlockedEmail(form.email)) {
+      reportRejection('blocked email domain', { domain: emailDomain(form.email) });
+      silentSuccess();
+      return;
+    }
 
     const templateParams = {
       first_name:   form.firstName,
@@ -172,6 +346,38 @@ export default function LeadCaptureForm({
         </div>
       )}
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/*
+          Honeypot. Not part of the visible form and not a real field.
+
+          It is moved off-screen inside a zero-size, overflow-hidden wrapper
+          rather than given type="hidden" or display:none — bots skip both of
+          those, but they do fill inputs they can find in the DOM by name.
+          "company_website" is the kind of name a naive filler targets.
+
+          Accessibility is not optional here: aria-hidden keeps it out of the
+          screen-reader tree and tabIndex={-1} keeps it out of the tab order,
+          so no assistive-tech user can ever land in it and be silently
+          dropped. autoComplete="off" stops a browser filling it on the
+          user's behalf. It is never required and never sent.
+
+          Inline styles on purpose — this must not depend on a utility class
+          surviving a future Tailwind config change.
+        */}
+        <div
+          aria-hidden="true"
+          style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', left: '-9999px' }}
+        >
+          <label htmlFor="company_website">Company Website</label>
+          <input
+            id="company_website"
+            name="company_website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={companyWebsite}
+            onChange={(e) => setCompanyWebsite(e.target.value)}
+          />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>First Name *</label>
