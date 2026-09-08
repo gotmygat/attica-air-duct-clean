@@ -22,8 +22,8 @@ export default function ThankYou() {
 
           {/* Green checkmark icon */}
           <div className="flex items-center justify-center mb-6">
-            <div className="w-20 h-20 rounded-full bg-[oklch(0.56_0.12_165)]/15 flex items-center justify-center">
-              <CheckCircle size={44} className="text-[oklch(0.56_0.12_165)]" strokeWidth={1.8} />
+            <div className="w-20 h-20 rounded-full bg-[oklch(0.53_0.12_165)]/15 flex items-center justify-center">
+              <CheckCircle size={44} className="text-[oklch(0.53_0.12_165)]" strokeWidth={1.8} />
             </div>
           </div>
 
@@ -38,7 +38,7 @@ export default function ThankYou() {
             For immediate assistance, call{' '}
             <a
               href="tel:4079901969"
-              className="text-[oklch(0.56_0.12_165)] font-semibold hover:underline"
+              className="text-[oklch(0.53_0.12_165)] font-semibold hover:underline"
             >
               (407) 990-1969
             </a>
@@ -48,7 +48,7 @@ export default function ThankYou() {
           {/* Back to home button */}
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 font-body font-semibold text-sm px-8 py-3 rounded-full bg-[oklch(0.56_0.12_165)] text-white hover:bg-[oklch(0.50_0.12_165)] transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-2 font-body font-semibold text-sm px-8 py-3 rounded-full bg-[oklch(0.53_0.12_165)] text-white hover:bg-[oklch(0.50_0.12_165)] transition-colors duration-200"
           >
             Back to Home
           </Link>

@@ -2,7 +2,7 @@
  * ATTICA CLEANERS — Global Styles
  * Design: Clean Air Luxury
  * Palette: Warm off-white bg, charcoal text, teal-green accent (#2D8C6E), sand sections
- * Fonts: Playfair Display (display) + Outfit (body/UI)
+ * Fonts: Poppins (display, matches the logo wordmark) + Outfit (body/UI)
  * Philosophy: Light, airy, editorial — NOT dark or heavy
  */
 
@@ -52,7 +52,7 @@
 
 :root {
   /* Brand teal-green — used sparingly for accents, CTAs, highlights */
-  --primary: oklch(0.56 0.12 165);
+  --primary: oklch(0.53 0.12 165);
   --primary-foreground: oklch(0.99 0 0);
 
   --radius: 0.75rem;
@@ -81,9 +81,9 @@
 
   --border: oklch(0.88 0.005 80);
   --input: oklch(0.88 0.005 80);
-  --ring: oklch(0.56 0.12 165);
+  --ring: oklch(0.53 0.12 165);
 
-  --chart-1: oklch(0.56 0.12 165);
+  --chart-1: oklch(0.53 0.12 165);
   --chart-2: oklch(0.65 0.10 165);
   --chart-3: oklch(0.45 0.10 165);
   --chart-4: oklch(0.75 0.08 165);
@@ -91,12 +91,12 @@
 
   --sidebar: oklch(0.97 0.003 80);
   --sidebar-foreground: oklch(0.18 0.01 250);
-  --sidebar-primary: oklch(0.56 0.12 165);
+  --sidebar-primary: oklch(0.53 0.12 165);
   --sidebar-primary-foreground: oklch(0.99 0 0);
   --sidebar-accent: oklch(0.93 0.01 165);
   --sidebar-accent-foreground: oklch(0.18 0.01 250);
   --sidebar-border: oklch(0.88 0.005 80);
-  --sidebar-ring: oklch(0.56 0.12 165);
+  --sidebar-ring: oklch(0.53 0.12 165);
 }
 
 @layer base {
@@ -151,7 +151,12 @@
 
   /* ── Typography ── */
   .font-display {
-    font-family: 'Playfair Display', Georgia, serif;
+    /* Poppins mirrors the logo wordmark: geometric, circular bowls, a
+       single-storey 'a' and flat-cut terminals. Sentence case throughout —
+       the logo is sentence case, and all-caps would fight its friendliness. */
+    font-family: 'Poppins', 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
   .font-body {
     font-family: 'Outfit', sans-serif;
@@ -162,7 +167,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: oklch(0.56 0.12 165);
+    background-color: oklch(0.53 0.12 165);
     color: white;
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
@@ -170,7 +175,7 @@
     letter-spacing: 0.02em;
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
-    border: 2px solid oklch(0.56 0.12 165);
+    border: 2px solid oklch(0.53 0.12 165);
     transition: all 0.2s ease;
     text-decoration: none;
     white-space: nowrap;
@@ -187,20 +192,20 @@
     align-items: center;
     gap: 0.5rem;
     background-color: transparent;
-    color: oklch(0.56 0.12 165);
+    color: oklch(0.53 0.12 165);
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
     letter-spacing: 0.02em;
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
-    border: 2px solid oklch(0.56 0.12 165);
+    border: 2px solid oklch(0.53 0.12 165);
     transition: all 0.2s ease;
     text-decoration: none;
     white-space: nowrap;
   }
   .btn-outline:hover {
-    background-color: oklch(0.56 0.12 165);
+    background-color: oklch(0.53 0.12 165);
     color: white;
     transform: translateY(-1px);
   }
@@ -223,8 +228,8 @@
     white-space: nowrap;
   }
   .btn-white:hover {
-    background-color: oklch(0.56 0.12 165);
-    border-color: oklch(0.56 0.12 165);
+    background-color: oklch(0.53 0.12 165);
+    border-color: oklch(0.53 0.12 165);
     color: white;
     transform: translateY(-1px);
   }
@@ -240,7 +245,7 @@
     position: relative;
   }
   .nav-link:hover {
-    color: oklch(0.56 0.12 165);
+    color: oklch(0.53 0.12 165);
   }
 
   /* ── Dropdown ── */
@@ -285,7 +290,7 @@
   .section-rule {
     width: 3rem;
     height: 3px;
-    background: oklch(0.56 0.12 165);
+    background: oklch(0.53 0.12 165);
     border-radius: 9999px;
     margin-bottom: 1.25rem;
   }
@@ -303,7 +308,7 @@
 
   /* ── Special Offer Highlight ── */
   .offer-card {
-    background: linear-gradient(135deg, oklch(0.56 0.12 165) 0%, oklch(0.45 0.13 175) 100%);
+    background: linear-gradient(135deg, oklch(0.53 0.12 165) 0%, oklch(0.45 0.13 175) 100%);
     border-radius: 2rem;
     position: relative;
     overflow: hidden;

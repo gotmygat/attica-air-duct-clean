@@ -16,6 +16,7 @@ import Footer from '@/components/Footer';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 import SEO from '@/components/SEO';
 import { useScrollAnimation, useCountUp } from '@/hooks/useScrollAnimation';
+import { trackEvent } from '@/lib/firebase';
 
 const BASE_URL = 'https://www.atticacleaners.com';
 
@@ -297,10 +298,16 @@ export default function Home() {
               <Star size={12} className="text-yellow-400 fill-yellow-400" />
               <span className="font-body text-xs text-white font-medium tracking-wide">Orlando's #1 Rated Air Duct Cleaners</span>
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6">
-              Breathe{' '}
-              <span className="text-[#4ade80] italic">Cleaner Air</span>
-              <br />Orlando's Air Duct Cleaning Service
+            <h1 className="font-display text-white mb-6">
+              {/* Impact line, then a smaller supporting line: Poppins sets wider
+                  than the old serif and the single block was colliding with the
+                  header. Full h1 text is preserved for SEO. */}
+              <span className="block text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+                Breathe <span className="text-[#8FC73F]">Cleaner Air</span>
+              </span>
+              <span className="block mt-3 text-xl sm:text-2xl lg:text-3xl font-semibold text-white/85">
+                Orlando's Air Duct Cleaning Service
+              </span>
             </h1>
             <p className="font-body text-base sm:text-lg text-white/80 mb-8 leading-relaxed max-w-lg">
               Orlando's expert air duct cleaning service — air duct &amp; dryer vent cleaning powered by
@@ -326,52 +333,66 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           $97 SPECIAL — Prominent, matches screenshot
       ═══════════════════════════════════════════ */}
-      <section id="special-offer" className="py-16 lg:py-20 bg-[#0f1923]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="special-offer" className="relative overflow-hidden py-16 lg:py-24 bg-[#0f1923]">
+        {/* Logo-green wash so the offer is the brightest thing on the page */}
+        <div aria-hidden className="pointer-events-none absolute inset-0"
+          style={{ background: 'radial-gradient(70% 60% at 78% 42%, rgba(143,199,63,0.18) 0%, rgba(143,199,63,0) 70%)' }} />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="fade-up">
-            {/* Outer card — dark navy like the screenshot */}
-            <div className="rounded-3xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a2a3a 0%, #162030 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div className="grid lg:grid-cols-[1fr_auto] gap-0">
-                {/* Left content */}
+            <div className="rounded-3xl overflow-hidden"
+              style={{ background: 'linear-gradient(135deg, #16232F 0%, #0f1923 100%)', border: '1px solid rgba(143,199,63,0.35)' }}>
+              <div className="grid lg:grid-cols-[1fr_auto] gap-0 items-center">
+
+                {/* Left — the offer */}
                 <div className="p-8 lg:p-12">
-                  {/* Badge — teal pill like screenshot */}
-                  <div className="inline-flex items-center bg-[#2DD4BF] text-[#0f1923] text-xs font-body font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide">
+                  <div className="inline-flex items-center bg-[#8FC73F] text-[#0f1923] text-xs font-body font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase">
                     {SPECIAL_MONTH} Special
                   </div>
-                  <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-3">
-                    The "Clean Air" Special
+                  <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-4">
+                    The <span className="text-[#8FC73F]">Clean Air</span> Special
                   </h2>
-                  <p className="font-body text-white/60 mb-8 max-w-md leading-relaxed">
-                    Unlimited Air Duct + Dryer Vent Cleaning powered by our state-of-the-art Negative Air Pressure Technology.
+                  <p className="font-body text-white/70 mb-8 max-w-md leading-relaxed text-lg">
+                    Unlimited Air Duct <span className="text-[#8FC73F] font-semibold">+</span> Dryer Vent Cleaning,
+                    powered by our state-of-the-art Negative Air Pressure Technology.
                   </p>
-                  {/* Two-column checklist */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
                     {[...SPECIAL_ITEMS_LEFT, ...SPECIAL_ITEMS_RIGHT].map((item) => (
                       <div key={item} className="flex items-center gap-3">
-                        <CheckCircle size={18} className="text-[#2DD4BF] flex-shrink-0" />
-                        <span className="font-body text-sm text-white/80">{item}</span>
+                        <CheckCircle size={18} className="text-[#8FC73F] flex-shrink-0" />
+                        <span className="font-body text-sm text-white/85">{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Right price card — white box */}
-                <div className="flex items-center justify-center p-8 lg:p-12">
-                  <div className="bg-white rounded-2xl p-8 text-center shadow-2xl min-w-[200px]">
-                    <p className="font-body text-sm text-gray-400 line-through mb-1">Was $279</p>
-                    <div className="font-display font-bold text-[#2DD4BF] leading-none mb-1" style={{ fontSize: '5rem' }}>
+                {/* Right — the price. Filled with the logo green and set in navy:
+                    the old card put #2DD4BF on white, which measured 1.86:1. */}
+                <div className="flex items-center justify-center p-6 pb-10 lg:p-12">
+                  <div className="relative bg-[#8FC73F] rounded-3xl px-10 py-9 text-center shadow-2xl w-full max-w-[320px] lg:min-w-[300px]">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#0f1923] px-5 py-2 font-body text-xs font-bold uppercase tracking-widest text-[#8FC73F] shadow-lg">
+                      Save $182
+                    </div>
+
+                    <p className="font-body text-sm text-[#0f1923]/60 line-through mt-3 mb-0">Was $279</p>
+                    <div className="font-display font-extrabold text-[#0f1923] leading-[0.85] my-1"
+                      style={{ fontSize: 'clamp(5rem, 12vw, 7.5rem)' }}>
                       $97
                     </div>
-                    <p className="font-body text-sm text-gray-500 mb-6">Limited Time Offer</p>
+                    <p className="font-body text-sm font-bold uppercase tracking-widest text-[#0f1923]/75 mb-1">Per A/C Unit</p>
+                    <p className="font-body text-xs text-[#0f1923]/60 mb-6">Limited time offer</p>
+
                     <a
                       href="tel:4079901969"
-                      className="block w-full text-center font-body font-bold text-sm py-3 px-6 rounded-full text-white transition-all duration-200 hover:opacity-90"
-                      style={{ background: 'linear-gradient(135deg, #2DD4BF, #16a34a)' }}
+                      onClick={() => trackEvent('generate_lead', { method: 'phone', location: 'special_offer' })}
+                      className="flex items-center justify-center gap-2 w-full rounded-full bg-[#0f1923] px-6 py-4 font-body text-base font-bold text-[#8FC73F] transition-transform duration-200 hover:scale-[1.03]"
                     >
-                      Book Service Now
+                      <Phone size={18} /> Book Now
                     </a>
+                    <p className="font-body text-xs text-[#0f1923]/70 mt-3 font-semibold">(407) 990-1969</p>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -381,7 +402,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           STATS BAR
       ═══════════════════════════════════════════ */}
-      <section className="py-10" style={{ background: 'oklch(0.56 0.12 165)' }}>
+      <section className="py-10" style={{ background: 'oklch(0.53 0.12 165)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-x divide-white/20">
             <StatItem value={500} suffix="+" label="Happy Customers" />
@@ -399,7 +420,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 fade-up">
             <div className="section-rule mx-auto" />
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
               Complete Air Quality Solutions
             </h2>
             <p className="font-body text-muted-foreground max-w-xl mx-auto">
@@ -412,7 +433,7 @@ export default function Home() {
                 <div className="relative h-52 overflow-hidden">
                   <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
                   {service.tag && (
-                    <div className="absolute top-3 left-3 text-white text-xs font-body font-semibold px-3 py-1 rounded-full" style={{ background: 'oklch(0.56 0.12 165)' }}>
+                    <div className="absolute top-3 left-3 text-white text-xs font-body font-semibold px-3 py-1 rounded-full" style={{ background: 'oklch(0.53 0.12 165)' }}>
                       {service.tag}
                     </div>
                   )}
@@ -420,7 +441,7 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="font-display text-xl font-bold text-foreground mb-2">{service.title}</h3>
                   <p className="font-body text-sm text-muted-foreground mb-4 leading-relaxed">{service.desc}</p>
-                  <Link href={service.href} className="inline-flex items-center gap-1.5 font-body text-sm font-semibold hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.56 0.12 165)' }}>
+                  <Link href={service.href} className="inline-flex items-center gap-1.5 font-body text-sm font-semibold hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.53 0.12 165)' }}>
                     Learn More <ArrowRight size={14} />
                   </Link>
                 </div>
@@ -438,10 +459,13 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="fade-up">
               <div className="section-rule" />
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-6">
-                Why Greater Orlando Trusts Attica Cleaners
+              <p className="font-body text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: 'oklch(0.42 0.10 165)' }}>
+                Why Choose Attica
+              </p>
+              <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-foreground mb-6">
+                Why Greater Orlando <span style={{ color: 'oklch(0.42 0.10 165)' }}>Trusts Attica</span>
               </h2>
-              <p className="font-body text-muted-foreground mb-10 leading-relaxed">
+              <p className="font-body text-lg text-muted-foreground mb-10 leading-relaxed">
                 We don't just clean vents — we restore your home's respiratory system. Our meticulous approach ensures you breathe easier and live healthier.
               </p>
               <div className="space-y-6">
@@ -451,11 +475,11 @@ export default function Home() {
                   { icon: Leaf, title: 'Eco-Friendly Solutions', desc: 'Safe for your family, your pets, and the environment.' },
                 ].map(({ icon: Icon, title, desc }) => (
                   <div key={title} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'oklch(0.93 0.04 165)' }}>
-                      <Icon size={22} style={{ color: 'oklch(0.56 0.12 165)' }} />
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm" style={{ background: '#8FC73F' }}>
+                      <Icon size={24} style={{ color: '#0f1923' }} />
                     </div>
                     <div>
-                      <h3 className="font-display font-semibold text-lg text-foreground mb-1">{title}</h3>
+                      <h3 className="font-display font-bold text-xl text-foreground mb-1">{title}</h3>
                       <p className="font-body text-sm text-muted-foreground">{desc}</p>
                     </div>
                   </div>
@@ -470,7 +494,7 @@ export default function Home() {
                 <img src={WHY_CHOOSE_IMG} alt="Attica Cleaners professional technician" className="w-full h-[480px] object-cover" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'oklch(0.56 0.12 165)' }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'oklch(0.53 0.12 165)' }}>
                   <CheckCircle size={22} className="text-white" />
                 </div>
                 <div>
@@ -486,14 +510,14 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           HIRING BANNER — teal green
       ═══════════════════════════════════════════ */}
-      <section className="py-14" style={{ background: 'oklch(0.56 0.12 165)' }}>
+      <section className="py-14" style={{ background: 'oklch(0.53 0.12 165)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-8 fade-up">
             <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
               <Users size={30} className="text-white" />
             </div>
             <div className="text-center lg:text-left flex-1">
-              <h2 className="font-display text-2xl lg:text-3xl font-bold text-white mb-3">We're Hiring!</h2>
+              <h2 className="font-display text-3xl lg:text-4xl font-extrabold text-white mb-3">We're Hiring!</h2>
               <p className="font-body text-white/85 leading-relaxed max-w-3xl">
                 Our team is growing and we're seeking a reliable, motivated new team member. Full-time position. Great work environment. Training provided. If you're hardworking, responsible, and ready to be part of a solid team — we want to hear from you! Send a message to (407) 990-1969.
               </p>
@@ -512,7 +536,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 fade-up">
             <div className="section-rule mx-auto" />
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
               Loved by Florida Homeowners
             </h2>
             <p className="font-body text-muted-foreground">See what your neighbors are saying.</p>
@@ -526,7 +550,7 @@ export default function Home() {
                 <blockquote className="font-body text-sm text-muted-foreground leading-relaxed mb-6 italic">"{t.text}"</blockquote>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'oklch(0.93 0.04 165)' }}>
-                    <span className="font-display font-bold text-sm" style={{ color: 'oklch(0.56 0.12 165)' }}>{t.name[0]}</span>
+                    <span className="font-display font-bold text-sm" style={{ color: 'oklch(0.46 0.12 165)' }}>{t.name[0]}</span>
                   </div>
                   <div>
                     <div className="font-body font-semibold text-sm text-foreground">{t.name}</div>
@@ -546,7 +570,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 fade-up">
             <div className="section-rule mx-auto" />
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
               Proudly Serving Greater Orlando
             </h2>
             <p className="font-body text-muted-foreground">20 cities across Central Florida</p>
@@ -556,9 +580,9 @@ export default function Home() {
               <Link
                 key={city}
                 href={`/locations/${city.toLowerCase().replace(/\s+/g, '-')}`}
-                className="flex items-center gap-2 bg-white rounded-xl px-4 py-3 text-sm font-body font-medium text-foreground border border-border hover:border-[oklch(0.56_0.12_165)] hover:text-[oklch(0.56_0.12_165)] transition-all duration-200 shadow-sm hover:shadow-md"
+                className="flex items-center gap-2 bg-white rounded-xl px-4 py-3 text-sm font-body font-medium text-foreground border border-border hover:border-[oklch(0.53_0.12_165)] hover:text-[oklch(0.53_0.12_165)] transition-all duration-200 shadow-sm hover:shadow-md"
               >
-                <MapPin size={13} className="flex-shrink-0" style={{ color: 'oklch(0.56 0.12 165)' }} />
+                <MapPin size={13} className="flex-shrink-0" style={{ color: 'oklch(0.53 0.12 165)' }} />
                 {city}
               </Link>
             ))}
@@ -573,8 +597,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="fade-up">
-              <div className="w-12 h-0.5 mb-6" style={{ background: 'oklch(0.56 0.12 165)' }} />
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-4">
+              <div className="w-12 h-0.5 mb-6" style={{ background: 'oklch(0.53 0.12 165)' }} />
+              <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-4">
                 Ready to Breathe Easier?
               </h2>
               <p className="font-body text-white/60 mb-8 leading-relaxed">
@@ -588,7 +612,7 @@ export default function Home() {
                   'Certified, background-checked technicians',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 font-body text-sm text-white/70">
-                    <CheckCircle size={16} style={{ color: 'oklch(0.56 0.12 165)', flexShrink: 0 }} />
+                    <CheckCircle size={16} style={{ color: 'oklch(0.53 0.12 165)', flexShrink: 0 }} />
                     {item}
                   </div>
                 ))}
@@ -612,8 +636,8 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-[#FAFAF8]" aria-label="Frequently Asked Questions">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 fade-up">
-            <p className="font-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'oklch(0.56 0.12 165)' }}>Got Questions?</p>
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
+            <p className="font-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'oklch(0.53 0.12 165)' }}>Got Questions?</p>
+            <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-foreground mb-4">Frequently Asked Questions</h2>
             <p className="font-body text-muted-foreground">Everything you need to know about air duct cleaning in Orlando.</p>
           </div>
           <div className="bg-white rounded-2xl shadow-sm border border-border px-6 fade-up">
@@ -623,7 +647,7 @@ export default function Home() {
           </div>
           <p className="text-center mt-8 font-body text-sm text-muted-foreground">
             Still have questions?{' '}
-            <a href="tel:4079901969" className="font-semibold" style={{ color: 'oklch(0.56 0.12 165)' }}>Call us at (407) 990-1969</a>
+            <a href="tel:4079901969" className="font-semibold" style={{ color: 'oklch(0.53 0.12 165)' }}>Call us at (407) 990-1969</a>
           </p>
         </div>
       </section>

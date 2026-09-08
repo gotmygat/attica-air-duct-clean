@@ -71,7 +71,7 @@ export default function Contact() {
       <section className="bg-[#0f1923] pt-20 lg:pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="max-w-2xl">
-            <p className="font-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'oklch(0.56 0.12 165)' }}>
+            <p className="font-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'oklch(0.53 0.12 165)' }}>
               Get In Touch
             </p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
@@ -103,7 +103,7 @@ export default function Contact() {
                 <a
                   href="tel:4079901969"
                   className="font-body text-2xl font-semibold hover:underline"
-                  style={{ color: 'oklch(0.56 0.12 165)' }}
+                  style={{ color: 'oklch(0.53 0.12 165)' }}
                 >
                   (407) 990-1969
                 </a>
@@ -121,7 +121,7 @@ export default function Contact() {
                 <a
                   href="mailto:atticacleaners1@gmail.com"
                   className="font-body text-base font-medium hover:underline"
-                  style={{ color: 'oklch(0.56 0.12 165)' }}
+                  style={{ color: 'oklch(0.53 0.12 165)' }}
                 >
                   atticacleaners1@gmail.com
                 </a>
@@ -159,7 +159,7 @@ export default function Contact() {
                 <div className="flex flex-wrap gap-2">
                   {SERVICE_AREAS.map((city) => (
                     <span key={city} className="inline-flex items-center gap-1 font-body text-xs font-medium px-3 py-1.5 rounded-full bg-[#F5F0E8] text-foreground">
-                      <CheckCircle size={11} style={{ color: 'oklch(0.56 0.12 165)' }} />
+                      <CheckCircle size={11} style={{ color: 'oklch(0.53 0.12 165)' }} />
                       {city}
                     </span>
                   ))}

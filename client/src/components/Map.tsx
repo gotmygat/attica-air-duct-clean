@@ -40,7 +40,7 @@ export function MapView({
       className: "",
       html: `<div style="
         width:28px;height:28px;
-        background:linear-gradient(135deg,#22c55e,#16a34a);
+        background:linear-gradient(135deg,#8FC73F,#5A8F1F);
         border-radius:50% 50% 50% 0;
         transform:rotate(-45deg);
         border:3px solid white;

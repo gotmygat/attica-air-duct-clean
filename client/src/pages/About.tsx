@@ -102,7 +102,7 @@ export default function About() {
       <section className="bg-[#0f1923] pt-20 lg:pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="max-w-2xl">
-            <p className="font-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'oklch(0.56 0.12 165)' }}>
+            <p className="font-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'oklch(0.53 0.12 165)' }}>
               Who We Are
             </p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
@@ -122,7 +122,7 @@ export default function About() {
 
             {/* Text */}
             <div className="fade-up">
-              <div className="w-12 h-0.5 mb-6" style={{ background: 'oklch(0.56 0.12 165)' }} />
+              <div className="w-12 h-0.5 mb-6" style={{ background: 'oklch(0.53 0.12 165)' }} />
               <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-6">Our Story</h2>
               <div className="space-y-5 font-body text-muted-foreground leading-relaxed text-base">
                 <p>
@@ -170,7 +170,7 @@ export default function About() {
       <section className="py-20 lg:py-24 bg-[#FAFAF8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 fade-up">
-            <div className="w-12 h-0.5 mx-auto mb-6" style={{ background: 'oklch(0.56 0.12 165)' }} />
+            <div className="w-12 h-0.5 mx-auto mb-6" style={{ background: 'oklch(0.53 0.12 165)' }} />
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">Why Families Trust Attica</h2>
             <p className="font-body text-muted-foreground max-w-xl mx-auto">
               Our commitment to quality, safety, and transparency sets us apart from other air duct cleaning companies in Orlando.
@@ -208,7 +208,7 @@ export default function About() {
 
             {/* Text */}
             <div className="fade-up order-1 lg:order-2">
-              <div className="w-12 h-0.5 mb-6" style={{ background: 'oklch(0.56 0.12 165)' }} />
+              <div className="w-12 h-0.5 mb-6" style={{ background: 'oklch(0.53 0.12 165)' }} />
               <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-6">Our Services</h2>
               <p className="font-body text-muted-foreground leading-relaxed mb-8">
                 We offer a comprehensive range of indoor air quality services for homeowners and businesses across Greater Orlando, FL.
@@ -224,7 +224,7 @@ export default function About() {
                   'HVAC System Restoration — full system care',
                 ].map((service) => (
                   <div key={service} className="flex items-start gap-3">
-                    <CheckCircle size={16} className="flex-shrink-0 mt-0.5" style={{ color: 'oklch(0.56 0.12 165)' }} />
+                    <CheckCircle size={16} className="flex-shrink-0 mt-0.5" style={{ color: 'oklch(0.53 0.12 165)' }} />
                     <span className="font-body text-sm text-foreground">{service}</span>
                   </div>
                 ))}
