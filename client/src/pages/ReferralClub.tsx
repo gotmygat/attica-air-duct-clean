@@ -98,12 +98,12 @@ export default function ReferralClub() {
                 {HOW_IT_WORKS.map((step, i) => (
                   <div key={step.step} className="flex gap-5 fade-up" style={{ transitionDelay: `${i * 100}ms` }}>
                     <div className="flex-shrink-0">
-                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: 'oklch(0.93 0.04 165)' }}>
-                        <step.icon size={24} style={{ color: 'oklch(0.53 0.12 165)' }} />
+                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: 'oklch(0.95 0.045 232.9)' }}>
+                        <step.icon size={24} style={{ color: 'oklch(0.54 0.135 232.9)' }} />
                       </div>
                     </div>
                     <div>
-                      <div className="font-body text-xs font-bold tracking-widest uppercase mb-1" style={{ color: 'oklch(0.53 0.12 165)' }}>
+                      <div className="font-body text-xs font-bold tracking-widest uppercase mb-1" style={{ color: 'oklch(0.54 0.135 232.9)' }}>
                         Step {step.step}
                       </div>
                       <h3 className="font-display text-lg font-bold text-foreground mb-2">{step.title}</h3>
@@ -118,16 +118,16 @@ export default function ReferralClub() {
               <div className="grid sm:grid-cols-2 gap-3 mb-10">
                 {BENEFITS.map((b) => (
                   <div key={b} className="flex items-start gap-3 rounded-xl p-4" style={{ background: '#F7F3EC' }}>
-                    <CheckCircle size={17} style={{ color: 'oklch(0.53 0.12 165)', flexShrink: 0, marginTop: 2 }} />
+                    <CheckCircle size={17} style={{ color: 'oklch(0.54 0.135 232.9)', flexShrink: 0, marginTop: 2 }} />
                     <span className="font-body text-sm text-foreground">{b}</span>
                   </div>
                 ))}
               </div>
 
               {/* CTA */}
-              <div className="rounded-2xl p-8 fade-up" style={{ background: 'oklch(0.93 0.04 165)' }}>
+              <div className="rounded-2xl p-8 fade-up" style={{ background: 'oklch(0.95 0.045 232.9)' }}>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'oklch(0.53 0.12 165)' }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'oklch(0.54 0.135 232.9)' }}>
                     <DollarSign size={22} className="text-white" />
                   </div>
                   <div>

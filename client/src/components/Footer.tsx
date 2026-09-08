@@ -48,15 +48,15 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               <a href="tel:4079901969" className="flex items-center gap-2 text-sm font-body transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                <Phone size={14} style={{ color: 'oklch(0.53 0.12 165)', flexShrink: 0 }} />
+                <Phone size={14} style={{ color: 'oklch(0.655 0.135 232.9)', flexShrink: 0 }} />
                 (407) 990-1969
               </a>
               <a href="mailto:atticacleaners1@gmail.com" className="flex items-center gap-2 text-sm font-body transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                <Mail size={14} style={{ color: 'oklch(0.53 0.12 165)', flexShrink: 0 }} />
+                <Mail size={14} style={{ color: 'oklch(0.655 0.135 232.9)', flexShrink: 0 }} />
                 atticacleaners1@gmail.com
               </a>
               <div className="flex items-start gap-2 text-sm font-body" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                <MapPin size={14} style={{ color: 'oklch(0.53 0.12 165)', flexShrink: 0, marginTop: 2 }} />
+                <MapPin size={14} style={{ color: 'oklch(0.655 0.135 232.9)', flexShrink: 0, marginTop: 2 }} />
                 Greater Orlando, FL
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full flex items-center justify-center transition-colors"
                 style={{ background: 'rgba(255,255,255,0.1)' }}
                 aria-label="Facebook"
-                onMouseEnter={e => (e.currentTarget.style.background = 'oklch(0.53 0.12 165)')}
+                onMouseEnter={e => (e.currentTarget.style.background = 'oklch(0.54 0.135 232.9)')}
                 onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}>
                 <Facebook size={15} />
               </a>
@@ -73,7 +73,7 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full flex items-center justify-center transition-colors"
                 style={{ background: 'rgba(255,255,255,0.1)' }}
                 aria-label="Instagram"
-                onMouseEnter={e => (e.currentTarget.style.background = 'oklch(0.53 0.12 165)')}
+                onMouseEnter={e => (e.currentTarget.style.background = 'oklch(0.54 0.135 232.9)')}
                 onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}>
                 <Instagram size={15} />
               </a>

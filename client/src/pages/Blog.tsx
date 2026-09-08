@@ -123,7 +123,7 @@ function BlogCard({ post, onClick }: { post: typeof POSTS[0]; onClick: () => voi
     >
       <div className="relative h-52 overflow-hidden">
         <img src={post.img} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-        <div className="absolute top-3 left-3 text-white text-xs font-body font-semibold px-3 py-1 rounded-full" style={{ background: 'oklch(0.53 0.12 165)' }}>
+        <div className="absolute top-3 left-3 text-white text-xs font-body font-semibold px-3 py-1 rounded-full" style={{ background: 'oklch(0.54 0.135 232.9)' }}>
           {post.category}
         </div>
       </div>
@@ -138,7 +138,7 @@ function BlogCard({ post, onClick }: { post: typeof POSTS[0]; onClick: () => voi
         </div>
         <h3 className="font-display text-lg font-bold text-foreground mb-3 leading-snug">{post.title}</h3>
         <p className="font-body text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-3">{post.excerpt}</p>
-        <button className="inline-flex items-center gap-1.5 font-body text-sm font-semibold group-hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.53 0.12 165)' }}>
+        <button className="inline-flex items-center gap-1.5 font-body text-sm font-semibold group-hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.54 0.135 232.9)' }}>
           Read More <ArrowRight size={14} />
         </button>
       </div>
@@ -153,7 +153,7 @@ function BlogPost({ post, onBack }: { post: typeof POSTS[0]; onBack: () => void 
         <img src={post.img} alt={post.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8 max-w-4xl mx-auto">
-          <div className="inline-flex items-center text-white text-xs font-body font-semibold px-3 py-1 rounded-full mb-3" style={{ background: 'oklch(0.53 0.12 165)' }}>
+          <div className="inline-flex items-center text-white text-xs font-body font-semibold px-3 py-1 rounded-full mb-3" style={{ background: 'oklch(0.54 0.135 232.9)' }}>
             {post.category}
           </div>
           <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug">{post.title}</h1>
@@ -177,7 +177,7 @@ function BlogPost({ post, onBack }: { post: typeof POSTS[0]; onBack: () => void 
             </div>
           ))}
         </div>
-        <div className="mt-12 p-8 rounded-2xl text-center" style={{ background: 'oklch(0.93 0.04 165)' }}>
+        <div className="mt-12 p-8 rounded-2xl text-center" style={{ background: 'oklch(0.95 0.045 232.9)' }}>
           <h3 className="font-display text-xl font-bold text-foreground mb-2">Ready to Breathe Cleaner Air?</h3>
           <p className="font-body text-sm text-muted-foreground mb-4">Book our $97 Air Duct &amp; Dryer Vent Cleaning Special today.</p>
           <a href="tel:4079901969" className="btn-primary">Call (407) 990-1969</a>

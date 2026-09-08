@@ -402,7 +402,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           STATS BAR
       ═══════════════════════════════════════════ */}
-      <section className="py-10" style={{ background: 'oklch(0.53 0.12 165)' }}>
+      <section className="py-10" style={{ background: 'oklch(0.54 0.135 232.9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-x divide-white/20">
             <StatItem value={500} suffix="+" label="Happy Customers" />
@@ -433,7 +433,7 @@ export default function Home() {
                 <div className="relative h-52 overflow-hidden">
                   <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
                   {service.tag && (
-                    <div className="absolute top-3 left-3 text-white text-xs font-body font-semibold px-3 py-1 rounded-full" style={{ background: 'oklch(0.53 0.12 165)' }}>
+                    <div className="absolute top-3 left-3 text-white text-xs font-body font-semibold px-3 py-1 rounded-full" style={{ background: 'oklch(0.54 0.135 232.9)' }}>
                       {service.tag}
                     </div>
                   )}
@@ -441,7 +441,7 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="font-display text-xl font-bold text-foreground mb-2">{service.title}</h3>
                   <p className="font-body text-sm text-muted-foreground mb-4 leading-relaxed">{service.desc}</p>
-                  <Link href={service.href} className="inline-flex items-center gap-1.5 font-body text-sm font-semibold hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.53 0.12 165)' }}>
+                  <Link href={service.href} className="inline-flex items-center gap-1.5 font-body text-sm font-semibold hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.54 0.135 232.9)' }}>
                     Learn More <ArrowRight size={14} />
                   </Link>
                 </div>
@@ -459,11 +459,11 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="fade-up">
               <div className="section-rule" />
-              <p className="font-body text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: 'oklch(0.42 0.10 165)' }}>
+              <p className="font-body text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: 'oklch(0.52 0.140 129.2)' }}>
                 Why Choose Attica
               </p>
               <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-foreground mb-6">
-                Why Greater Orlando <span style={{ color: 'oklch(0.42 0.10 165)' }}>Trusts Attica</span>
+                Why Greater Orlando <span style={{ color: 'oklch(0.52 0.140 129.2)' }}>Trusts Attica</span>
               </h2>
               <p className="font-body text-lg text-muted-foreground mb-10 leading-relaxed">
                 We don't just clean vents — we restore your home's respiratory system. Our meticulous approach ensures you breathe easier and live healthier.
@@ -494,7 +494,7 @@ export default function Home() {
                 <img src={WHY_CHOOSE_IMG} alt="Attica Cleaners professional technician" className="w-full h-[480px] object-cover" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'oklch(0.53 0.12 165)' }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'oklch(0.54 0.135 232.9)' }}>
                   <CheckCircle size={22} className="text-white" />
                 </div>
                 <div>
@@ -510,7 +510,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           HIRING BANNER — teal green
       ═══════════════════════════════════════════ */}
-      <section className="py-14" style={{ background: 'oklch(0.53 0.12 165)' }}>
+      <section className="py-14" style={{ background: 'oklch(0.54 0.135 232.9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-8 fade-up">
             <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
@@ -549,8 +549,8 @@ export default function Home() {
                 </div>
                 <blockquote className="font-body text-sm text-muted-foreground leading-relaxed mb-6 italic">"{t.text}"</blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'oklch(0.93 0.04 165)' }}>
-                    <span className="font-display font-bold text-sm" style={{ color: 'oklch(0.46 0.12 165)' }}>{t.name[0]}</span>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'oklch(0.95 0.045 232.9)' }}>
+                    <span className="font-display font-bold text-sm" style={{ color: 'oklch(0.44 0.135 232.9)' }}>{t.name[0]}</span>
                   </div>
                   <div>
                     <div className="font-body font-semibold text-sm text-foreground">{t.name}</div>
@@ -580,9 +580,9 @@ export default function Home() {
               <Link
                 key={city}
                 href={`/locations/${city.toLowerCase().replace(/\s+/g, '-')}`}
-                className="flex items-center gap-2 bg-white rounded-xl px-4 py-3 text-sm font-body font-medium text-foreground border border-border hover:border-[oklch(0.53_0.12_165)] hover:text-[oklch(0.53_0.12_165)] transition-all duration-200 shadow-sm hover:shadow-md"
+                className="flex items-center gap-2 bg-white rounded-xl px-4 py-3 text-sm font-body font-medium text-foreground border border-border hover:border-[oklch(0.54_0.135_232.9)] hover:text-[oklch(0.54_0.135_232.9)] transition-all duration-200 shadow-sm hover:shadow-md"
               >
-                <MapPin size={13} className="flex-shrink-0" style={{ color: 'oklch(0.53 0.12 165)' }} />
+                <MapPin size={13} className="flex-shrink-0" style={{ color: 'oklch(0.54 0.135 232.9)' }} />
                 {city}
               </Link>
             ))}
@@ -597,7 +597,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="fade-up">
-              <div className="w-12 h-0.5 mb-6" style={{ background: 'oklch(0.53 0.12 165)' }} />
+              <div className="w-12 h-0.5 mb-6" style={{ background: 'oklch(0.54 0.135 232.9)' }} />
               <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-white mb-4">
                 Ready to Breathe Easier?
               </h2>
@@ -612,7 +612,7 @@ export default function Home() {
                   'Certified, background-checked technicians',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 font-body text-sm text-white/70">
-                    <CheckCircle size={16} style={{ color: 'oklch(0.53 0.12 165)', flexShrink: 0 }} />
+                    <CheckCircle size={16} style={{ color: 'oklch(0.655 0.135 232.9)', flexShrink: 0 }} />
                     {item}
                   </div>
                 ))}
@@ -636,7 +636,7 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-[#FAFAF8]" aria-label="Frequently Asked Questions">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 fade-up">
-            <p className="font-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'oklch(0.53 0.12 165)' }}>Got Questions?</p>
+            <p className="font-body text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: 'oklch(0.54 0.135 232.9)' }}>Got Questions?</p>
             <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-foreground mb-4">Frequently Asked Questions</h2>
             <p className="font-body text-muted-foreground">Everything you need to know about air duct cleaning in Orlando.</p>
           </div>
@@ -647,7 +647,7 @@ export default function Home() {
           </div>
           <p className="text-center mt-8 font-body text-sm text-muted-foreground">
             Still have questions?{' '}
-            <a href="tel:4079901969" className="font-semibold" style={{ color: 'oklch(0.53 0.12 165)' }}>Call us at (407) 990-1969</a>
+            <a href="tel:4079901969" className="font-semibold" style={{ color: 'oklch(0.54 0.135 232.9)' }}>Call us at (407) 990-1969</a>
           </p>
         </div>
       </section>

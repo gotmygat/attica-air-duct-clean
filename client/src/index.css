@@ -1,9 +1,14 @@
 /**
  * ATTICA CLEANERS — Global Styles
- * Design: Clean Air Luxury
- * Palette: Warm off-white bg, charcoal text, teal-green accent (#2D8C6E), sand sections
- * Fonts: Poppins (display, matches the logo wordmark) + Outfit (body/UI)
- * Philosophy: Light, airy, editorial — NOT dark or heavy
+ * Design: Clean Air Luxury (light, airy, editorial)
+ * Palette taken from the logo:
+ *   green #8FC73F  the "A" — accent fills, badges, icon tiles. Navy text on top (8.8:1).
+ *   blue  #009DD5  the wordmark and airflow swooshes — accents on dark surfaces.
+ *   navy  #0f1923  dark sections.  sand #F7F3EC  warm editorial bands.
+ * Contrast rule: neither logo colour carries white text (2.0:1 and 3.1:1), so
+ * primary actions use a darkened blue (--primary, 4.8:1 on white) and text
+ * accents on light use --brand-blue-deep / --brand-green-deep. The raw logo
+ * green and blue are reserved for fills with navy text, and for accents on navy.
  */
 
 @import "tailwindcss";
@@ -51,13 +56,22 @@
 }
 
 :root {
-  /* Brand teal-green — used sparingly for accents, CTAs, highlights */
-  --primary: oklch(0.53 0.12 165);
+  /* Primary action — the logo blue darkened until white text clears AA (4.8:1) */
+  --primary: oklch(0.54 0.135 232.9);
   --primary-foreground: oklch(0.99 0 0);
+
+  /* Brand tokens straight off the logo */
+  --brand-green: oklch(0.765 0.174 129.2);
+  --brand-green-deep: oklch(0.52 0.140 129.2);
+  --brand-green-tint: oklch(0.95 0.045 129.2);
+  --brand-blue: oklch(0.655 0.135 232.9);
+  --brand-blue-deep: oklch(0.44 0.135 232.9);
+  --brand-blue-tint: oklch(0.95 0.045 232.9);
+  --brand-navy: oklch(0.19 0.021 245);
 
   --radius: 0.75rem;
 
-  /* Light warm background */
+  /* Light warm background — unchanged, this is Attica's editorial feel */
   --background: oklch(0.99 0.003 80);
   --foreground: oklch(0.18 0.01 250);
 
@@ -73,7 +87,7 @@
   --muted: oklch(0.95 0.005 80);
   --muted-foreground: oklch(0.50 0.01 250);
 
-  --accent: oklch(0.93 0.01 165);
+  --accent: oklch(0.95 0.045 232.9);
   --accent-foreground: oklch(0.18 0.01 250);
 
   --destructive: oklch(0.577 0.245 27.325);
@@ -81,22 +95,23 @@
 
   --border: oklch(0.88 0.005 80);
   --input: oklch(0.88 0.005 80);
-  --ring: oklch(0.53 0.12 165);
+  --ring: oklch(0.54 0.135 232.9);
 
-  --chart-1: oklch(0.53 0.12 165);
-  --chart-2: oklch(0.65 0.10 165);
-  --chart-3: oklch(0.45 0.10 165);
-  --chart-4: oklch(0.75 0.08 165);
-  --chart-5: oklch(0.35 0.08 165);
+  /* Charts alternate the two logo hues */
+  --chart-1: oklch(0.54 0.135 232.9);
+  --chart-2: oklch(0.765 0.174 129.2);
+  --chart-3: oklch(0.44 0.135 232.9);
+  --chart-4: oklch(0.52 0.140 129.2);
+  --chart-5: oklch(0.655 0.135 232.9);
 
   --sidebar: oklch(0.97 0.003 80);
   --sidebar-foreground: oklch(0.18 0.01 250);
-  --sidebar-primary: oklch(0.53 0.12 165);
+  --sidebar-primary: oklch(0.54 0.135 232.9);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.93 0.01 165);
+  --sidebar-accent: oklch(0.95 0.045 232.9);
   --sidebar-accent-foreground: oklch(0.18 0.01 250);
   --sidebar-border: oklch(0.88 0.005 80);
-  --sidebar-ring: oklch(0.53 0.12 165);
+  --sidebar-ring: oklch(0.54 0.135 232.9);
 }
 
 @layer base {
@@ -167,7 +182,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: oklch(0.53 0.12 165);
+    background-color: oklch(0.54 0.135 232.9);
     color: white;
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
@@ -175,16 +190,16 @@
     letter-spacing: 0.02em;
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
-    border: 2px solid oklch(0.53 0.12 165);
+    border: 2px solid oklch(0.54 0.135 232.9);
     transition: all 0.2s ease;
     text-decoration: none;
     white-space: nowrap;
   }
   .btn-primary:hover {
-    background-color: oklch(0.48 0.12 165);
-    border-color: oklch(0.48 0.12 165);
+    background-color: oklch(0.47 0.135 232.9);
+    border-color: oklch(0.47 0.135 232.9);
     transform: translateY(-1px);
-    box-shadow: 0 4px 20px oklch(0.56 0.12 165 / 0.3);
+    box-shadow: 0 4px 20px oklch(0.54 0.135 232.9 / 0.35);
   }
 
   .btn-outline {
@@ -192,20 +207,20 @@
     align-items: center;
     gap: 0.5rem;
     background-color: transparent;
-    color: oklch(0.53 0.12 165);
+    color: oklch(0.54 0.135 232.9);
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
     letter-spacing: 0.02em;
     padding: 0.75rem 1.75rem;
     border-radius: 9999px;
-    border: 2px solid oklch(0.53 0.12 165);
+    border: 2px solid oklch(0.54 0.135 232.9);
     transition: all 0.2s ease;
     text-decoration: none;
     white-space: nowrap;
   }
   .btn-outline:hover {
-    background-color: oklch(0.53 0.12 165);
+    background-color: oklch(0.54 0.135 232.9);
     color: white;
     transform: translateY(-1px);
   }
@@ -228,8 +243,8 @@
     white-space: nowrap;
   }
   .btn-white:hover {
-    background-color: oklch(0.53 0.12 165);
-    border-color: oklch(0.53 0.12 165);
+    background-color: oklch(0.54 0.135 232.9);
+    border-color: oklch(0.54 0.135 232.9);
     color: white;
     transform: translateY(-1px);
   }
@@ -245,7 +260,7 @@
     position: relative;
   }
   .nav-link:hover {
-    color: oklch(0.53 0.12 165);
+    color: oklch(0.54 0.135 232.9);
   }
 
   /* ── Dropdown ── */
@@ -283,14 +298,14 @@
   .card-service:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 50px rgba(0,0,0,0.10);
-    border-color: oklch(0.56 0.12 165 / 0.3);
+    border-color: oklch(0.54 0.135 232.9 / 0.35);
   }
 
   /* ── Section Rule ── */
   .section-rule {
     width: 3rem;
     height: 3px;
-    background: oklch(0.53 0.12 165);
+    background: oklch(0.54 0.135 232.9);
     border-radius: 9999px;
     margin-bottom: 1.25rem;
   }
@@ -308,7 +323,7 @@
 
   /* ── Special Offer Highlight ── */
   .offer-card {
-    background: linear-gradient(135deg, oklch(0.53 0.12 165) 0%, oklch(0.45 0.13 175) 100%);
+    background: linear-gradient(135deg, oklch(0.54 0.135 232.9) 0%, oklch(0.44 0.135 232.9) 100%);
     border-radius: 2rem;
     position: relative;
     overflow: hidden;

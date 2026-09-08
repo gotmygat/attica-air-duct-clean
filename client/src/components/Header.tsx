@@ -109,7 +109,7 @@ export default function Header() {
                 <div className={`dropdown-menu ${servicesOpen ? 'opacity-100' : ''}`}>
                   {SERVICES.map((s) => (
                     <Link key={s.href + s.label} href={s.href}
-                      className="block px-4 py-2.5 text-sm font-body text-foreground hover:bg-[oklch(0.93_0.04_165)] hover:text-[oklch(0.45_0.12_165)] transition-colors">
+                      className="block px-4 py-2.5 text-sm font-body text-foreground hover:bg-[oklch(0.95_0.045_232.9)] hover:text-[oklch(0.44_0.135_232.9)] transition-colors">
                       {s.label}
                     </Link>
                   ))}
@@ -130,7 +130,7 @@ export default function Header() {
                   <div className="grid grid-cols-2">
                     {LOCATIONS.map((l) => (
                       <Link key={l.href} href={l.href}
-                        className="block px-3 py-2 text-sm font-body text-foreground hover:bg-[oklch(0.93_0.04_165)] hover:text-[oklch(0.45_0.12_165)] transition-colors">
+                        className="block px-3 py-2 text-sm font-body text-foreground hover:bg-[oklch(0.95_0.045_232.9)] hover:text-[oklch(0.44_0.135_232.9)] transition-colors">
                         {l.label}
                       </Link>
                     ))}
@@ -147,7 +147,7 @@ export default function Header() {
             {/* CTA */}
             <div className="hidden lg:flex items-center gap-3">
               <a href="tel:4079901969"
-                className={`flex items-center gap-2 font-body font-semibold text-base whitespace-nowrap transition-colors duration-300 ${!solidBg ? 'text-white hover:text-[#8FC73F]' : 'text-foreground hover:text-[oklch(0.53_0.12_165)]'}`}>
+                className={`flex items-center gap-2 font-body font-semibold text-base whitespace-nowrap transition-colors duration-300 ${!solidBg ? 'text-white hover:text-[#8FC73F]' : 'text-foreground hover:text-[oklch(0.54_0.135_232.9)]'}`}>
                 <Phone size={15} />
                 (407) 990-1969
               </a>
@@ -191,7 +191,7 @@ export default function Header() {
                 <div className="ml-4 mt-1 space-y-1">
                   {SERVICES.map((s) => (
                     <Link key={s.href + s.label} href={s.href}
-                      className="block py-2 px-3 text-sm text-muted-foreground hover:text-[oklch(0.53_0.12_165)] rounded-lg hover:bg-muted transition-colors">
+                      className="block py-2 px-3 text-sm text-muted-foreground hover:text-[oklch(0.54_0.135_232.9)] rounded-lg hover:bg-muted transition-colors">
                       {s.label}
                     </Link>
                   ))}
@@ -207,7 +207,7 @@ export default function Header() {
                 <div className="ml-4 mt-1 grid grid-cols-2 gap-1">
                   {LOCATIONS.map((l) => (
                     <Link key={l.href} href={l.href}
-                      className="block py-2 px-3 text-sm text-muted-foreground hover:text-[oklch(0.53_0.12_165)] rounded-lg hover:bg-muted transition-colors">
+                      className="block py-2 px-3 text-sm text-muted-foreground hover:text-[oklch(0.54_0.135_232.9)] rounded-lg hover:bg-muted transition-colors">
                       {l.label}
                     </Link>
                   ))}
@@ -226,7 +226,7 @@ export default function Header() {
             >
               Book Now — Get a Free Quote
             </button>
-            <a href="tel:4079901969" className="flex items-center justify-center gap-2 font-body font-semibold text-sm text-foreground hover:text-[oklch(0.53_0.12_165)] transition-colors">
+            <a href="tel:4079901969" className="flex items-center justify-center gap-2 font-body font-semibold text-sm text-foreground hover:text-[oklch(0.54_0.135_232.9)] transition-colors">
               <Phone size={16} /> Call (407) 990-1969
             </a>
           </div>
@@ -234,7 +234,7 @@ export default function Header() {
       </div>
 
       {/* Mobile sticky call bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden" style={{ background: 'oklch(0.53 0.12 165)' }}>
+      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden" style={{ background: 'oklch(0.54 0.135 232.9)' }}>
         <a href="tel:4079901969" className="flex items-center justify-center gap-2 py-3.5 font-body font-semibold text-sm tracking-wide text-white">
           <Phone size={16} /> Call Now: (407) 990-1969
         </a>

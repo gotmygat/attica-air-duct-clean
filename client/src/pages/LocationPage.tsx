@@ -221,7 +221,7 @@ export default function LocationPage() {
                         style={{ background: '#F7F3EC' }}
                       >
                         <div className="flex items-start gap-3">
-                          <CheckCircle size={17} style={{ color: 'oklch(0.53 0.12 165)', flexShrink: 0, marginTop: 3 }} />
+                          <CheckCircle size={17} style={{ color: 'oklch(0.54 0.135 232.9)', flexShrink: 0, marginTop: 3 }} />
                           <div>
                             <h3 className="font-display font-bold text-base text-foreground mb-1">
                               {svc.name} in {city.name}
@@ -262,8 +262,8 @@ export default function LocationPage() {
               {/* Hours */}
               <div className="fade-up rounded-2xl p-6 border border-border" style={{ background: '#FAFAF8' }}>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'oklch(0.93 0.04 165)' }}>
-                    <Clock size={18} style={{ color: 'oklch(0.53 0.12 165)' }} />
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'oklch(0.95 0.045 232.9)' }}>
+                    <Clock size={18} style={{ color: 'oklch(0.54 0.135 232.9)' }} />
                   </div>
                   <h3 className="font-display font-bold text-lg text-foreground">Business Hours</h3>
                 </div>
