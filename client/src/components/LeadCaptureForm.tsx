@@ -381,35 +381,35 @@ export default function LeadCaptureForm({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>First Name *</label>
-            <input name="firstName" type="text" required placeholder="John" value={form.firstName} onChange={handleChange} className={inputClass} />
+            <input name="firstName" type="text" required placeholder="First name" value={form.firstName} onChange={handleChange} className={inputClass} />
           </div>
           <div>
             <label className={labelClass}>Last Name *</label>
-            <input name="lastName" type="text" required placeholder="Smith" value={form.lastName} onChange={handleChange} className={inputClass} />
+            <input name="lastName" type="text" required placeholder="Last name" value={form.lastName} onChange={handleChange} className={inputClass} />
           </div>
         </div>
         <div>
           <label className={labelClass}>Address</label>
-          <input name="address" type="text" placeholder="123 Main Street" value={form.address} onChange={handleChange} className={inputClass} />
+          <input name="address" type="text" placeholder="Street address" value={form.address} onChange={handleChange} className={inputClass} />
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           <div className="col-span-1 sm:col-span-1">
             <label className={labelClass}>City</label>
-            <input name="city" type="text" placeholder="Orlando" value={form.city} onChange={handleChange} className={inputClass} />
+            <input name="city" type="text" placeholder="City" value={form.city} onChange={handleChange} className={inputClass} />
           </div>
           <div>
             <label className={labelClass}>State</label>
-            <input name="state" type="text" placeholder="FL" value={form.state} onChange={handleChange} className={inputClass} />
+            <input name="state" type="text" placeholder="State" value={form.state} onChange={handleChange} className={inputClass} />
           </div>
           <div>
             <label className={labelClass}>Zip Code</label>
-            <input name="zipCode" type="tel" placeholder="32801" value={form.zipCode} onChange={handleChange} className={inputClass} />
+            <input name="zipCode" type="tel" placeholder="ZIP code" value={form.zipCode} onChange={handleChange} className={inputClass} />
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>Phone *</label>
-            <input name="phone" type="tel" required placeholder="(407) 000-0000" value={form.phone} onChange={handleChange} className={inputClass} />
+            <input name="phone" type="tel" required placeholder="(000) 000-0000" value={form.phone} onChange={handleChange} className={inputClass} />
           </div>
           <div>
             <label className={labelClass}>Email</label>
