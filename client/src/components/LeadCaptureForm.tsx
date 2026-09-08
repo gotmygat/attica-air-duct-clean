@@ -413,7 +413,7 @@ export default function LeadCaptureForm({
           </div>
           <div>
             <label className={labelClass}>Email</label>
-            <input name="email" type="email" placeholder="john@example.com" value={form.email} onChange={handleChange} className={inputClass} />
+            <input name="email" type="email" placeholder="you@email.com" value={form.email} onChange={handleChange} className={inputClass} />
           </div>
         </div>
         <div>
