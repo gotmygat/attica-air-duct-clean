@@ -120,9 +120,9 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-body text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>
             &copy; {new Date().getFullYear()} Attica Air Duct Cleaners LLC. All rights reserved.
-            {' '}Site built by{' '}
+            {' '}Smart Website Built by{' '}
             <a
-              href="https://renderanalytics.net"
+              href="https://renderanalytics.net/"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-white underline underline-offset-2"
