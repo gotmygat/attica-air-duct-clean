@@ -420,7 +420,7 @@ export default function Home() {
             <div className="fade-up">
               <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
                 <img
-                  src="/assets/orlandos-best-2026-gold-badge.png"
+                  src="/assets/orlandos-best-2026-gold-badge.webp"
                   alt="Orlando's Best 2026 Gold Winner badge"
                   width={360} height={438} loading="lazy"
                   className="w-32 sm:w-36 lg:w-44 h-auto flex-shrink-0 mx-auto sm:mx-0"

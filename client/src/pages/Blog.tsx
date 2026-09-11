@@ -19,7 +19,7 @@ const IMG1 = '/assets/why-choose-attica.webp';
 const IMG2 = '/assets/air-duct-cleaning.webp';
 const IMG3 = `${CF_BASE}/attica-dryer-vent-HUUTnvW6cjAqwvmfjdrvne.webp`;
 // Pre-designed graphic supplied by Orlando's Best, used unaltered per their brand guidelines.
-const AWARD_IMG = '/assets/orlandos-best-2026-we-won-square.png';
+const AWARD_IMG = '/assets/orlandos-best-2026-we-won-square.webp';
 
 const POSTS = [
   {

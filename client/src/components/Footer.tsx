@@ -55,7 +55,7 @@ export default function Footer() {
               aria-label="Orlando's Best 2026 Gold Winner — view the official winners list"
             >
               <img
-                src="/assets/orlandos-best-2026-gold-badge.png"
+                src="/assets/orlandos-best-2026-gold-badge.webp"
                 alt="Orlando's Best 2026 Gold Winner badge"
                 width={360} height={438} loading="lazy"
                 className="h-24 w-auto"
