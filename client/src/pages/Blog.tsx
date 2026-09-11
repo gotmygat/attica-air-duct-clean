@@ -18,8 +18,45 @@ const BLOG_HERO = '/assets/why-choose-attica.webp';
 const IMG1 = '/assets/why-choose-attica.webp';
 const IMG2 = '/assets/air-duct-cleaning.webp';
 const IMG3 = `${CF_BASE}/attica-dryer-vent-HUUTnvW6cjAqwvmfjdrvne.webp`;
+// Pre-designed graphic supplied by Orlando's Best, used unaltered per their brand guidelines.
+const AWARD_IMG = '/assets/orlandos-best-2026-we-won-square.png';
 
 const POSTS = [
+  {
+    id: 'orlandos-best-2026-gold',
+    title: "Attica Air Duct Cleaners Wins Gold at the 2026 Orlando's Best\u2122 Awards",
+    date: 'September 2026',
+    readTime: '3 min read',
+    category: 'Company News',
+    img: AWARD_IMG,
+    excerpt: "Attica Air Duct Cleaners has been named the Gold Winner for Air Duct Cleaning in the 2026 Orlando's Best\u2122 awards \u2014 an award decided entirely by a public vote of Orlando area residents.",
+    content: [
+      {
+        heading: null,
+        text: "We have some news we are genuinely proud to share. Attica Air Duct Cleaners has been named the Gold Winner for Air Duct Cleaning in the 2026 Orlando's Best\u2122 awards, announced at the awards ceremony in Orlando on 8 September 2026.",
+      },
+      {
+        heading: null,
+        text: "What makes this one mean so much is how it was decided. The Orlando's Best\u2122 awards are not judged by a panel or bought through a sponsorship. Winners are chosen by a public vote of Orlando area residents \u2014 the people who live here, hire local companies, and have to live with the results. Gold in our category came directly from the homeowners we have worked for.",
+      },
+      {
+        heading: 'Thank You to Every Customer Who Voted',
+        text: "We want to be clear about who earned this. Every vote came from someone who let our technicians into their home, watched them work, and thought enough of the result to go and put our name forward. That is not something we take lightly, and it is not something any amount of advertising can buy. Thank you.",
+      },
+      {
+        heading: 'What This Changes for You: Nothing, and That Is the Point',
+        text: "An award is only worth something if the service behind it stays the same. Our pricing, our process and our people are exactly what they were the week before the ceremony. You will get the same certified, background-checked technicians, the same Negative Air Pressure Technology, the same upfront price quoted before we start, and the same before-and-after documentation on every job.",
+      },
+      {
+        heading: 'How to Verify the Award',
+        text: "We think you should be able to check a claim like this rather than take our word for it. The full list of 2026 winners is published by Orlando's Best\u2122 at orlandosbest.com/winners \u2014 look under the Air Duct Cleaning category. We are listed there as the Gold result, alongside every other category winner across the region.",
+      },
+      {
+        heading: 'Booking With the 2026 Gold Winner',
+        text: "If you have been putting off having your ducts or dryer vent looked at, now is a good time. Our $97 Clean Air Special covers unlimited air duct and dryer vent cleaning per A/C unit, including a coil condition check, air flow inspection and duct condition inspection. Call (407) 990-1969 and we will find you a slot, usually within the same week.",
+      },
+    ],
+  },
   {
     id: 'cost',
     title: 'How Much Does It Typically Cost to Have Air Ducts Cleaned?',

@@ -60,6 +60,7 @@ const HOME_JSON_LD = {
       image: `${BASE_URL}/assets/attica-logo.png`,
       description: "Orlando's trusted air duct cleaning specialists. Serving Greater Orlando with air duct cleaning, dryer vent cleaning, chimney inspection, attic insulation, and air purification.",
       priceRange: '$$',
+      award: 'Gold Winner, Air Duct Cleaning — 2026 Orlando\'s Best Awards',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Orlando',
@@ -295,8 +296,8 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-4 py-1.5 mb-6">
-              <Star size={12} className="text-yellow-400 fill-yellow-400" />
-              <span className="font-body text-xs text-white font-medium tracking-wide">Orlando's #1 Rated Air Duct Cleaners</span>
+              <Award size={13} className="text-[#E3B341]" />
+              <span className="font-body text-xs text-white font-medium tracking-wide">Orlando&apos;s Best&trade; 2026 &mdash; Gold Winner, Air Duct Cleaning</span>
             </div>
             <h1 className="font-display text-white mb-6">
               {/* Impact line, then a smaller supporting line: Poppins sets wider
@@ -395,6 +396,76 @@ export default function Home() {
 
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          AWARD — Orlando's Best 2026 Gold Winner
+
+          The badge and any pre-designed graphics are used exactly as
+          supplied by Orlando's Best: not recoloured, cropped, re-lettered
+          or converted, per their brand guidelines. Copy states the year,
+          the category and the result so it cannot read as a nominee or
+          finalist claim, and links to the official winners list so a
+          visitor can verify it independently.
+      ═══════════════════════════════════════════ */}
+      <section className="relative overflow-hidden py-16 lg:py-20 bg-[#0f1923]">
+        <div aria-hidden className="pointer-events-none absolute inset-0"
+          style={{ background: 'radial-gradient(65% 60% at 22% 45%, rgba(227,179,65,0.16) 0%, rgba(227,179,65,0) 70%)' }} />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            <div className="fade-up">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
+                <img
+                  src="/assets/orlandos-best-2026-gold-badge.png"
+                  alt="Orlando's Best 2026 Gold Winner badge"
+                  width={360} height={438} loading="lazy"
+                  className="w-32 sm:w-36 lg:w-44 h-auto flex-shrink-0 mx-auto sm:mx-0"
+                />
+                <div>
+                  <p className="font-body text-xs font-bold uppercase tracking-[0.2em] mb-3 text-[#E3B341]">
+                    2026 Award Winner
+                  </p>
+                  <h2 className="font-display text-3xl lg:text-4xl font-extrabold text-white mb-4 leading-tight">
+                    Voted Orlando&apos;s Best&trade;<br />Air Duct Cleaning
+                  </h2>
+                  <p className="font-body text-white/70 leading-relaxed">
+                    Attica Air Duct Cleaners took <span className="text-[#8FC73F] font-semibold">Gold</span> in the
+                    Air Duct Cleaning category of the 2026 Orlando&apos;s Best&trade; awards &mdash; chosen by a public
+                    vote of Orlando area residents. Thank you to every customer who voted for us.
+                  </p>
+                  <a
+                    href="https://orlandosbest.com/winners/"
+                    target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-6 font-body text-sm font-semibold text-[#009DD5] hover:text-white transition-colors underline underline-offset-4"
+                  >
+                    See the official 2026 winners list <ArrowRight size={15} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Attica's own photographs from the ceremony */}
+            <div className="fade-up grid grid-cols-5 gap-3 sm:gap-4">
+              <img
+                src="/assets/award-ceremony-stage.webp"
+                alt="The Attica Air Duct Cleaners team accepting the 2026 Orlando's Best Gold award on stage"
+                loading="lazy"
+                className="col-span-3 w-full h-56 sm:h-72 object-cover rounded-2xl"
+                style={{ border: '1px solid rgba(255,255,255,0.12)' }}
+              />
+              <img
+                src="/assets/award-ceremony-wide.webp"
+                alt="Attica Air Duct Cleaners receiving their certificate at the 2026 Orlando's Best awards ceremony"
+                loading="lazy"
+                className="col-span-2 w-full h-56 sm:h-72 object-cover rounded-2xl"
+                style={{ border: '1px solid rgba(255,255,255,0.12)' }}
+              />
+            </div>
+
           </div>
         </div>
       </section>

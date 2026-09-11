@@ -44,8 +44,23 @@ export default function Footer() {
               />
             </div>
             <p className="font-body text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.55)' }}>
-              Orlando's #1 rated air duct cleaning company. Serving Greater Orlando with certified expertise and advanced Negative Air Pressure Technology.
+              Gold Winner for Air Duct Cleaning in the 2026 Orlando&apos;s Best&trade; awards. Serving Greater
+              Orlando with certified expertise and advanced Negative Air Pressure Technology.
             </p>
+            {/* Badge used exactly as supplied by Orlando's Best — unaltered. */}
+            <a
+              href="https://orlandosbest.com/winners/"
+              target="_blank" rel="noopener noreferrer"
+              className="inline-block mb-6 transition-opacity hover:opacity-80"
+              aria-label="Orlando's Best 2026 Gold Winner — view the official winners list"
+            >
+              <img
+                src="/assets/orlandos-best-2026-gold-badge.png"
+                alt="Orlando's Best 2026 Gold Winner badge"
+                width={360} height={438} loading="lazy"
+                className="h-24 w-auto"
+              />
+            </a>
             <div className="space-y-3">
               <a href="tel:4079901969" className="flex items-center gap-2 text-sm font-body transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 <Phone size={14} style={{ color: 'oklch(0.655 0.135 232.9)', flexShrink: 0 }} />
