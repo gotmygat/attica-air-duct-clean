@@ -7,7 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Analytics from "./components/Analytics";
 
-// Home is eager (most-visited landing page — no chunk waterfall).
+// Home is eager (most-visited landing page, no chunk waterfall).
 import Home from "./pages/Home";
 
 // Every other route is code-split so it's only downloaded when visited,

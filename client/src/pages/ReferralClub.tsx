@@ -1,6 +1,6 @@
 /**
- * ATTICA CLEANERS — Referral Club Page
- * Design: Clean Air Luxury — light editorial layout
+ * ATTICA CLEANERS, Referral Club Page
+ * Design: Clean Air Luxury, light editorial layout
  */
 
 import { Gift, Users, DollarSign, Star, CheckCircle, Phone } from 'lucide-react';
@@ -34,13 +34,13 @@ const HOW_IT_WORKS = [
     step: '02',
     icon: CheckCircle,
     title: 'They Book a Service',
-    desc: 'Your referral books and completes any of our cleaning services — air duct, dryer vent, chimney, or attic insulation.',
+    desc: 'Your referral books and completes any of our cleaning services, air duct, dryer vent, chimney, or attic insulation.',
   },
   {
     step: '03',
     icon: Gift,
     title: 'You Both Get Rewarded',
-    desc: 'Once their service is complete, you receive your referral reward. It\'s that simple — no complicated forms or waiting periods.',
+    desc: 'Once their service is complete, you receive your referral reward. It\'s that simple, no complicated forms or waiting periods.',
   },
 ];
 
@@ -50,7 +50,7 @@ const BENEFITS = [
   'Your referrals get great service at a great price',
   'Rewards paid promptly after service completion',
   'Works for all Attica services',
-  'Easy — just share our phone number',
+  'Easy, just share our phone number',
 ];
 
 export default function ReferralClub() {
@@ -59,8 +59,8 @@ export default function ReferralClub() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Referral Club — Earn Rewards | Attica Air Duct Cleaners"
-        description="Refer friends and neighbors to Attica Air Duct Cleaners and earn rewards. No limit on referrals — you both benefit. Join our Orlando referral program today."
+        title="Referral Club, Earn Rewards | Attica Air Duct Cleaners"
+        description="Refer friends and neighbors to Attica Air Duct Cleaners and earn rewards. No limit on referrals. You both benefit. Join our Orlando referral program today."
         canonical="/referral-club"
         jsonLd={REFERRAL_JSON_LD}
       />
@@ -83,10 +83,10 @@ export default function ReferralClub() {
             <div className="lg:col-span-2">
               <div className="section-rule" />
               <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground mb-6">
-                Share the Gift of Clean Air — and Get Rewarded
+                Share the Gift of Clean Air, and Get Rewarded
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed mb-6">
-                At Attica Air Duct Cleaners, we believe our best advertising comes from happy customers. That's why we created our Referral Club — a simple way to reward you for spreading the word about our services to the people you care about.
+                At Attica Air Duct Cleaners, we believe our best advertising comes from happy customers. That's why we created our Referral Club, a simple way to reward you for spreading the word about our services to the people you care about.
               </p>
               <p className="font-body text-muted-foreground leading-relaxed mb-10">
                 When you refer a friend, family member, or neighbor to Attica and they complete a service, you earn a reward. There's no limit to how many people you can refer, and the process couldn't be simpler. Just share our number and have them mention your name.

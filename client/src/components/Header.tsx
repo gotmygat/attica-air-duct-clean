@@ -1,5 +1,5 @@
 /**
- * ATTICA CLEANERS — Header Component
+ * ATTICA CLEANERS, Header Component
  * Book Now button opens a modal with the lead capture form
  */
 
@@ -224,7 +224,7 @@ export default function Header() {
               onClick={() => { setMobileOpen(false); setBookingOpen(true); }}
               className="btn-primary w-full justify-center"
             >
-              Book Now — Get a Free Quote
+              Book Now, Get a Free Quote
             </button>
             <a href="tel:4079901969" className="flex items-center justify-center gap-2 font-body font-semibold text-sm text-foreground hover:text-[oklch(0.54_0.135_232.9)] transition-colors">
               <Phone size={16} /> Call (407) 990-1969

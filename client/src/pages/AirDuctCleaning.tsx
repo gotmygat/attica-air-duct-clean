@@ -30,7 +30,7 @@ export default function AirDuctCleaning() {
         },
         {
           heading: 'Our Negative Air Pressure Process',
-          text: 'We use state-of-the-art negative air pressure technology to create a powerful vacuum effect inside your ductwork. This draws out all contaminants — including those deep in the system — and captures them in our HEPA-filtered collection unit. The result is a thoroughly cleaned duct system that delivers genuinely fresh air.',
+          text: 'We use state-of-the-art negative air pressure technology to create a powerful vacuum effect inside your ductwork. This draws out all contaminants, including those deep in the system, and captures them in our HEPA-filtered collection unit. The result is a thoroughly cleaned duct system that delivers genuinely fresh air.',
         },
         {
           heading: "What's Included in Our Service",

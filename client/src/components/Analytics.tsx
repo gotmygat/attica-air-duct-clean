@@ -9,8 +9,8 @@ import { trackPageView } from '@/lib/firebase';
  * so on a single-page app every internal navigation would otherwise be
  * invisible to GA4. Mounted next to <ScrollToTop /> inside the Router.
  *
- * <SEO> sets document.title from a child effect that runs *after* this one —
- * later still when the route's chunk is lazy-loaded — so we wait for the
+ * <SEO> sets document.title from a child effect that runs *after* this one, 
+ * later still when the route's chunk is lazy-loaded, so we wait for the
  * title to settle before logging. Without that wait, page_view would report
  * the previous page's title against the new page's path.
  */

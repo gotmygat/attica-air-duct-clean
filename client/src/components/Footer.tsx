@@ -1,6 +1,6 @@
 /**
- * ATTICA CLEANERS — Footer Component
- * Design: Clean Air Luxury — deep charcoal background, editorial layout
+ * ATTICA CLEANERS, Footer Component
+ * Design: Clean Air Luxury, deep charcoal background, editorial layout
  * Uses real Attica logo
  */
 
@@ -47,12 +47,12 @@ export default function Footer() {
               Gold Winner for Air Duct Cleaning in the 2026 Orlando&apos;s Best&trade; awards. Serving Greater
               Orlando with certified expertise and advanced Negative Air Pressure Technology.
             </p>
-            {/* Badge used exactly as supplied by Orlando's Best — unaltered. */}
+            {/* Badge used exactly as supplied by Orlando's Best, unaltered. */}
             <a
               href="https://orlandosbest.com/winners/"
               target="_blank" rel="noopener noreferrer"
               className="inline-block mb-6 transition-opacity hover:opacity-80"
-              aria-label="Orlando's Best 2026 Gold Winner — view the official winners list"
+              aria-label="Orlando's Best 2026 Gold Winner, view the official winners list"
             >
               <img
                 src="/assets/orlandos-best-2026-gold-badge.webp"

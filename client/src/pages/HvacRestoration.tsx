@@ -12,7 +12,7 @@ export default function HvacRestoration() {
       canonical="/hvac-restoration"
       subtitle="Performance & Efficiency"
       heroImage={IMG}
-      description="Our HVAC System Restoration service restores your heating and cooling system to peak performance. We clean, inspect, and tune your entire HVAC system — improving airflow, reducing energy consumption, and extending the lifespan of your equipment."
+      description="Our HVAC System Restoration service restores your heating and cooling system to peak performance. We clean, inspect, and tune your entire HVAC system, improving airflow, reducing energy consumption, and extending the lifespan of your equipment."
       benefits={[
         'Full System Inspection',
         'Improved Airflow & Efficiency',
@@ -26,7 +26,7 @@ export default function HvacRestoration() {
       details={[
         {
           heading: 'What Is HVAC Restoration?',
-          text: 'Over time, your HVAC system accumulates dust, debris, and biological growth that reduces its efficiency and air quality output. HVAC restoration goes beyond standard maintenance — we deep clean the entire system including the air handler, coils, blower motor, and ductwork connections to bring your system back to like-new performance.',
+          text: 'Over time, your HVAC system accumulates dust, debris, and biological growth that reduces its efficiency and air quality output. HVAC restoration goes beyond standard maintenance. We deep clean the entire system including the air handler, coils, blower motor, and ductwork connections to bring your system back to like-new performance.',
         },
         {
           heading: 'Signs You Need HVAC Restoration',

@@ -1,6 +1,6 @@
 /**
- * ATTICA CLEANERS — Contact Page
- * Design: Clean Air Luxury — dark hero, light content area
+ * ATTICA CLEANERS, Contact Page
+ * Design: Clean Air Luxury, dark hero, light content area
  * SEO: ContactPage JSON-LD, BreadcrumbList, full meta tags
  */
 
@@ -78,7 +78,7 @@ export default function Contact() {
               Contact Us
             </h1>
             <p className="font-body text-white/60 text-lg leading-relaxed">
-              Ready to breathe cleaner air? Call us, fill out the form, or send us an email — we respond within 24 hours.
+              Ready to breathe cleaner air? Call us, fill out the form, or send us an email. We respond within 24 hours.
             </p>
           </div>
         </div>

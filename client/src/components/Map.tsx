@@ -1,5 +1,5 @@
 /**
- * ATTICA CLEANERS — Map Component
+ * ATTICA CLEANERS, Map Component
  * Uses Leaflet + OpenStreetMap (no API key required, works on Firebase)
  * Pin and view update reactively when city coordinates change (navigation fix)
  */

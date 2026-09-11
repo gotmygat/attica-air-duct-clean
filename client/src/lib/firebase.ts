@@ -1,10 +1,10 @@
 /**
- * ATTICA CLEANERS — Firebase bootstrap + Google Analytics (GA4).
+ * ATTICA CLEANERS, Firebase bootstrap + Google Analytics (GA4).
  *
  * Why this config is inline rather than in env vars: a Firebase *web* config
  * is public by design. It ships in the client bundle however it is supplied,
  * and access is gated by Firebase security rules and the authorized-domain
- * list in the console — not by hiding these strings. Keeping them here means
+ * list in the console, not by hiding these strings. Keeping them here means
  * the GitHub Actions deploy needs no additional secrets.
  *
  * The SDK is pulled in with dynamic import() so it lands in its own chunk and
@@ -44,7 +44,7 @@ function isRealVisit(): boolean {
   if (host === 'localhost' || host === '127.0.0.1' || host === '::1') return false;
   if (host.endsWith('.local')) return false;
   // `pnpm dev --host` also serves on the LAN address, which is how the site
-  // gets checked on a phone — that traffic is not real either.
+  // gets checked on a phone. That traffic is not real either.
   if (/^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(host)) return false;
   // Firebase preview channels look like <site>--<channel>-<hash>.web.app
   if (host.includes('--')) return false;
@@ -79,7 +79,7 @@ function afterLoad(): Promise<void> {
 
 /**
  * Initialises Firebase Analytics once and caches the instance.
- * Resolves to null whenever analytics should not run — a prerender pass, a
+ * Resolves to null whenever analytics should not run, a prerender pass, a
  * dev host, an unsupported browser, or an ad blocker taking out the SDK.
  */
 export async function getAnalyticsInstance(): Promise<AnalyticsInstance | null> {
@@ -127,7 +127,7 @@ export async function trackPageView(path: string): Promise<void> {
 }
 
 /**
- * Logs any other GA4 event — use for conversions such as phone-tap or
+ * Logs any other GA4 event, use for conversions such as phone-tap or
  * quote-form submit, e.g. trackEvent('generate_lead', { method: 'phone' }).
  */
 export async function trackEvent(

@@ -1,9 +1,9 @@
 /**
- * ATTICA CLEANERS — Global Styles
+ * ATTICA CLEANERS, Global Styles
  * Design: Clean Air Luxury (light, airy, editorial)
  * Palette taken from the logo:
- *   green #8FC73F  the "A" — accent fills, badges, icon tiles. Navy text on top (8.8:1).
- *   blue  #009DD5  the wordmark and airflow swooshes — accents on dark surfaces.
+ *   green #8FC73F  the "A", accent fills, badges, icon tiles. Navy text on top (8.8:1).
+ *   blue  #009DD5  the wordmark and airflow swooshes, accents on dark surfaces.
  *   navy  #0f1923  dark sections.  sand #F7F3EC  warm editorial bands.
  * Contrast rule: neither logo colour carries white text (2.0:1 and 3.1:1), so
  * primary actions use a darkened blue (--primary, 4.8:1 on white) and text
@@ -56,7 +56,7 @@
 }
 
 :root {
-  /* Primary action — the logo blue darkened until white text clears AA (4.8:1) */
+  /* Primary action, the logo blue darkened until white text clears AA (4.8:1) */
   --primary: oklch(0.54 0.135 232.9);
   --primary-foreground: oklch(0.99 0 0);
 
@@ -71,7 +71,7 @@
 
   --radius: 0.75rem;
 
-  /* Light warm background — unchanged, this is Attica's editorial feel */
+  /* Light warm background, unchanged, this is Attica's editorial feel */
   --background: oklch(0.99 0.003 80);
   --foreground: oklch(0.18 0.01 250);
 
@@ -167,7 +167,7 @@
   /* ── Typography ── */
   .font-display {
     /* Poppins mirrors the logo wordmark: geometric, circular bowls, a
-       single-storey 'a' and flat-cut terminals. Sentence case throughout —
+       single-storey 'a' and flat-cut terminals. Sentence case throughout, 
        the logo is sentence case, and all-caps would fight its friendliness. */
     font-family: 'Poppins', 'Outfit', sans-serif;
     letter-spacing: -0.02em;

@@ -1,6 +1,6 @@
 /**
- * ATTICA CLEANERS — Dynamic Location Page
- * Design: Clean Air Luxury — light editorial layout
+ * ATTICA CLEANERS, Dynamic Location Page
+ * Design: Clean Air Luxury, light editorial layout
  * Uses Leaflet + OpenStreetMap (no API key needed)
  * OS-aware directions link
  */
@@ -335,7 +335,7 @@ export default function LocationPage() {
                 <LeadCaptureForm
                   dark={true}
                   title={`Book in ${city.name}`}
-                  subtitle="Get a free quote — we respond within 24 hours."
+                  subtitle="Get a free quote. We respond within 24 hours."
                 />
               </div>
             </div>

@@ -1,6 +1,6 @@
 /**
- * ATTICA CLEANERS — About Us Page
- * Design: Clean Air Luxury — editorial layout with dark hero
+ * ATTICA CLEANERS, About Us Page
+ * Design: Clean Air Luxury, editorial layout with dark hero
  * SEO: AboutPage + Organization JSON-LD, BreadcrumbList, H1/H2/H3 hierarchy
  */
 
@@ -23,7 +23,7 @@ const ABOUT_JSON_LD = {
       '@type': 'AboutPage',
       name: 'About Attica Air Duct Cleaners',
       url: `${BASE_URL}/about`,
-      description: 'Learn about Attica Air Duct Cleaners — Orlando\'s trusted air duct cleaning specialists. Our story, mission, and commitment to cleaner air for Greater Orlando families.',
+      description: 'Learn about Attica Air Duct Cleaners, Orlando\'s trusted air duct cleaning specialists. Our story, mission, and commitment to cleaner air for Greater Orlando families.',
       mainEntity: {
         '@type': 'Organization',
         '@id': `${BASE_URL}/#business`,
@@ -92,7 +92,7 @@ export default function About() {
     <div className="min-h-screen bg-background">
       <SEO
         title="About Attica Air Duct Cleaners | Orlando's Trusted Air Duct Cleaning Company"
-        description="Learn about Attica Air Duct Cleaners — Orlando's trusted air duct cleaning specialists. Backed by years of expertise, serving Greater Orlando with certified, professional indoor air quality services."
+        description="Learn about Attica Air Duct Cleaners, Orlando's trusted air duct cleaning specialists. Backed by years of expertise, serving Greater Orlando with certified, professional indoor air quality services."
         canonical="/about"
         jsonLd={ABOUT_JSON_LD}
       />
@@ -109,7 +109,7 @@ export default function About() {
               About Attica Air Duct Cleaners
             </h1>
             <p className="font-body text-white/60 text-lg leading-relaxed">
-              Orlando's trusted air duct cleaning specialists — backed by years of proven expertise and a commitment to healthier homes.
+              Orlando's trusted air duct cleaning specialists, backed by years of proven expertise and a commitment to healthier homes.
             </p>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function About() {
                   We helped families and homeowners improve indoor air quality at affordable rates. What started as a small local business has grown into a trusted provider of residential HVAC air duct cleaning services in the greater Orlando, Florida area.
                 </p>
                 <p>
-                  Our team recognized the need for reliable, high-quality cleaning solutions to maintain a healthy indoor environment. Attica also offers expert dryer vent cleaning in Orlando, Florida — safety experts recommend this service yearly to protect your home and keep your dryer running efficiently.
+                  Our team recognized the need for reliable, high-quality cleaning solutions to maintain a healthy indoor environment. Attica also offers expert dryer vent cleaning in Orlando, Florida. Safety experts recommend this service yearly to protect your home and keep your dryer running efficiently.
                 </p>
                 <p>
                   Every project includes a detailed before-and-after photo and video report, allowing you to see the clear results yourself. When you need reliable air duct cleaning in the greater Orlando, Florida area, choose Attica for professional service, certified expertise, and healthier air.
@@ -215,13 +215,13 @@ export default function About() {
               </p>
               <div className="space-y-3">
                 {[
-                  'Air Duct Cleaning — Unlimited Vents, Negative Air Pressure Technology',
-                  'Dryer Vent Cleaning — Up to 7ft, fire prevention',
-                  'Chimney Inspection & Cleaning — creosote removal, safety check',
-                  'Attic Insulation — blow-in insulation, energy savings',
-                  'Air Purification Systems — whole-home HEPA filtration',
-                  'Condenser Coil Cleaning — restore HVAC efficiency',
-                  'HVAC System Restoration — full system care',
+                  'Air Duct Cleaning, Unlimited Vents, Negative Air Pressure Technology',
+                  'Dryer Vent Cleaning, Up to 7ft, fire prevention',
+                  'Chimney Inspection & Cleaning, creosote removal, safety check',
+                  'Attic Insulation, blow-in insulation, energy savings',
+                  'Air Purification Systems, whole-home HEPA filtration',
+                  'Condenser Coil Cleaning, restore HVAC efficiency',
+                  'HVAC System Restoration, full system care',
                 ].map((service) => (
                   <div key={service} className="flex items-start gap-3">
                     <CheckCircle size={16} className="flex-shrink-0 mt-0.5" style={{ color: 'oklch(0.54 0.135 232.9)' }} />

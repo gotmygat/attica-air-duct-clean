@@ -1,5 +1,5 @@
 /**
- * ATTICA CLEANERS — Services Overview Page
+ * ATTICA CLEANERS, Services Overview Page
  */
 import { Link } from 'wouter';
 import { ArrowRight } from 'lucide-react';

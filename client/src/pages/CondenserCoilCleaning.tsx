@@ -26,7 +26,7 @@ export default function CondenserCoilCleaning() {
       details={[
         {
           heading: 'Why Condenser Coil Cleaning Matters',
-          text: 'The condenser coil is the outdoor component of your air conditioning system responsible for releasing heat from your home. When it becomes coated with dirt, grass clippings, and debris, it can\'t release heat efficiently — forcing your compressor to work harder, consuming more energy, and wearing out faster. A dirty condenser coil can increase energy usage by 30% or more.',
+          text: 'The condenser coil is the outdoor component of your air conditioning system responsible for releasing heat from your home. When it becomes coated with dirt, grass clippings, and debris, it can\'t release heat efficiently, forcing your compressor to work harder, consuming more energy, and wearing out faster. A dirty condenser coil can increase energy usage by 30% or more.',
         },
         {
           heading: 'Signs Your Coils Need Cleaning',
@@ -38,7 +38,7 @@ export default function CondenserCoilCleaning() {
         },
         {
           heading: 'How Often Should Coils Be Cleaned?',
-          text: 'We recommend having your condenser coils professionally cleaned at least once a year — ideally in the spring before the cooling season begins. Homes near trees, construction sites, or with pets may need cleaning more frequently. Regular cleaning is one of the most cost-effective ways to maintain your HVAC system.',
+          text: 'We recommend having your condenser coils professionally cleaned at least once a year, ideally in the spring before the cooling season begins. Homes near trees, construction sites, or with pets may need cleaning more frequently. Regular cleaning is one of the most cost-effective ways to maintain your HVAC system.',
         },
       ]}
     />

@@ -1,4 +1,4 @@
-# Attica Air Duct Cleaners — https://www.atticacleaners.com
+# Attica Air Duct Cleaners, https://www.atticacleaners.com
 # All well-behaved crawlers, including AI answer engines, are welcome.
 
 User-agent: *

@@ -26,11 +26,11 @@ export default function SolarAtticFan() {
       details={[
         {
           heading: 'Why Solar Attic Fans?',
-          text: 'During Florida summers, attic temperatures can exceed 150°F. This extreme heat radiates down into your living spaces, forcing your air conditioning system to work harder and driving up energy bills. Solar attic fans actively exhaust this superheated air and replace it with cooler outside air — all powered entirely by the sun at zero operating cost.',
+          text: 'During Florida summers, attic temperatures can exceed 150°F. This extreme heat radiates down into your living spaces, forcing your air conditioning system to work harder and driving up energy bills. Solar attic fans actively exhaust this superheated air and replace it with cooler outside air, all powered entirely by the sun at zero operating cost.',
         },
         {
           heading: 'Benefits for Your Home',
-          text: 'By keeping your attic cooler, solar attic fans reduce the thermal load on your HVAC system, which can lower cooling costs by up to 30%. They also reduce moisture buildup in the attic, which prevents mold growth, wood rot, and premature deterioration of insulation and roofing materials — significantly extending the life of your roof.',
+          text: 'By keeping your attic cooler, solar attic fans reduce the thermal load on your HVAC system, which can lower cooling costs by up to 30%. They also reduce moisture buildup in the attic, which prevents mold growth, wood rot, and premature deterioration of insulation and roofing materials, significantly extending the life of your roof.',
         },
         {
           heading: 'Our Installation Process',
@@ -38,7 +38,7 @@ export default function SolarAtticFan() {
         },
         {
           heading: 'Ideal for Florida Homes',
-          text: 'With over 230 sunny days per year, Orlando and Greater Central Florida are perfect for solar attic ventilation. Our fans operate silently and automatically whenever sunlight is available — providing maximum ventilation during the hottest parts of the day when you need it most. Backed by our 100% satisfaction guarantee.',
+          text: 'With over 230 sunny days per year, Orlando and Greater Central Florida are perfect for solar attic ventilation. Our fans operate silently and automatically whenever sunlight is available, providing maximum ventilation during the hottest parts of the day when you need it most. Backed by our 100% satisfaction guarantee.',
         },
       ]}
     />

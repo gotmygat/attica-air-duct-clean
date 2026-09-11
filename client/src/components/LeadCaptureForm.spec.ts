@@ -1,13 +1,13 @@
 /**
- * ATTICA CLEANERS — Lead Capture Form spam-defence tests
+ * ATTICA CLEANERS, Lead Capture Form spam-defence tests
  *
  * These guard the two checks that can silently eat a real customer lead:
  * the email-domain blocklist and the submit-timing floor. The honeypot is
  * exercised end-to-end in the browser instead, since it is a DOM concern.
  *
  * The case that matters most is the lookalike domain. A naive substring
- * match would drop notvirtualhandsupport.community — a legitimate address
- * that merely contains the blocked string — and nobody would ever find out.
+ * match would drop notvirtualhandsupport.community, a legitimate address
+ * that merely contains the blocked string, and nobody would ever find out.
  *
  * Run with: pnpm test
  */
@@ -30,7 +30,7 @@ describe('BLOCKED_EMAIL_DOMAINS', () => {
   });
 });
 
-describe('isBlockedEmail — blocks the vendor', () => {
+describe('isBlockedEmail, blocks the vendor', () => {
   it('blocks the exact domain', () => {
     expect(isBlockedEmail('sales@virtualhandsupport.com')).toBe(true);
   });
@@ -53,7 +53,7 @@ describe('isBlockedEmail — blocks the vendor', () => {
   });
 });
 
-describe('isBlockedEmail — never blocks a genuine lead', () => {
+describe('isBlockedEmail, never blocks a genuine lead', () => {
   it('lets the lookalike domain through', () => {
     // The whole point of matching on label boundaries rather than substrings.
     expect(isBlockedEmail('someone@notvirtualhandsupport.community')).toBe(false);

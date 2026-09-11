@@ -1,6 +1,6 @@
 /**
- * ATTICA CLEANERS — Lead Capture Form
- * Design: Clean Air Luxury — clean form with green accents
+ * ATTICA CLEANERS, Lead Capture Form
+ * Design: Clean Air Luxury, clean form with green accents
  * EmailJS integration: sends all submissions to atticacleaners1@gmail.com
  * INP optimization: EmailJS is lazy-loaded only on form submit (not on page load)
  * Spam defence: honeypot + submit timing + blocked sender domains (see below)
@@ -17,13 +17,13 @@ const EMAILJS_PUBLIC_KEY  = 'f22PGUPTJ1sPihQjh';
 /* ------------------------------------------------------------------ *
  * SPAM DEFENCE
  *
- * The whole form runs in the browser — there is no server in the request
- * path — so these are deterrents, not security. They exist to stop the
+ * The whole form runs in the browser. There is no server in the request
+ * path, so these are deterrents, not security. They exist to stop the
  * outbound lead-gen vendors that submit a handful of fake quote requests a
  * week, and they are deliberately tuned to let anything ambiguous through.
  *
  * GOVERNING RULE: losing one genuine lead costs the client far more than
- * receiving ten spam ones. Every check below fails OPEN — if a value is
+ * receiving ten spam ones. Every check below fails OPEN, if a value is
  * missing, malformed, or merely suspicious, the lead is SENT.
  *
  * When a check does fire, the submission is dropped silently and the user
@@ -36,13 +36,13 @@ const EMAILJS_PUBLIC_KEY  = 'f22PGUPTJ1sPihQjh';
  * Email domains whose submissions are dropped.
  *
  * TO ADD A VENDOR: append the bare registered domain, lowercase, with no
- * "@", no "www." and no protocol — e.g. 'somevendor.com'. Subdomains are
+ * "@", no "www." and no protocol, e.g. 'somevendor.com'. Subdomains are
  * covered automatically (mail.somevendor.com matches somevendor.com), and
  * matching is case-insensitive and boundary-aware, so adding 'example.com'
  * does NOT catch 'notexample.community' or 'example.com.br'.
  *
  * Keep this list small and specific. It should only ever contain domains
- * the client has actually confirmed as spam — never a whole free-mail
+ * the client has actually confirmed as spam, never a whole free-mail
  * provider, and never a guess. Real customers use odd email addresses.
  */
 export const BLOCKED_EMAIL_DOMAINS: readonly string[] = [
@@ -64,7 +64,7 @@ export const BLOCKED_EMAIL_DOMAINS: readonly string[] = [
  *     reason to pause between filling the last field and firing submit.
  *   - The fastest realistic human path is click a field, accept a browser
  *     autofill suggestion, click Send. That is two deliberate clicks plus a
- *     dropdown selection — on the order of 2.5–4s of motor action alone,
+ *     dropdown selection, on the order of 2.5–4s of motor action alone,
  *     before any reading.
  *
  * 1500ms sits above the automation ceiling with room to spare and still
@@ -77,7 +77,7 @@ const MIN_SUBMIT_MS = 1500;
 /**
  * Extracts the lowercase domain of an email address, or null when there
  * isn't one we can read with confidence. Returning null means "let it
- * through" — every caller treats an unreadable address as legitimate.
+ * through", every caller treats an unreadable address as legitimate.
  */
 function emailDomain(email: string): string | null {
   const at = email.lastIndexOf('@');
@@ -127,17 +127,17 @@ export function isTooFast(renderedAt: number | null, now: number): boolean {
  * trail. A bot can ignore it, and a real visitor's console is not somewhere
  * anyone will look. It exists so that if the client ever reports "I stopped
  * getting leads", someone can open the console on the live form, submit,
- * and immediately see which check fired and why — rather than discovering
+ * and immediately see which check fired and why, rather than discovering
  * months later that the form had been quietly eating real enquiries.
  *
  * The GA4 event is the closest thing to a real signal: it is the only part
  * of this that reaches somewhere a human might notice a spike. It carries
- * the reason and the email domain only — never the name, phone or address
+ * the reason and the email domain only, never the name, phone or address
  * of whoever was dropped.
  */
 function reportRejection(reason: string, detail: Record<string, unknown>): void {
   console.warn(
-    `[lead-form] submission dropped — ${reason}`,
+    `[lead-form] submission dropped, ${reason}`,
     { reason, ...detail, note: 'client-side diagnostic only, not an audit trail' },
   );
 
@@ -170,7 +170,7 @@ function buildHtmlEmail(fields: {
     <tr>
       <td style="padding:10px 20px;background:#f9f9f9;border-bottom:1px solid #e8e8e8;">
         <p style="margin:0;font-family:Arial,sans-serif;font-size:11px;font-weight:700;color:#888888;text-transform:uppercase;letter-spacing:0.5px;">${label}</p>
-        <p style="margin:4px 0 0;font-family:Arial,sans-serif;font-size:15px;color:#222222;">${value || '<span style="color:#aaa;">—</span>'}</p>
+        <p style="margin:4px 0 0;font-family:Arial,sans-serif;font-size:15px;color:#222222;">${value || '<span style="color:#aaa;">, </span>'}</p>
       </td>
     </tr>`;
 
@@ -350,7 +350,7 @@ export default function LeadCaptureForm({
           Honeypot. Not part of the visible form and not a real field.
 
           It is moved off-screen inside a zero-size, overflow-hidden wrapper
-          rather than given type="hidden" or display:none — bots skip both of
+          rather than given type="hidden" or display:none, bots skip both of
           those, but they do fill inputs they can find in the DOM by name.
           "company_website" is the kind of name a naive filler targets.
 
@@ -360,7 +360,7 @@ export default function LeadCaptureForm({
           dropped. autoComplete="off" stops a browser filling it on the
           user's behalf. It is never required and never sent.
 
-          Inline styles on purpose — this must not depend on a utility class
+          Inline styles on purpose. This must not depend on a utility class
           surviving a future Tailwind config change.
         */}
         <div

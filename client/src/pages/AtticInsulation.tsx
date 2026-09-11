@@ -30,7 +30,7 @@ export default function AtticInsulation() {
         },
         {
           heading: 'Our Blow-In Insulation Process',
-          text: 'We use professional-grade blown-in insulation — a loose-fill material that conforms to any space, filling gaps and voids that batt insulation can\'t reach. Our technicians use specialized equipment to distribute the insulation evenly across your attic floor, achieving the recommended R-value for Central Florida\'s climate.',
+          text: 'We use professional-grade blown-in insulation, a loose-fill material that conforms to any space, filling gaps and voids that batt insulation can\'t reach. Our technicians use specialized equipment to distribute the insulation evenly across your attic floor, achieving the recommended R-value for Central Florida\'s climate.',
         },
         {
           heading: 'Signs You Need New Attic Insulation',

@@ -1,7 +1,7 @@
 /**
- * ATTICA CLEANERS — Home Page
- * Design: Clean Air Luxury — Playfair Display + Outfit
- * Palette: Warm white bg, charcoal text, teal-green accent — light & airy
+ * ATTICA CLEANERS, Home Page
+ * Design: Clean Air Luxury, Playfair Display + Outfit
+ * Palette: Warm white bg, charcoal text, teal-green accent, light & airy
  */
 
 import { useEffect, useRef } from 'react';
@@ -60,7 +60,7 @@ const HOME_JSON_LD = {
       image: `${BASE_URL}/assets/attica-logo.png`,
       description: "Orlando's trusted air duct cleaning specialists. Serving Greater Orlando with air duct cleaning, dryer vent cleaning, chimney inspection, attic insulation, and air purification.",
       priceRange: '$$',
-      award: 'Gold Winner, Air Duct Cleaning — 2026 Orlando\'s Best Awards',
+      award: 'Gold Winner for Air Duct Cleaning at the 2026 Orlando\'s Best Awards',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Orlando',
@@ -178,7 +178,7 @@ const SPECIAL_MONTH = new Date().toLocaleDateString('en-US', { month: 'long', ye
  * first attempt and start over, which shows up as a duplicate request.
  * Setting .src once produces exactly one fetch.
  *
- * scripts/prerender.mjs strips the src back out of the static snapshot —
+ * scripts/prerender.mjs strips the src back out of the static snapshot, 
  * without that, the deferral would be undone by the very HTML it produces.
  */
 function HeroVideo() {
@@ -279,14 +279,14 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <SEO
         title="Air Duct Cleaning Service Orlando"
-        description="Orlando's trusted air duct cleaning service — duct & dryer vent cleaning, chimney inspection & attic insulation. Call (407) 990-1969."
+        description="Orlando's trusted air duct cleaning service, duct & dryer vent cleaning, chimney inspection & attic insulation. Call (407) 990-1969."
         canonical="/"
         jsonLd={HOME_JSON_LD}
       />
       <Header />
 
       {/* ═══════════════════════════════════════════
-          HERO — Full-bleed video, dark overlay
+          HERO, Full-bleed video, dark overlay
       ═══════════════════════════════════════════ */}
       <section className="relative h-screen min-h-[600px] max-h-[900px] flex items-center overflow-hidden">
         <HeroVideo />
@@ -297,7 +297,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-4 py-1.5 mb-6">
               <Award size={13} className="text-[#E3B341]" />
-              <span className="font-body text-xs text-white font-medium tracking-wide">Orlando&apos;s Best&trade; 2026 &mdash; Gold Winner, Air Duct Cleaning</span>
+              <span className="font-body text-xs text-white font-medium tracking-wide">Orlando&apos;s Best&trade; 2026 Gold Winner for Air Duct Cleaning</span>
             </div>
             <h1 className="font-display text-white mb-6">
               {/* Impact line, then a smaller supporting line: Poppins sets wider
@@ -311,7 +311,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="font-body text-base sm:text-lg text-white/80 mb-8 leading-relaxed max-w-lg">
-              Orlando's expert air duct cleaning service — air duct &amp; dryer vent cleaning powered by
+              Orlando's expert air duct cleaning service, air duct &amp; dryer vent cleaning powered by
               Negative Air Pressure Technology. Protect your family's health and prevent fire hazards.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          $97 SPECIAL — Prominent, matches screenshot
+          $97 SPECIAL, Prominent, matches screenshot
       ═══════════════════════════════════════════ */}
       <section id="special-offer" className="relative overflow-hidden py-16 lg:py-24 bg-[#0f1923]">
         {/* Logo-green wash so the offer is the brightest thing on the page */}
@@ -345,7 +345,7 @@ export default function Home() {
               style={{ background: 'linear-gradient(135deg, #16232F 0%, #0f1923 100%)', border: '1px solid rgba(143,199,63,0.35)' }}>
               <div className="grid lg:grid-cols-[1fr_auto] gap-0 items-center">
 
-                {/* Left — the offer */}
+                {/* Left, the offer */}
                 <div className="p-8 lg:p-12">
                   <div className="inline-flex items-center bg-[#8FC73F] text-[#0f1923] text-xs font-body font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase">
                     {SPECIAL_MONTH} Special
@@ -367,7 +367,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Right — the price. Filled with the logo green and set in navy:
+                {/* Right, the price. Filled with the logo green and set in navy:
                     the old card put #2DD4BF on white, which measured 1.86:1. */}
                 <div className="flex items-center justify-center p-6 pb-10 lg:p-12">
                   <div className="relative bg-[#8FC73F] rounded-3xl px-10 py-9 text-center shadow-2xl w-full max-w-[320px] lg:min-w-[300px]">
@@ -401,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          AWARD — Orlando's Best 2026 Gold Winner
+          AWARD, Orlando's Best 2026 Gold Winner
 
           The badge and any pre-designed graphics are used exactly as
           supplied by Orlando's Best: not recoloured, cropped, re-lettered
@@ -434,7 +434,7 @@ export default function Home() {
                   </h2>
                   <p className="font-body text-white/70 leading-relaxed">
                     Attica Air Duct Cleaners took <span className="text-[#8FC73F] font-semibold">Gold</span> in the
-                    Air Duct Cleaning category of the 2026 Orlando&apos;s Best&trade; awards &mdash; chosen by a public
+                    Air Duct Cleaning category of the 2026 Orlando&apos;s Best&trade; awards, chosen by a public
                     vote of Orlando area residents. Thank you to every customer who voted for us.
                   </p>
                   <a
@@ -485,7 +485,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          SERVICES GRID — Light background
+          SERVICES GRID, Light background
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -495,7 +495,7 @@ export default function Home() {
               Complete Air Quality Solutions
             </h2>
             <p className="font-body text-muted-foreground max-w-xl mx-auto">
-              From residential and commercial air duct cleaning to HVAC duct cleaning, dryer vents, and more — expert services designed to improve your home's air quality, safety, and energy efficiency.
+              From residential and commercial air duct cleaning to HVAC duct cleaning, dryer vents, and more, expert services designed to improve your home's air quality, safety, and energy efficiency.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -523,7 +523,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          WHY CHOOSE US — Warm sand background
+          WHY CHOOSE US, Warm sand background
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 bg-[#F7F3EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -537,7 +537,7 @@ export default function Home() {
                 Why Greater Orlando <span style={{ color: 'oklch(0.52 0.140 129.2)' }}>Trusts Attica</span>
               </h2>
               <p className="font-body text-lg text-muted-foreground mb-10 leading-relaxed">
-                We don't just clean vents — we restore your home's respiratory system. Our meticulous approach ensures you breathe easier and live healthier.
+                We don't just clean vents. We restore your home's respiratory system. Our meticulous approach ensures you breathe easier and live healthier.
               </p>
               <div className="space-y-6">
                 {[
@@ -579,7 +579,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          HIRING BANNER — teal green
+          HIRING BANNER, teal green
       ═══════════════════════════════════════════ */}
       <section className="py-14" style={{ background: 'oklch(0.54 0.135 232.9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -590,7 +590,7 @@ export default function Home() {
             <div className="text-center lg:text-left flex-1">
               <h2 className="font-display text-3xl lg:text-4xl font-extrabold text-white mb-3">We're Hiring!</h2>
               <p className="font-body text-white/85 leading-relaxed max-w-3xl">
-                Our team is growing and we're seeking a reliable, motivated new team member. Full-time position. Great work environment. Training provided. If you're hardworking, responsible, and ready to be part of a solid team — we want to hear from you! Send a message to (407) 990-1969.
+                Our team is growing and we're seeking a reliable, motivated new team member. Full-time position. Great work environment. Training provided. If you're hardworking, responsible, and ready to be part of a solid team. We want to hear from you! Send a message to (407) 990-1969.
               </p>
             </div>
             <a href="tel:4079901969" className="btn-white flex-shrink-0">
@@ -601,7 +601,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          TESTIMONIALS — White background
+          TESTIMONIALS, White background
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -635,7 +635,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          SERVICE AREAS — Sand background
+          SERVICE AREAS, Sand background
       ═══════════════════════════════════════════ */}
       <section className="py-20 bg-[#F7F3EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -662,7 +662,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          LEAD CAPTURE + CTA — Dark section at bottom
+          LEAD CAPTURE + CTA, Dark section at bottom
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 bg-[#0f1923]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -678,7 +678,7 @@ export default function Home() {
               <div className="space-y-4 mb-10">
                 {[
                   'Same-week scheduling available',
-                  'No hidden fees — transparent pricing',
+                  'No hidden fees, transparent pricing',
                   '100% satisfaction guarantee',
                   'Certified, background-checked technicians',
                 ].map((item) => (
@@ -702,7 +702,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          FAQ SECTION — FAQPage schema eligible
+          FAQ SECTION, FAQPage schema eligible
       ═══════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 bg-[#FAFAF8]" aria-label="Frequently Asked Questions">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

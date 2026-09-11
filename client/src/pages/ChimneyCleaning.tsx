@@ -26,11 +26,11 @@ export default function ChimneyCleaning() {
       details={[
         {
           heading: 'Why Chimney Cleaning Is Essential',
-          text: 'When you burn wood in your fireplace, combustion byproducts — including creosote — accumulate on the inner walls of your chimney. Creosote is highly flammable and is the leading cause of chimney fires. Regular cleaning removes this dangerous buildup and ensures your chimney is safe to use.',
+          text: 'When you burn wood in your fireplace, combustion byproducts, including creosote, accumulate on the inner walls of your chimney. Creosote is highly flammable and is the leading cause of chimney fires. Regular cleaning removes this dangerous buildup and ensures your chimney is safe to use.',
         },
         {
           heading: 'Carbon Monoxide: The Silent Danger',
-          text: 'A blocked or damaged chimney can cause carbon monoxide — a colorless, odorless gas — to back up into your home. This is a serious health hazard that can be fatal. Our inspection includes a thorough check for blockages, cracks, and deterioration that could allow carbon monoxide to enter your living space.',
+          text: 'A blocked or damaged chimney can cause carbon monoxide (a colorless, odorless gas) to back up into your home. This is a serious health hazard that can be fatal. Our inspection includes a thorough check for blockages, cracks, and deterioration that could allow carbon monoxide to enter your living space.',
         },
         {
           heading: 'Our Chimney Cleaning Process',

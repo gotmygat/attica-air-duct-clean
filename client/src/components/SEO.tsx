@@ -1,5 +1,5 @@
 /**
- * ATTICA CLEANERS — SEO Component
+ * ATTICA CLEANERS, SEO Component
  * Sets document title, meta description, canonical URL,
  * Open Graph tags, and JSON-LD structured data for every page.
  */
@@ -84,7 +84,7 @@ const LOCAL_BUSINESS_JSONLD = {
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '08:00', closes: '21:00' },
   ],
   priceRange: '$$',
-  award: 'Gold Winner, Air Duct Cleaning — 2026 Orlando\'s Best Awards',
+  award: 'Gold Winner for Air Duct Cleaning at the 2026 Orlando\'s Best Awards',
   sameAs: [
     'https://www.facebook.com/profile.php?id=61569575870635',
     'https://www.instagram.com/atticacleaners/',

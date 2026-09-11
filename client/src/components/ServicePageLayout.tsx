@@ -1,7 +1,7 @@
 /**
- * ATTICA CLEANERS — Service Page Layout
+ * ATTICA CLEANERS, Service Page Layout
  * Reusable layout for all service sub-pages
- * Redesigned hero: split layout (text left, image right) — no stretching or cropping
+ * Redesigned hero: split layout (text left, image right), no stretching or cropping
  * Includes full SEO: meta tags, Open Graph, JSON-LD, canonical, alt text, H1/H2/H3 hierarchy
  * CWV: hero image has fetchpriority="high" for LCP improvement
  * SEO: BreadcrumbList JSON-LD added for Google rich results
@@ -107,7 +107,7 @@ export default function ServicePageLayout({
       />
       <Header />
 
-      {/* ── HERO: Split layout — dark text panel left, image right ── */}
+      {/* ── HERO: Split layout, dark text panel left, image right ── */}
       <section className="bg-[#111111]" aria-label={`${title} hero`}>
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 min-h-[420px]">
           {/* Left: text */}
@@ -139,7 +139,7 @@ export default function ServicePageLayout({
             </div>
           </div>
 
-          {/* Right: image — fetchpriority=high for LCP, contained, never stretched */}
+          {/* Right: image, fetchpriority=high for LCP, contained, never stretched */}
           <div className="relative overflow-hidden min-h-[280px] lg:min-h-0">
             <img
               src={heroImage}
@@ -164,7 +164,7 @@ export default function ServicePageLayout({
               <div className="section-rule" />
               <p className="font-body text-muted-foreground leading-relaxed mb-10 text-lg">{description}</p>
 
-              {/* Benefits — H2 section */}
+              {/* Benefits, H2 section */}
               <h2 className="font-display text-2xl font-bold text-foreground mb-6">What's Included</h2>
               <div className="grid sm:grid-cols-2 gap-4 mb-12 fade-up">
                 {benefits.map((b) => (
@@ -175,7 +175,7 @@ export default function ServicePageLayout({
                 ))}
               </div>
 
-              {/* Details — H3 for each subsection */}
+              {/* Details, H3 for each subsection */}
               <div className="space-y-8">
                 {details.map((d, i) => (
                   <div key={i} className="fade-up">

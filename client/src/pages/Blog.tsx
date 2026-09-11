@@ -1,6 +1,6 @@
 /**
- * ATTICA CLEANERS — Blog Page
- * Design: Clean Air Luxury — light editorial layout
+ * ATTICA CLEANERS, Blog Page
+ * Design: Clean Air Luxury, light editorial layout
  * Contains all 3 real blog posts from atticacleaners.com
  */
 
@@ -29,7 +29,7 @@ const POSTS = [
     readTime: '3 min read',
     category: 'Company News',
     img: AWARD_IMG,
-    excerpt: "Attica Air Duct Cleaners has been named the Gold Winner for Air Duct Cleaning in the 2026 Orlando's Best\u2122 awards \u2014 an award decided entirely by a public vote of Orlando area residents.",
+    excerpt: "Attica Air Duct Cleaners has been named the Gold Winner for Air Duct Cleaning in the 2026 Orlando's Best\u2122 awards, an award decided entirely by a public vote of Orlando area residents.",
     content: [
       {
         heading: null,
@@ -37,7 +37,7 @@ const POSTS = [
       },
       {
         heading: null,
-        text: "What makes this one mean so much is how it was decided. The Orlando's Best\u2122 awards are not judged by a panel or bought through a sponsorship. Winners are chosen by a public vote of Orlando area residents \u2014 the people who live here, hire local companies, and have to live with the results. Gold in our category came directly from the homeowners we have worked for.",
+        text: "What makes this one mean so much is how it was decided. The Orlando's Best\u2122 awards are not judged by a panel or bought through a sponsorship. Winners are chosen by a public vote of Orlando area residents, the people who live here, hire local companies, and have to live with the results. Gold in our category came directly from the homeowners we have worked for.",
       },
       {
         heading: 'Thank You to Every Customer Who Voted',
@@ -49,7 +49,7 @@ const POSTS = [
       },
       {
         heading: 'How to Verify the Award',
-        text: "We think you should be able to check a claim like this rather than take our word for it. The full list of 2026 winners is published by Orlando's Best\u2122 at orlandosbest.com/winners \u2014 look under the Air Duct Cleaning category. We are listed there as the Gold result, alongside every other category winner across the region.",
+        text: "We think you should be able to check a claim like this rather than take our word for it. The full list of 2026 winners is published by Orlando's Best\u2122 at orlandosbest.com/winners, look under the Air Duct Cleaning category. We are listed there as the Gold result, alongside every other category winner across the region.",
       },
       {
         heading: 'Booking With the 2026 Gold Winner',
@@ -76,11 +76,11 @@ const POSTS = [
       },
       {
         heading: 'Does Cleaning Air Ducts Really Make a Difference?',
-        text: 'The benefits of cleaning air ducts are evident in improved system performance and increased efficiency. Beyond health concerns, recirculating contaminants can compromise the performance of your HVAC system. Dust and debris can clog filters, restrict airflow, and cause the system to work harder than necessary — driving up your energy bills.',
+        text: 'The benefits of cleaning air ducts are evident in improved system performance and increased efficiency. Beyond health concerns, recirculating contaminants can compromise the performance of your HVAC system. Dust and debris can clog filters, restrict airflow, and cause the system to work harder than necessary, driving up your energy bills.',
       },
       {
         heading: 'What Does Air Duct Cleaning Cost?',
-        text: 'Air duct cleaning costs vary based on the size of your home, the number of vents, and the condition of your ductwork. At Attica, we offer a straightforward $97 special that includes unlimited vents, maintenance cleaning, coil condition check, air flow inspection, and duct condition inspection — all per A/C unit. No hidden fees, no surprises.',
+        text: 'Air duct cleaning costs vary based on the size of your home, the number of vents, and the condition of your ductwork. At Attica, we offer a straightforward $97 special that includes unlimited vents, maintenance cleaning, coil condition check, air flow inspection, and duct condition inspection, all per A/C unit. No hidden fees, no surprises.',
       },
       {
         heading: 'When Should You Schedule a Cleaning?',
@@ -107,7 +107,7 @@ const POSTS = [
       },
       {
         heading: 'What to Look for in a Local Air Duct Cleaner',
-        text: 'When evaluating local companies, look for transparent pricing with no per-vent charges, certified technicians with verifiable experience, real customer reviews on Google, and a satisfaction guarantee. Attica checks every one of these boxes — and we serve 20+ cities across Greater Orlando.',
+        text: 'When evaluating local companies, look for transparent pricing with no per-vent charges, certified technicians with verifiable experience, real customer reviews on Google, and a satisfaction guarantee. Attica checks every one of these boxes, and we serve 20+ cities across Greater Orlando.',
       },
       {
         heading: 'Why Attica Is Greater Orlando\'s Best Choice',
@@ -122,7 +122,7 @@ const POSTS = [
     readTime: '6 min read',
     category: 'Maintenance Tips',
     img: IMG3,
-    excerpt: 'Regular air duct cleaning is essential for maintaining a clean and healthy home environment — but how often should it be done? A seasonal approach can help keep your ducts in top condition year-round.',
+    excerpt: 'Regular air duct cleaning is essential for maintaining a clean and healthy home environment, but how often should it be done? A seasonal approach can help keep your ducts in top condition year-round.',
     content: [
       {
         heading: null,
@@ -130,7 +130,7 @@ const POSTS = [
       },
       {
         heading: 'Winter: Preparing for Increased Indoor Activity',
-        text: 'During the colder months, people tend to spend more time indoors, which means indoor air quality becomes even more crucial. Dust, pet dander, and other contaminants often accumulate when windows and doors are closed. Cleaning air ducts at the start of winter ensures that your HVAC system isn\'t circulating accumulated dust and allergens. If you haven\'t had a professional cleaning within the past year, winter is a great time to consider it — especially before heavy heating use.',
+        text: 'During the colder months, people tend to spend more time indoors, which means indoor air quality becomes even more crucial. Dust, pet dander, and other contaminants often accumulate when windows and doors are closed. Cleaning air ducts at the start of winter ensures that your HVAC system isn\'t circulating accumulated dust and allergens. If you haven\'t had a professional cleaning within the past year, winter is a great time to consider it, especially before heavy heating use.',
       },
       {
         heading: 'Spring: Combating Allergy Season',

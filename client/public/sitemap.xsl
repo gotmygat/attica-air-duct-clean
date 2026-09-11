@@ -8,7 +8,7 @@
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
-        <title>Sitemap — Attica Air Duct Cleaners</title>
+        <title>Sitemap, Attica Air Duct Cleaners</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <style>
           * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,7 +35,7 @@
       </head>
       <body>
         <header>
-          <h1>Attica Air Duct Cleaners — Sitemap</h1>
+          <h1>Attica Air Duct Cleaners, Sitemap</h1>
           <p>All indexed pages for www.atticacleaners.com</p>
         </header>
         <div class="container">
