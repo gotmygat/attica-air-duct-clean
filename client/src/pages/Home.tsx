@@ -440,7 +440,7 @@ export default function Home() {
                   <a
                     href="https://orlandosbest.com/winners/"
                     target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-6 font-body text-sm font-semibold text-[#009DD5] hover:text-white transition-colors underline underline-offset-4"
+                    className="inline-flex items-center gap-2 mt-6 py-1.5 font-body text-sm font-semibold text-[#009DD5] hover:text-white transition-colors underline underline-offset-4"
                   >
                     See the official 2026 winners list <ArrowRight size={15} />
                   </a>
@@ -718,7 +718,7 @@ export default function Home() {
           </div>
           <p className="text-center mt-8 font-body text-sm text-muted-foreground">
             Still have questions?{' '}
-            <a href="tel:4079901969" className="font-semibold" style={{ color: 'oklch(0.54 0.135 232.9)' }}>Call us at (407) 990-1969</a>
+            <a href="tel:4079901969" className="inline-block py-1.5 -my-1 font-semibold" style={{ color: 'oklch(0.54 0.135 232.9)' }}>Call us at (407) 990-1969</a>
           </p>
         </div>
       </section>

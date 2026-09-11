@@ -62,11 +62,11 @@ export default function Footer() {
               />
             </a>
             <div className="space-y-3">
-              <a href="tel:4079901969" className="flex items-center gap-2 text-sm font-body transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              <a href="tel:4079901969" className="flex items-center gap-2 py-1.5 -my-1 text-sm font-body transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 <Phone size={14} style={{ color: 'oklch(0.655 0.135 232.9)', flexShrink: 0 }} />
                 (407) 990-1969
               </a>
-              <a href="mailto:atticacleaners1@gmail.com" className="flex items-center gap-2 text-sm font-body transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              <a href="mailto:atticacleaners1@gmail.com" className="flex items-center gap-2 py-1.5 -my-1 text-sm font-body transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 <Mail size={14} style={{ color: 'oklch(0.655 0.135 232.9)', flexShrink: 0 }} />
                 atticacleaners1@gmail.com
               </a>
@@ -102,7 +102,7 @@ export default function Footer() {
               {SERVICES_FOOTER.map((s) => (
                 <li key={s.href + s.label}>
                   <Link href={s.href}
-                    className="font-body text-sm transition-colors hover:text-white"
+                    className="inline-block py-1.5 -my-1 font-body text-sm transition-colors hover:text-white"
                     style={{ color: 'rgba(255,255,255,0.6)' }}>
                     {s.label}
                   </Link>
@@ -119,7 +119,7 @@ export default function Footer() {
                 <Link
                   key={city}
                   href={`/locations/${city.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="font-body text-sm transition-colors py-0.5 hover:text-white"
+                  className="inline-block py-1.5 -my-1 font-body text-sm transition-colors hover:text-white"
                   style={{ color: 'rgba(255,255,255,0.55)' }}
                 >
                   {city}
