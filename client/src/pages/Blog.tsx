@@ -175,7 +175,7 @@ function BlogCard({ post, onClick }: { post: typeof POSTS[0]; onClick: () => voi
         </div>
         <h3 className="font-display text-lg font-bold text-foreground mb-3 leading-snug">{post.title}</h3>
         <p className="font-body text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-3">{post.excerpt}</p>
-        <button className="inline-flex items-center gap-1.5 font-body text-sm font-semibold group-hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.54 0.135 232.9)' }}>
+        <button className="inline-flex items-center gap-1.5 py-1.5 -my-1 font-body text-sm font-semibold group-hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.54 0.135 232.9)' }}>
           Read More <ArrowRight size={14} />
         </button>
       </div>
@@ -201,7 +201,7 @@ function BlogPost({ post, onBack }: { post: typeof POSTS[0]; onBack: () => void 
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-        <button onClick={onBack} className="flex items-center gap-2 font-body text-sm font-medium text-muted-foreground hover:text-foreground mb-8 transition-colors">
+        <button onClick={onBack} className="flex items-center gap-2 py-1.5 font-body text-sm font-medium text-muted-foreground hover:text-foreground mb-8 transition-colors">
           ← Back to All Posts
         </button>
         <div className="prose-attica space-y-6">
