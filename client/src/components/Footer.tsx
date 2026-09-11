@@ -140,7 +140,7 @@ export default function Footer() {
               href="https://renderanalytics.net/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-white underline underline-offset-2"
+              className="inline-block py-1.5 -my-1 transition-colors hover:text-white underline underline-offset-2"
               style={{ color: 'rgba(255,255,255,0.5)' }}
             >
               Render Analytics
@@ -148,9 +148,9 @@ export default function Footer() {
             .
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/blog" className="font-body text-xs transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.35)' }}>Blog</Link>
-            <Link href="/referral-club" className="font-body text-xs transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.35)' }}>Referral Club</Link>
-            <Link href="/services" className="font-body text-xs transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.35)' }}>Services</Link>
+            <Link href="/blog" className="inline-block py-1.5 -my-1 font-body text-xs transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.35)' }}>Blog</Link>
+            <Link href="/referral-club" className="inline-block py-1.5 -my-1 font-body text-xs transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.35)' }}>Referral Club</Link>
+            <Link href="/services" className="inline-block py-1.5 -my-1 font-body text-xs transition-colors hover:text-white" style={{ color: 'rgba(255,255,255,0.35)' }}>Services</Link>
           </div>
         </div>
       </div>
