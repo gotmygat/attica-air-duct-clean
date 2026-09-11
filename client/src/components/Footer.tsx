@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <img
-                src={LOGO_URL}
+                src={LOGO_URL} width={304} height={178}
                 alt="Attica Air Duct Cleaners"
                 className="h-12 w-auto object-contain brightness-0 invert"
               />

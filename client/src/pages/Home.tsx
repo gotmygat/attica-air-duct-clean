@@ -451,14 +451,14 @@ export default function Home() {
             {/* Attica's own photographs from the ceremony */}
             <div className="fade-up grid grid-cols-5 gap-3 sm:gap-4">
               <img
-                src="/assets/award-ceremony-stage.webp"
+                src="/assets/award-ceremony-stage.webp" width={1500} height={1000}
                 alt="The Attica Air Duct Cleaners team accepting the 2026 Orlando's Best Gold award on stage"
                 loading="lazy"
                 className="col-span-3 w-full h-56 sm:h-72 object-cover rounded-2xl"
                 style={{ border: '1px solid rgba(255,255,255,0.12)' }}
               />
               <img
-                src="/assets/award-ceremony-wide.webp"
+                src="/assets/award-ceremony-wide.webp" width={1000} height={1333}
                 alt="Attica Air Duct Cleaners receiving their certificate at the 2026 Orlando's Best awards ceremony"
                 loading="lazy"
                 className="col-span-2 w-full h-56 sm:h-72 object-cover rounded-2xl"
@@ -562,7 +562,7 @@ export default function Home() {
             </div>
             <div className="fade-up relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl">
-                <img src={WHY_CHOOSE_IMG} alt="Attica Cleaners professional technician" className="w-full h-[480px] object-cover" />
+                <img src={WHY_CHOOSE_IMG} width={360} height={640} alt="Attica Cleaners professional technician" className="w-full h-[480px] object-cover" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'oklch(0.54 0.135 232.9)' }}>

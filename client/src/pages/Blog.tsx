@@ -269,7 +269,7 @@ export default function Blog() {
         <>
           {/* Hero */}
           <section className="relative h-64 sm:h-80 flex items-end overflow-hidden">
-            <img src={BLOG_HERO} alt="Attica Cleaners Blog" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={BLOG_HERO} width={360} height={640} alt="Attica Cleaners Blog" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
               <p className="font-body text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: '#8FC73F' }}>Knowledge Base</p>

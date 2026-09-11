@@ -86,7 +86,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <img
-                src={LOGO_URL}
+                src={LOGO_URL} width={304} height={178}
                 alt="Attica Air Duct Cleaners"
                 className={`h-12 lg:h-16 w-auto object-contain transition-all duration-300 ${!solidBg ? 'brightness-0 invert' : ''}`}
               />
@@ -177,7 +177,7 @@ export default function Header() {
           onClick={() => setMobileOpen(false)} />
         <div className={`absolute top-0 right-0 h-full w-80 max-w-full bg-white shadow-2xl transition-transform duration-300 overflow-y-auto ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex items-center justify-between p-5 border-b">
-            <img src={LOGO_URL} alt="Attica Air Duct Cleaners" className="h-10 w-auto" />
+            <img src={LOGO_URL} width={304} height={178} alt="Attica Air Duct Cleaners" className="h-10 w-auto" />
             <button onClick={() => setMobileOpen(false)} className="p-2 rounded-lg hover:bg-muted"><X size={20} /></button>
           </div>
           <nav className="p-5 space-y-1">
