@@ -306,13 +306,16 @@ export default function Home() {
               <span className="block text-4xl sm:text-5xl lg:text-6xl font-extrabold">
                 Breathe <span className="text-[#8FC73F]">Cleaner Air</span>
               </span>
-              <span className="block mt-3 text-xl sm:text-2xl lg:text-3xl font-semibold text-white/85">
+              <span className="block mt-2 sm:mt-3 text-lg sm:text-2xl lg:text-3xl font-semibold text-white/85">
                 Orlando's Air Duct Cleaning Service
               </span>
             </h1>
-            <p className="font-body text-[15px] sm:text-lg text-white/80 mb-6 sm:mb-8 leading-relaxed max-w-lg">
+            <p className="font-body text-[15px] sm:text-lg text-white/80 mb-5 sm:mb-8 leading-relaxed max-w-lg">
               Orlando's expert air duct cleaning service, air duct &amp; dryer vent cleaning powered by
-              Negative Air Pressure Technology. Protect your family's health and prevent fire hazards.
+              Negative Air Pressure Technology.
+              {/* Desktop-only tail: on a 375px screen this sentence wrapped an
+                  extra line and pushed the call to action past the fold. */}
+              <span className="hidden sm:inline"> Protect your family's health and prevent fire hazards.</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a href="#special-offer" className="btn-primary text-base px-7 py-3.5 sm:px-8 sm:py-4">
