@@ -161,7 +161,7 @@ export default function Header() {
 
             {/* Mobile toggle */}
             <button
-              className={`lg:hidden p-2 rounded-lg transition-colors ${textColor}`}
+              className={`lg:hidden flex items-center justify-center min-w-11 min-h-11 rounded-lg transition-colors ${textColor}`}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >

@@ -321,7 +321,7 @@ export default function LeadCaptureForm({
     }
   };
 
-  const inputClass = `w-full px-4 py-3 rounded-xl font-body text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
+  const inputClass = `w-full px-4 py-3 rounded-xl font-body text-base transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 ${
     dark
       ? 'bg-white/10 border border-white/20 text-white placeholder-white/40 focus:bg-white/15'
       : 'bg-white border border-border text-foreground placeholder-muted-foreground focus:border-primary'

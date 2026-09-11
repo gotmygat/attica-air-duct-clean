@@ -310,15 +310,15 @@ export default function Home() {
                 Orlando's Air Duct Cleaning Service
               </span>
             </h1>
-            <p className="font-body text-base sm:text-lg text-white/80 mb-8 leading-relaxed max-w-lg">
+            <p className="font-body text-[15px] sm:text-lg text-white/80 mb-6 sm:mb-8 leading-relaxed max-w-lg">
               Orlando's expert air duct cleaning service, air duct &amp; dryer vent cleaning powered by
               Negative Air Pressure Technology. Protect your family's health and prevent fire hazards.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <a href="#special-offer" className="btn-primary text-base px-8 py-4">
+              <a href="#special-offer" className="btn-primary text-base px-7 py-3.5 sm:px-8 sm:py-4">
                 See $97 Special
               </a>
-              <a href="tel:4079901969" className="btn-white text-base px-8 py-4">
+              <a href="tel:4079901969" className="btn-white text-base px-7 py-3.5 sm:px-8 sm:py-4">
                 <Phone size={16} />
                 (407) 990-1969
               </a>
@@ -512,7 +512,7 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="font-display text-xl font-bold text-foreground mb-2">{service.title}</h3>
                   <p className="font-body text-sm text-muted-foreground mb-4 leading-relaxed">{service.desc}</p>
-                  <Link href={service.href} className="inline-flex items-center gap-1.5 font-body text-sm font-semibold hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.54 0.135 232.9)' }}>
+                  <Link href={service.href} className="inline-flex items-center gap-1.5 py-2.5 -my-1 font-body text-sm font-semibold hover:gap-3 transition-all duration-200" style={{ color: 'oklch(0.54 0.135 232.9)' }}>
                     Learn More <ArrowRight size={14} />
                   </Link>
                 </div>

@@ -360,3 +360,16 @@
     box-shadow: 0 8px 40px rgba(0,0,0,0.12);
   }
 }
+
+@layer base {
+  /* iOS zooms the viewport when a focused field is under 16px, which leaves
+     the visitor scrolled sideways mid-form. Enforced here so it cannot be
+     undone by a utility class on an individual input. */
+  @media (max-width: 767px) {
+    input,
+    select,
+    textarea {
+      font-size: 16px;
+    }
+  }
+}
