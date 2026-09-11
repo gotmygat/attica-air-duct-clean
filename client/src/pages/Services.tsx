@@ -47,7 +47,7 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Air Duct Cleaning Services in Orlando, FL | Attica Air Duct Cleaners"
+        title="Air Duct Cleaning Services | Attica Air Duct Cleaners"
         description="Professional air duct cleaning, dryer vent cleaning, chimney inspection, attic insulation & air purification services in Orlando, FL. Call (407) 990-1969 for a free quote."
         canonical="/services"
         jsonLd={SERVICES_JSON_LD}

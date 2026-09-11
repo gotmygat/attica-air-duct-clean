@@ -43,7 +43,7 @@ export default function ServicePageLayout({
 }: ServicePageLayoutProps) {
   useScrollAnimation();
 
-  const seoTitle = metaTitle || `${title} in Orlando, FL`;
+  const seoTitle = metaTitle || `${title} Orlando FL`;
   const seoDescription = metaDescription || `${description.slice(0, 155).trim()}…`;
   const pageUrl = `${BASE_URL}${canonical || ''}`;
 

@@ -91,7 +91,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="About Attica Air Duct Cleaners | Orlando's Trusted Air Duct Cleaning Company"
+        title="About Attica Air Duct Cleaners | Orlando FL"
         description="Learn about Attica Air Duct Cleaners, Orlando's trusted air duct cleaning specialists. Backed by years of expertise, serving Greater Orlando with certified, professional indoor air quality services."
         canonical="/about"
         jsonLd={ABOUT_JSON_LD}

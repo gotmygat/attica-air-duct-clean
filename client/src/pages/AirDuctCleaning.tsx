@@ -9,7 +9,7 @@ export default function AirDuctCleaning() {
       subtitle="Indoor Air Quality"
       heroImage={IMG}
       heroImageAlt="Attica Air Duct Cleaners technician performing professional air duct cleaning in an Orlando home"
-      metaTitle="Air Duct Cleaning in Orlando, FL | Attica Air Duct Cleaners"
+      metaTitle="Air Duct Cleaning Orlando FL | Attica Air Duct Cleaners"
       metaDescription="Professional air duct cleaning in Orlando, FL. Remove dust, allergens, mold & pet dander with Negative Air Pressure Technology. Unlimited vents. Call (407) 990-1969."
       canonical="/air-duct-cleaning"
       description="Air duct cleaning in our work place is equally important as in our homes. Scheduled comprehensive duct cleaning for work place will increase airflow, limit allergens and contaminants in the air and help save you money. Breathe easier with our expert air duct cleaning services. We remove dust, allergens, and contaminants to improve air quality and enhance the efficiency of your HVAC system, creating a fresher, healthier environment for you and your family."

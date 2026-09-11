@@ -7,7 +7,7 @@ export default function SolarAtticFan() {
     <ServicePageLayout
       title="Solar Attic Fan Installation"
       heroImageAlt="Solar attic fan installed on a residential roof in Orlando, FL by Attica Air Duct Cleaners"
-      metaTitle="Solar Attic Fan Installation in Orlando, FL | Attica Air Duct Cleaners"
+      metaTitle="Solar Attic Fan Orlando FL | Attica Air Duct Cleaners"
       metaDescription="At Attica Air Duct Cleaners, we harness the sun's power to keep your attic cool, reduce energy costs, and prolong the life of your roof and HVAC system. Call (407) 990-1969."
       canonical="/solar-attic-fan"
       subtitle="Energy Efficiency"

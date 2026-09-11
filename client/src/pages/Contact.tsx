@@ -60,7 +60,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Contact Attica Air Duct Cleaners | Orlando, FL | (407) 990-1969"
+        title="Contact Attica Air Duct Cleaners | Orlando FL"
         description="Contact Attica Air Duct Cleaners in Orlando, FL. Call (407) 990-1969 or fill out our form for a free quote on air duct cleaning, dryer vent cleaning, chimney inspection & more."
         canonical="/contact"
         jsonLd={CONTACT_JSON_LD}

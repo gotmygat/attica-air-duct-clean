@@ -43,7 +43,7 @@ export const locations: Location[] = [
     lat: 28.5383,
     lng: -81.3792,
     seoTitle:
-      "Orlando Air Duct Cleaning for Homes, Condos and Rentals | Attica",
+      "Orlando Duct Cleaning for Rentals",
     description:
       "Air duct, dryer vent and chimney cleaning across Orlando, from 1920s bungalows to downtown condos and rental turnovers. Call (407) 990-1969.",
     h1: "Air Duct Cleaning for Orlando's Bungalows, Condos and Rental Turnovers",
@@ -102,7 +102,7 @@ export const locations: Location[] = [
     county: "Orange County",
     lat: 28.6936,
     lng: -81.5322,
-    seoTitle: "Apopka Air Duct Cleaning: Nursery and Field Dust | Attica",
+    seoTitle: "Apopka Duct Cleaning: Field Dust",
     description:
       "Duct and dryer vent cleaning in Apopka, where nursery soil, shade houses and unpaved shoulders put a different kind of dust in your system.",
     h1: "Duct Cleaning in Apopka, Where the Dust Comes Off the Fields",
@@ -161,7 +161,7 @@ export const locations: Location[] = [
     county: "Seminole County",
     lat: 28.7031,
     lng: -81.3384,
-    seoTitle: "Longwood Duct and Chimney Cleaning for Wooded Lots | Attica",
+    seoTitle: "Longwood Duct & Chimney Cleaning",
     description:
       "Longwood duct, chimney and dryer vent cleaning for the historic district and the wooded Wekiva-side subdivisions. Call (407) 990-1969.",
     h1: "Longwood Duct and Chimney Work, From the Historic District to the Wekiva Side",
@@ -221,7 +221,7 @@ export const locations: Location[] = [
     lat: 28.8006,
     lng: -81.2731,
     seoTitle:
-      "Sanford FL Duct Cleaning for Historic and Waterfront Homes | Attica",
+      "Sanford FL Historic Duct Cleaning",
     description:
       "Duct and vent cleaning in Sanford, built around historic district homes with retrofitted ductwork and the humidity off Lake Monroe.",
     h1: "Duct Cleaning in Sanford, Built for Houses Older Than Air Conditioning",
@@ -281,7 +281,7 @@ export const locations: Location[] = [
     lat: 28.6611,
     lng: -81.3656,
     seoTitle:
-      "Altamonte Springs Duct and Dryer Vent Cleaning for Condos | Attica",
+      "Altamonte Springs Duct Cleaning",
     description:
       "Condo and apartment duct and dryer vent cleaning in Altamonte Springs, where closet air handlers and shared lint chases are the norm.",
     h1: "Altamonte Springs Duct Work for Condos, Apartments and Closet Air Handlers",
@@ -340,7 +340,7 @@ export const locations: Location[] = [
     county: "Seminole County",
     lat: 28.6678,
     lng: -81.3245,
-    seoTitle: "Casselberry Duct Cleaning for 1960s Ranch Homes | Attica",
+    seoTitle: "Casselberry Ranch Duct Cleaning",
     description:
       "Casselberry duct and attic work for the lakeside ranch neighborhoods, where one hallway return still serves the entire house.",
     h1: "Casselberry Duct Cleaning Where One Return Serves the Whole House",
@@ -400,7 +400,7 @@ export const locations: Location[] = [
     lat: 28.5494,
     lng: -81.7729,
     seoTitle:
-      "Clermont Air Duct Cleaning for New Builds and Hot Attics | Attica",
+      "Clermont New Build Duct Cleaning",
     description:
       "Clermont duct and attic services for new construction and hillside homes, where attic temperatures punish builder-grade flex duct.",
     h1: "Clermont Duct Cleaning Where the Attic Runs Hotter Than the Roof Deck Should",
@@ -459,7 +459,7 @@ export const locations: Location[] = [
     county: "Orange County",
     lat: 28.54,
     lng: -81.51,
-    seoTitle: "Gotha FL Duct and Vent Cleaning for Acreage Properties | Attica",
+    seoTitle: "Gotha FL Duct & Vent Cleaning",
     description:
       "Duct, chimney and dryer vent cleaning in Gotha, for old settlement cottages and newer custom homes on wooded acreage lots.",
     h1: "Gotha Duct Cleaning for Oak-Shaded Lots and Long Private Drives",
@@ -518,7 +518,7 @@ export const locations: Location[] = [
     county: "Seminole County",
     lat: 28.7581,
     lng: -81.3178,
-    seoTitle: "Lake Mary Duct Cleaning for Two-Story and Zoned Homes | Attica",
+    seoTitle: "Lake Mary Zoned Duct Cleaning",
     description:
       "Lake Mary duct cleaning for the Heathrow-era two-story homes with attic air handlers, zone dampers and long upstairs runs.",
     h1: "Lake Mary Duct Cleaning for Attic Air Handlers and Zoned Two-Story Homes",
@@ -577,7 +577,7 @@ export const locations: Location[] = [
     county: "Seminole County",
     lat: 28.83,
     lng: -81.32,
-    seoTitle: "Lake Monroe Duct Cleaning for Waterfront Properties | Attica",
+    seoTitle: "Lake Monroe Duct Cleaning",
     description:
       "Duct and vent cleaning for Lake Monroe waterfront homes on the St. Johns, where river humidity and long lots shape every job.",
     h1: "Lake Monroe Duct Cleaning Where the River Sets the Humidity",
@@ -637,7 +637,7 @@ export const locations: Location[] = [
     lat: 28.6278,
     lng: -81.3631,
     seoTitle:
-      "Maitland Duct Cleaning for Mid-Century and Slab Duct Homes | Attica",
+      "Maitland Slab Duct Cleaning",
     description:
       "Maitland duct cleaning for mid-century homes with low attics, in-slab ductwork and the oak canopy around Lake Lily and Lake Sybelia.",
     h1: "Maitland Duct Cleaning for Low Attics and Mid-Century Floor Plans",
@@ -696,7 +696,7 @@ export const locations: Location[] = [
     county: "Orange County",
     lat: 28.5686,
     lng: -81.5437,
-    seoTitle: "Ocoee Air Duct Cleaning Near the 429 Growth Corridor | Attica",
+    seoTitle: "Ocoee Duct Cleaning Near the 429",
     description:
       "Ocoee duct and dryer vent cleaning for both the older Starke Lake neighborhoods and the newer subdivisions along the 429 corridor.",
     h1: "Ocoee Duct Cleaning for Two Very Different Halves of the Same City",
@@ -756,7 +756,7 @@ export const locations: Location[] = [
     lat: 28.67,
     lng: -81.2081,
     seoTitle:
-      "Oviedo Duct Cleaning for Wooded Subdivisions and Rentals | Attica",
+      "Oviedo Duct Cleaning for Rentals",
     description:
       "Oviedo duct and dryer vent cleaning for the oak-heavy subdivisions, the Econ floodplain edge and the rental turnover near UCF.",
     h1: "Oviedo Duct Cleaning for Oak Canopy, Low Ground and High Turnover",
@@ -816,7 +816,7 @@ export const locations: Location[] = [
     lat: 28.5997,
     lng: -81.3392,
     seoTitle:
-      "Winter Park Duct Cleaning for Historic Homes and Oak Pollen | Attica",
+      "Winter Park Oak Pollen Cleaning",
     description:
       "Winter Park duct and chimney cleaning for brick-street historic homes with retrofitted central air under a dense live oak canopy.",
     h1: "Winter Park Duct Cleaning Under the Oldest Oak Canopy in Orange County",
@@ -875,7 +875,7 @@ export const locations: Location[] = [
     county: "Seminole County",
     lat: 28.6989,
     lng: -81.2706,
-    seoTitle: "Winter Springs Duct Cleaning for Tuscawilla Area Homes | Attica",
+    seoTitle: "Winter Springs Duct Cleaning",
     description:
       "Winter Springs duct and attic work for the Tuscawilla golf community and wooded HOA neighborhoods built from the 1970s onward.",
     h1: "Winter Springs Duct Cleaning for Golf-Course Lots and 1980s Duct Board",
@@ -934,7 +934,7 @@ export const locations: Location[] = [
     county: "Orange County",
     lat: 28.4986,
     lng: -81.5354,
-    seoTitle: "Windermere Duct Cleaning for Butler Chain Estate Homes | Attica",
+    seoTitle: "Windermere Estate Duct Cleaning",
     description:
       "Windermere duct and vent cleaning for large Butler Chain homes with multiple air handlers, zoned floors and very long duct runs.",
     h1: "Windermere Duct Cleaning for Multi-System Homes on the Butler Chain",
@@ -993,7 +993,7 @@ export const locations: Location[] = [
     county: "Orange County",
     lat: 28.5653,
     lng: -81.5862,
-    seoTitle: "Winter Garden Duct Cleaning for New Horizon West Homes | Attica",
+    seoTitle: "Winter Garden Duct Cleaning",
     description:
       "Winter Garden duct and dryer vent cleaning for Horizon West new builds full of construction residue and historic Plant Street homes.",
     h1: "Winter Garden Duct Cleaning for Brand New Houses With Dirty Ductwork",
@@ -1053,7 +1053,7 @@ export const locations: Location[] = [
     lat: 28.4722,
     lng: -81.3603,
     seoTitle:
-      "Belle Isle Duct Cleaning for Conway Chain Lakefront Homes | Attica",
+      "Belle Isle Duct Cleaning",
     description:
       "Belle Isle duct and coil cleaning for the mid-century lakefront ranches on the Conway Chain, where humidity sits close to the ground.",
     h1: "Belle Isle Duct Cleaning for Low-Slung Lakefront Ranch Homes",
@@ -1113,7 +1113,7 @@ export const locations: Location[] = [
     lat: 29.0283,
     lng: -81.3031,
     seoTitle:
-      "Deland Duct and Chimney Cleaning for Historic Volusia Homes | Attica",
+      "Deland Duct & Chimney Cleaning",
     description:
       "Deland duct and chimney cleaning for the historic downtown houses and the rural Volusia County properties on wells and dirt roads.",
     h1: "Deland Duct and Chimney Work for Wood-Frame Houses and Rural Lots",
@@ -1172,7 +1172,7 @@ export const locations: Location[] = [
     county: "Volusia County",
     lat: 28.9006,
     lng: -81.2637,
-    seoTitle: "Deltona Duct Cleaning for 1960s Block Homes on Wells | Attica",
+    seoTitle: "Deltona Block Home Duct Cleaning",
     description:
       "Deltona duct and attic services for the mass-platted block ranches, converted carports, small attics, private wells and sandy scrub lots.",
     h1: "Deltona Duct Cleaning for Thousands of Houses Built From the Same Plans",

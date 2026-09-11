@@ -7,7 +7,7 @@ export default function AirPurification() {
     <ServicePageLayout
       title="Air Purification Systems"
       heroImageAlt="Attica Air Duct Cleaners installing a whole-home air purification system in an Orlando home"
-      metaTitle="Air Purification Systems in Orlando, FL | Attica Air Duct Cleaners"
+      metaTitle="Air Purification Orlando FL | Attica Air Duct Cleaners"
       metaDescription="Whole-home air purification systems in Orlando, FL. HEPA-grade filtration installed directly into your HVAC. Removes bacteria, viruses & allergens. Call (407) 990-1969."
       canonical="/air-purification"
       subtitle="Whole-Home Air Quality"

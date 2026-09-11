@@ -254,7 +254,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={activePost ? `${activePost.title} | Attica Air Duct Cleaners Blog` : 'Air Duct Cleaning Blog | Tips & Guides | Attica Air Duct Cleaners'}
+        title={activePost ? `${activePost.title} | Attica Air Duct Cleaners Blog` : 'Air Duct Cleaning Tips & Guides | Attica Air Duct Cleaners'}
         description={activePost ? activePost.excerpt : 'Expert insights on air duct cleaning, dryer vent maintenance, and indoor air quality for Orlando homeowners. Tips from certified HVAC cleaning professionals.'}
         canonical={activePost ? `/blog#${activePost.id}` : '/blog'}
         jsonLd={articleJsonLd}

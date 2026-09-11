@@ -7,7 +7,7 @@ export default function AtticInsulation() {
     <ServicePageLayout
       title="Attic Insulation"
       heroImageAlt="Attica Air Duct Cleaners installing blow-in attic insulation in an Orlando home"
-      metaTitle="Attic Insulation in Orlando, FL | Attica Air Duct Cleaners"
+      metaTitle="Attic Insulation Orlando FL | Attica Air Duct Cleaners"
       metaDescription="Professional attic blow-in insulation in Orlando, FL. Improve energy efficiency, reduce heating & cooling costs, and increase home comfort. Call (407) 990-1969."
       canonical="/attic-insulation"
       subtitle="Energy Efficiency"

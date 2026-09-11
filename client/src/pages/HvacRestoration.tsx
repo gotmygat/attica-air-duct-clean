@@ -7,7 +7,7 @@ export default function HvacRestoration() {
     <ServicePageLayout
       title="HVAC System Restoration"
       heroImageAlt="Attica Air Duct Cleaners performing HVAC system restoration service in Orlando, FL"
-      metaTitle="HVAC System Restoration in Orlando, FL | Attica Air Duct Cleaners"
+      metaTitle="HVAC Restoration Orlando FL | Attica Air Duct Cleaners"
       metaDescription="Professional HVAC system restoration in Orlando, FL. Restore performance, improve air quality & extend the life of your heating and cooling system. Call (407) 990-1969."
       canonical="/hvac-restoration"
       subtitle="Performance & Efficiency"

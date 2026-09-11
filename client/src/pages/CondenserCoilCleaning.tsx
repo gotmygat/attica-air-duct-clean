@@ -9,7 +9,7 @@ export default function CondenserCoilCleaning() {
       subtitle="HVAC Efficiency"
       heroImage={IMG}
       heroImageAlt="HVAC technician cleaning condenser coils on an outdoor AC unit in Orlando, FL"
-      metaTitle="Condenser Coil Cleaning in Orlando, FL | Attica Air Duct Cleaners"
+      metaTitle="Condenser Coil Cleaning Orlando | Attica Air Duct Cleaners"
       metaDescription="Professional condenser coil cleaning in Orlando, FL. Restore cooling capacity, reduce energy costs & prevent compressor failure. Call (407) 990-1969."
       canonical="/condenser-coil-cleaning"
       description="Dirty condenser coils are one of the leading causes of HVAC inefficiency and premature system failure. Our professional condenser coil cleaning service removes built-up dirt, debris, and biological growth to restore your system's cooling capacity and reduce energy costs."
