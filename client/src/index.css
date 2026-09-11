@@ -373,3 +373,13 @@
     }
   }
 }
+
+@layer components {
+  /* Leaflet renders its attribution links at 14px, under the 24px minimum in
+     WCAG 2.5.8. The attribution is required by the OpenStreetMap licence and is
+     left exactly as Leaflet writes it; only the tap area grows. */
+  .leaflet-control-attribution a {
+    display: inline-block;
+    padding: 5px 2px;
+  }
+}

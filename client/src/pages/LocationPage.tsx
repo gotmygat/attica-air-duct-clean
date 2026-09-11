@@ -157,7 +157,7 @@ export default function LocationPage() {
               {loc.h1}
             </h1>
             <p className="font-body text-white/70 text-lg leading-relaxed mb-8">
-              {loc.intro} Call <a href="tel:4079901969" className="text-[#8FC73F] font-semibold hover:underline">(407) 990-1969</a> to schedule your service today.
+              {loc.intro} Call <a href="tel:4079901969" className="inline-block py-0.5 -my-0.5 text-[#8FC73F] font-semibold hover:underline">(407) 990-1969</a> to schedule your service today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:4079901969" className="btn-primary">
